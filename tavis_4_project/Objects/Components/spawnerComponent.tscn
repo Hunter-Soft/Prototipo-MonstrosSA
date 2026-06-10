@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cv4i0lw13vvs3"]
+
+[ext_resource type="Script" uid="uid://dnshvr5u01xq0" path="res://spawnerComponent.gd" id="1_hb04x"]
+[ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster.tscn" id="2_epe1t"]
+
+[node name="SpawnerComponent" type="Node2D" unique_id=1821356837]
+script = ExtResource("1_hb04x")
+enemy_pool = Array[PackedScene]([ExtResource("2_epe1t")])
+enemy_pool_cost = Array[int]([3])

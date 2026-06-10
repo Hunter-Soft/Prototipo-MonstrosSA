@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b46cols1c34t2"]
+
+[ext_resource type="Script" uid="uid://desfxfmk5t47q" path="res://Objects/Components/HoverDetectionComponent.gd" id="1_jygsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqymb"]
+
+[node name="HoverDetectionComponent" type="Area2D" unique_id=1076711001]
+script = ExtResource("1_jygsr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135568351]
+shape = SubResource("RectangleShape2D_oqymb")

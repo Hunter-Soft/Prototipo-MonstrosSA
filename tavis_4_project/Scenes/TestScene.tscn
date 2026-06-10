@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://dw8gyvq5uptd7"]
 
+[ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster.tscn" id="1_b5ayd"]
+[ext_resource type="PackedScene" uid="uid://cv4i0lw13vvs3" path="res://Objects/Components/spawnerComponent.tscn" id="2_5lt6y"]
+
 [node name="Node2D" type="Node2D" unique_id=476375647]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1890784317]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="Monster" parent="." unique_id=1365438596 instance=ExtResource("1_b5ayd")]
+position = Vector2(136, 73)
+
+[node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("2_5lt6y")]
+position = Vector2(386, 148)
