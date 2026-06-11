@@ -4,7 +4,7 @@ extends Node2D
 var spawned: bool
 
 @export_subgroup("Config")
-@export var delay_between_spawns: float = 0.15
+@export var delay_between_spawns: float = 1
 @export var points: int = 12
 @export var enemy_pool: Array[PackedScene]
 @export var enemy_pool_cost: Array[int]
@@ -34,8 +34,8 @@ func spawnEnemies(enemy_list: Array[PackedScene]) -> void:
 		var new_enemy: Node2D = x.instantiate()
 		new_enemy.global_position = global_position + Vector2(randi_range(1, 150), randi_range(1, 150))
 		get_tree().root.add_child(new_enemy)
-	pass
-	await get_tree().create_timer(delay_between_spawns).timeout
+	#pass
+		await get_tree().create_timer(delay_between_spawns).timeout
 
 class EnemyData:
 	var x

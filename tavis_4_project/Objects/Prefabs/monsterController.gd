@@ -2,7 +2,7 @@ class_name MonsterController
 extends CharacterBody2D
 
 @export_subgroup("Config")
-@export_enum("Example_01", "Example_02") var monster_type = 0 
+@export_enum("Example_01", "Example_02") var monster_type = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

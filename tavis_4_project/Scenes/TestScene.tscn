@@ -5,12 +5,91 @@
 
 [node name="Node2D" type="Node2D" unique_id=476375647]
 
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1981576487]
+position = Vector2(169.69238, 102.76219)
+scale = Vector2(5.8404584, 4.933203)
+invert_enabled = true
+invert_border = 2.0
+polygon = PackedVector2Array(48.14646, -16.176474, -18, -16, -25.712624, -19.411768, -27, -1, -25.19492, 48.745106, 50.56241, 51.33334)
+uv = PackedVector2Array(-56, -48, -72, -32, -32, -8)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1218317164]
+position = Vector2(474, 80)
+scale = Vector2(5.8404584, 4.933203)
+invert_border = 2.0
+polygon = PackedVector2Array(6.1639023, -2.2297888, 6.50634, 11.148943, 11.129265, 15.000395, 16.437065, 11.148943, 15.75219, -3.0406208)
+uv = PackedVector2Array(-56, -48, -72, -32, -32, -8)
+
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=1959234594]
+position = Vector2(414.99997, 15)
+scale = Vector2(13.480461, 4.933203)
+invert_border = 2.0
+polygon = PackedVector2Array(6.1639023, -2.2297888, 6.50634, 11.148943, 16.437065, 11.148943, 16.081627, 3.7848434, 15.75219, -3.0406208)
+uv = PackedVector2Array(-56, -48, -72, -32, -32, -8)
+
+[node name="Polygon2D4" type="Polygon2D" parent="." unique_id=1499585132]
+position = Vector2(498.08344, 12.839325)
+scale = Vector2(2.2459352, 2.7052498)
+color = Color(0, 0, 0, 1)
+invert_border = 2.0
+polygon = PackedVector2Array(6.1639023, -2.2297888, 6.50634, 11.148943, 16.437065, 11.148943, 15.75219, -3.0406208)
+uv = PackedVector2Array(-56, -48, -72, -32, -32, -8)
+
+[node name="Polygon2D5" type="Polygon2D" parent="." unique_id=1449592434]
+position = Vector2(532, 13)
+scale = Vector2(2.2459352, 2.7052498)
+color = Color(0, 0, 0, 1)
+invert_border = 2.0
+polygon = PackedVector2Array(6.1639023, -2.2297888, 6.50634, 11.148943, 16.437065, 11.148943, 15.75219, -3.0406208)
+uv = PackedVector2Array(-56, -48, -72, -32, -32, -8)
+
+[node name="Polygon2D6" type="Polygon2D" parent="." unique_id=149250019]
+position = Vector2(567.00006, 10.000001)
+scale = Vector2(2.2459352, 2.7052498)
+color = Color(0, 0, 0, 1)
+invert_border = 2.0
+polygon = PackedVector2Array(6.1639023, -2.2297888, 6.50634, 11.148943, 16.437065, 11.148943, 15.75219, -3.0406208)
+uv = PackedVector2Array(-56, -48, -72, -32, -32, -8)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1890784317]
 anchor_mode = 0
 zoom = Vector2(2, 2)
 
 [node name="Monster" parent="." unique_id=1365438596 instance=ExtResource("1_b5ayd")]
-position = Vector2(136, 73)
+position = Vector2(539, 101)
+
+[node name="Monster4" parent="." unique_id=430198165 instance=ExtResource("1_b5ayd")]
+position = Vector2(104, 93)
+
+[node name="Monster11" parent="." unique_id=409292340 instance=ExtResource("1_b5ayd")]
+position = Vector2(157, 119)
+
+[node name="Monster5" parent="." unique_id=1758751185 instance=ExtResource("1_b5ayd")]
+position = Vector2(522, 198)
+
+[node name="Monster6" parent="." unique_id=1948368532 instance=ExtResource("1_b5ayd")]
+position = Vector2(93, 174)
+
+[node name="Monster3" parent="." unique_id=1261737013 instance=ExtResource("1_b5ayd")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(596, 100)
+
+[node name="Monster2" parent="." unique_id=634953278 instance=ExtResource("1_b5ayd")]
+position = Vector2(59, 90)
+
+[node name="Monster7" parent="." unique_id=871201773 instance=ExtResource("1_b5ayd")]
+position = Vector2(227, 69)
+
+[node name="Monster12" parent="." unique_id=1170820947 instance=ExtResource("1_b5ayd")]
+position = Vector2(212, 155)
+
+[node name="Monster9" parent="." unique_id=1522873596 instance=ExtResource("1_b5ayd")]
+position = Vector2(220, 252)
+
+[node name="Monster10" parent="." unique_id=411008613 instance=ExtResource("1_b5ayd")]
+position = Vector2(344, 224)
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("2_5lt6y")]
 position = Vector2(386, 148)
+ready_to_spawn = true
+delay_between_spawns = 0.15
