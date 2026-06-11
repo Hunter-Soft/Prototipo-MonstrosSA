@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export_subgroup("Config")
 @export_enum("Example_01", "Example_02") var monster_type = 0
 
+@export_subgroup("States")
+@export var slotted: bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bviy743a5gv3n"]
+
+[ext_resource type="PackedScene" uid="uid://cv4i0lw13vvs3" path="res://Objects/Components/spawnerComponent.tscn" id="1_3wvi2"]
+[ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
+
+[node name="Level01Test" type="Node2D" unique_id=872439788]
+script = ExtResource("1_klblu")
+
+[node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
+ready_to_spawn = true
