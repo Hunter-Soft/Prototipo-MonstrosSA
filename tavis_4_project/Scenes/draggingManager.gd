@@ -64,7 +64,7 @@ func endDrag() -> void:
 	#monster_being_dragged.scale = Vector2(1.05, 1.05)
 	var monster_slot_found: DeliveryZone = raycastCardSlotCheck()
 	if monster_slot_found && !monster_slot_found.monster_slotted:
-		monster_being_dragged.position = monster_slot_found.position
+		monster_being_dragged.global_position = monster_slot_found.global_position
 		monster_being_dragged.slotted = true
 		#monster_slot_found.get_node("Area2D/CollisionShape2D").disabled = true
 		monster_slot_found.current_monster = monster_being_dragged
@@ -104,7 +104,8 @@ func raycastCardSlotCheck():
 	var result = space_state.intersect_point(parameters)
 	
 	if result.size() > 0:
-		return result[0].collider.get_parent()
+		return result[0].collider
+		#return result[0].collider.get_parent() VOLTAR DEPOIS NICOLLAS
 	return null
 
 func raycastCardCheck():
@@ -119,5 +120,6 @@ func raycastCardCheck():
 	
 	if result.size() > 0:
 		return result[0].collider.get_parent()
+		#return result[0].collider.get_parent() VOLTAR DEPOIS NICOLLAS
 	return null
 	

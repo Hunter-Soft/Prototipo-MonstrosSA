@@ -55,10 +55,10 @@ func checkStates() -> void:
 func _process(delta: float) -> void:
 	if current_monster:
 		monster_slotted = true
-		checkStates() #Otimizar para funcionar apenas durante o slotted e o unslotted
+		#checkStates() #Otimizar para funcionar apenas durante o slotted e o unslotted
 
 func resetAtributes() -> void: 
-	if current_monster != null:
-		current_monster.state_component.current_state = current_monster.state_component.STATES.OFF
+	#if current_monster != null:
+		#current_monster.state_component.current_state = current_monster.state_component.STATES.OFF
 	
 	monster_slotted = false

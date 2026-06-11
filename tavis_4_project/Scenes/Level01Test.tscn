@@ -14,10 +14,10 @@ script = ExtResource("1_klblu")
 ready_to_spawn = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=409351304]
+position = Vector2(1128, 493)
 collision_layer = 4
 collision_mask = 4
+script = ExtResource("3_7gaad")
 
 [node name="DeliveryZone" type="CollisionShape2D" parent="Area2D" unique_id=1146159419]
-position = Vector2(1112.25, 484)
 shape = SubResource("RectangleShape2D_5sm5k")
-script = ExtResource("3_7gaad")
