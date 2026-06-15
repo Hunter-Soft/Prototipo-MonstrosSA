@@ -26,15 +26,17 @@ func _ready() -> void:
 	just_unslotted.connect(removeMonsterAttributes)
 
 func getMonsterAttributes(monster_added: Node2D) -> void:
+	monster_list.append(monster_added)
 	pass
 
 func removeMonsterAttributes(monster_removed: Node2D) -> void: 
-	
-	monster_slotted = false
+	monster_list.erase(monster_removed)
+	#monster_slotted = false
 
 func checkStates() -> void:
 	pass
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if current_monster:
-		monster_slotted = true
+	#if current_monster:
+		#monster_slotted = true
+	pass
