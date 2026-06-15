@@ -54,7 +54,7 @@ func startDrag(monster: Node2D) -> void:
 	var monster_slot_found = raycastCardSlotCheck() as DeliveryZone
 	
 	if monster_slot_found && monster_slot_found.monster_slotted && monster_being_dragged == monster_slot_found.current_monster:
-		monster_slot_found.emit_signal("just_unslotted")
+		monster_slot_found.emit_signal("just_unslotted", monster_being_dragged)
 		monster_slot_found.current_monster = null
 		
 	#print(monster_slot_found)
@@ -68,7 +68,7 @@ func endDrag() -> void:
 		monster_being_dragged.slotted = true
 		#monster_slot_found.get_node("Area2D/CollisionShape2D").disabled = true
 		monster_slot_found.current_monster = monster_being_dragged
-		monster_slot_found.emit_signal("just_slotted")
+		monster_slot_found.emit_signal("just_slotted", monster_being_dragged)
 	#elif monster_slot_found && 
 	monster_being_dragged = null
 
