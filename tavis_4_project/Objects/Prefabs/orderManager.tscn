@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bqsufogqoftxd"]
+
+[ext_resource type="Script" uid="uid://dvdinuaip3bgp" path="res://Objects/Prefabs/orderManager.gd" id="1_2jukh"]
+[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/monsterSpriteFrames.tres" id="2_q0av7"]
+[ext_resource type="PackedScene" uid="uid://ctwkbkrod4ow4" path="res://Objects/Prefabs/orderFlag.tscn" id="3_m7xs6"]
+
+[node name="OrderManager" type="Node2D" unique_id=264940256]
+script = ExtResource("1_2jukh")
+image = ExtResource("2_q0av7")
+
+[node name="OrderFlag" parent="." unique_id=1715212310 instance=ExtResource("3_m7xs6")]
+position = Vector2(-16, 0)
+sprite_frames = ExtResource("2_q0av7")
+animation = &"Idle"
+
+[node name="OrderFlag2" parent="." unique_id=1554634993 instance=ExtResource("3_m7xs6")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(16, 0)
+sprite_frames = ExtResource("2_q0av7")
+animation = &"Idle"

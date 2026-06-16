@@ -2,64 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b46cols1c34t2" path="res://Objects/Components/HoverDetectionComponent.tscn" id="1_37w2e"]
 [ext_resource type="Script" uid="uid://daqg8gc2q8dt5" path="res://Objects/Prefabs/monsterController.gd" id="1_sam45"]
-[ext_resource type="Texture2D" uid="uid://dgcglom580t4f" path="res://Sprites/TemporaryAssetpack/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Idle.png" id="3_4yboc"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y862k"]
-atlas = ExtResource("3_4yboc")
-region = Rect2(0, 24, 80, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ncwpd"]
-atlas = ExtResource("3_4yboc")
-region = Rect2(80, 24, 80, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sdcea"]
-atlas = ExtResource("3_4yboc")
-region = Rect2(160, 24, 80, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kg6o5"]
-atlas = ExtResource("3_4yboc")
-region = Rect2(240, 24, 80, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gq3uh"]
-atlas = ExtResource("3_4yboc")
-region = Rect2(320, 24, 80, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_084qo"]
-atlas = ExtResource("3_4yboc")
-region = Rect2(400, 24, 80, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1k736"]
-atlas = ExtResource("3_4yboc")
-region = Rect2(480, 24, 80, 40)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_00f5a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y862k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ncwpd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sdcea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kg6o5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gq3uh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_084qo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1k736")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/monsterSpriteFrames.tres" id="3_4yboc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yboc"]
 size = Vector2(30, 34)
@@ -74,7 +17,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=448399411]
-sprite_frames = SubResource("SpriteFrames_00f5a")
+sprite_frames = ExtResource("3_4yboc")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1755964189]

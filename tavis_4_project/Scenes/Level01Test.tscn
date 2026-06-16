@@ -2,26 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://cv4i0lw13vvs3" path="res://Objects/Components/spawnerComponent.tscn" id="1_3wvi2"]
 [ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
-[ext_resource type="Script" uid="uid://biqbdt746cosg" path="res://Scenes/deliveryZone.gd" id="3_7gaad"]
 [ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster.tscn" id="3_cps6d"]
 [ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster1.tscn" id="4_5ad2a"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sm5k"]
-size = Vector2(298.5, 474)
+[ext_resource type="PackedScene" uid="uid://c11i4p0gth8jj" path="res://Objects/Prefabs/delivery_area.tscn" id="5_cps6d"]
+[ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
 
 [node name="Level01Test" type="Node2D" unique_id=872439788]
 script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
-ready_to_spawn = true
 enemy_pool = Array[PackedScene]([ExtResource("3_cps6d"), ExtResource("4_5ad2a")])
 enemy_pool_cost = Array[int]([3, 4])
 
-[node name="Area2D" type="Area2D" parent="." unique_id=409351304]
+[node name="DeliveryArea" parent="." unique_id=1091671134 instance=ExtResource("5_cps6d")]
 position = Vector2(1128, 493)
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("3_7gaad")
 
-[node name="DeliveryZone" type="CollisionShape2D" parent="Area2D" unique_id=1146159419]
-shape = SubResource("RectangleShape2D_5sm5k")
+[node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
+position = Vector2(1214, 33)
+scale = Vector2(2, 2)
+order_list = null
+
+[node name="==MonsterHolder==" type="Node" parent="." unique_id=1253744609]
+
+[node name="Button" type="Button" parent="." unique_id=297069934]
+offset_left = 1095.0
+offset_top = 195.0
+offset_right = 1152.0
+offset_bottom = 226.0
+text = "Enviar"
