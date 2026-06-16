@@ -11,6 +11,7 @@
 script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
+position = Vector2(212, 159)
 enemy_pool = Array[PackedScene]([ExtResource("3_cps6d"), ExtResource("4_5ad2a")])
 enemy_pool_cost = Array[int]([3, 4])
 

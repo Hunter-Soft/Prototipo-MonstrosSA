@@ -43,3 +43,7 @@ id = 5
 position = Vector2(75, 160)
 script = ExtResource("2_31hpc")
 id = 6
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=997717601]
+polygon = PackedVector2Array(-151.99998, -255.99998, -151.99998, 232, 152, 232, 152.00002, -255.99998)
+uv = PackedVector2Array(-72, -16, -24, 48, 8, -8)
