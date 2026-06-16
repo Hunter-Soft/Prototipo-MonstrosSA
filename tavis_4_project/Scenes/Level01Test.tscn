@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bviy743a5gv3n"]
 
 [ext_resource type="PackedScene" uid="uid://cv4i0lw13vvs3" path="res://Objects/Components/spawnerComponent.tscn" id="1_3wvi2"]
+[ext_resource type="Script" uid="uid://d1blgyuv5oscy" path="res://Scenes/gameManager.gd" id="1_anx0o"]
 [ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
 [ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster.tscn" id="3_cps6d"]
 [ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster1.tscn" id="4_5ad2a"]
@@ -8,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
 
 [node name="Level01Test" type="Node2D" unique_id=872439788]
+script = ExtResource("1_anx0o")
+
+[node name="==DraggingManager==" type="Node2D" parent="." unique_id=491175797]
 script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]

@@ -24,10 +24,12 @@ var monster_type_list: Dictionary = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#removeMonsterAtributes()
-	order_manager.connect("completed_order", resetMonsterSlots)
-	order_manager.connect("completed_order", spawner_component.resetSpawner)
-	just_slotted.connect(getMonsterAttributes)
-	just_unslotted.connect(removeMonsterAttributes)
+	#order_manager.connect("completed_order", resetMonsterSlots)
+	#order_manager.connect("completed_order", spawner_component.resetSpawner)
+	#just_slotted.connect(getMonsterAttributes)
+	#just_unslotted.connect(removeMonsterAttributes)
+	pass
+	
 
 func getMonsterAttributes(monster_added: Node2D) -> void:
 	monster_list.append(monster_added)
