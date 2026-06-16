@@ -20,7 +20,6 @@ position = Vector2(1128, 493)
 [node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
 position = Vector2(1214, 33)
 scale = Vector2(2, 2)
-order_list = null
 
 [node name="==MonsterHolder==" type="Node" parent="." unique_id=1253744609]
 

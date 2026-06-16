@@ -19,9 +19,15 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func randomizeOrder() -> void:
-	for i in range(order_list.size()):
-		order_list["type_%d" % (i+1)] = randi_range(1, 3)
-	
+	for key in order_list:
+		order_list[key] = 0
+
+	var total_orders = randi_range(1, 6)
+
+	for i in range(total_orders):
+		var random_type = "type_%d" % randi_range(1, order_list.size())
+		order_list[random_type] += 1
+
 	updateIndicator()
 
 func updateIndicator() -> void:
