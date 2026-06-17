@@ -16,8 +16,9 @@ script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
 position = Vector2(212, 159)
-enemy_pool = Array[PackedScene]([ExtResource("3_cps6d"), ExtResource("4_5ad2a")])
-enemy_pool_cost = Array[int]([3, 4])
+max_monsters = 20
+monster_pool = Array[PackedScene]([ExtResource("4_5ad2a"), ExtResource("3_cps6d")])
+monster_pool_chance = Array[int]([80, 20])
 
 [node name="DeliveryArea" parent="." unique_id=1091671134 instance=ExtResource("5_cps6d")]
 position = Vector2(1128, 493)
