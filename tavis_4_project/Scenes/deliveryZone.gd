@@ -10,7 +10,7 @@ var monster_slotted: bool = false
 var current_monster: MonsterController
 
 @onready var delivery_zone: CollisionShape2D = $DeliveryZone
-@onready var order_manager: OrderManager = $"../OrderManager"
+#@onready var order_manager: OrderManager = $"../OrderManager"
 @onready var spawner_component: SpawnerComponent = $"../SpawnerComponent"
 
 var monster_list: Array[MonsterController]

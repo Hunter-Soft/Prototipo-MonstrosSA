@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c11i4p0gth8jj"]
 
-[ext_resource type="Script" uid="uid://biqbdt746cosg" path="res://Scenes/deliveryZone.gd" id="1_n8h1b"]
 [ext_resource type="Script" uid="uid://28eeww064r3i" path="res://Scripts/slot.gd" id="2_31hpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sm5k"]
@@ -9,7 +8,6 @@ size = Vector2(300, 480)
 [node name="DeliveryArea" type="Area2D" unique_id=1091671134]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_n8h1b")
 
 [node name="DeliveryZone" type="CollisionShape2D" parent="." unique_id=1470470650]
 position = Vector2(2, -14)
