@@ -2,7 +2,7 @@ class_name MonsterController
 extends CharacterBody2D
 
 @export_subgroup("Config")
-@export_enum("Example_01", "Example_02") var monster_type = 0
+@export_enum("Example_01", "Example_02", "Example_03") var monster_type = "Example_01"
 
 @export_subgroup("States")
 @export var slotted: bool

@@ -17,7 +17,7 @@ var counted: bool
 @export_subgroup("Config")
 @export var delay_between_spawns: float = 1
 @export var max_monsters: int = 30
-@export var initial_monster: int = 20
+@export var monster_to_spawn: int = 20
 var current_monsters: int
 @export var monster_pool: Array[PackedScene]
 @export var monster_pool_chance: Array[int]
@@ -29,11 +29,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("shoot"): ready_to_spawn = true
 	if !spawned && ready_to_spawn:
-		#print(selectMonsters())
-		spawnEnemies(selectMonsters())
+		var x = selectMonsters()
+		print(x)
+		spawnEnemies(x)
 	#pass
 
 func selectMonsters() -> Array[PackedScene]:
+	var monster_to_spawn_list: Array[PackedScene]
+	
+	#region Criar um dicionário com as chances e os index de cada monstro
 	var indexed = []
 
 	for i in range(monster_pool_chance.size()):
@@ -41,23 +45,34 @@ func selectMonsters() -> Array[PackedScene]:
 			"value": monster_pool_chance[i],
 			"original_index": i
 		})
-
-	indexed.sort_custom(func(a, b):
-		return a["value"] < b["value"]
-	)
+	#endregion
 	
-	var monster_to_spawn_list: Array[PackedScene]
+	#region Spawna os monstros quando precisar, no início do jogo spawna 20
+	while monster_to_spawn > 0:
+		#region Cuida da roleta
+		var total_chance = 0
 	
-	while initial_monster < 0:
-		var random_index = randi_range(1, monster_pool.size()) - 1
-		for key in indexed:
-			if key["value"] >= random_index:
+		for i in range(0, monster_pool.size()):
+			total_chance += monster_pool_chance[i]
+		
+		var rng = randf() * total_chance
+		
+		var acumulated_chance = 0
+		var chance_index = 0
+		
+		for monster in indexed:
+			#print(monster.value)
+			acumulated_chance += monster.value
+			if rng < acumulated_chance:
+				chance_index = monster.original_index
 				break
-		var current_monster = monster_pool[random_index]
-		initial_monster -= 1
+		#endregion
+		
+		var current_monster = monster_pool[chance_index]
+		monster_to_spawn -= 1
 		
 		monster_to_spawn_list.append(current_monster)
-	
+	#endregion
 	return monster_to_spawn_list
 
 func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
