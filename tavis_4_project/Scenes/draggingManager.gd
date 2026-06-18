@@ -1,6 +1,8 @@
 class_name DraggingManager
 extends Node2D
 
+@onready var order_manager: OrderManager = $"../OrderManager"
+
 const MONSTER_COLLISION_MASK = 2
 const MONSTER_SLOT_COLLISION_MASK = 4
 
@@ -37,7 +39,7 @@ func _input(event: InputEvent) -> void:
 		if event.is_pressed():
 			current_monster = raycastCardCheck()
 			if current_monster:
-				startDrag(current_monster)
+				order_manager.selectMonster(current_monster)
 			#print("current_monster.name")
 		else:
 			if current_monster:

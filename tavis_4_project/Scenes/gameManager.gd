@@ -1,6 +1,8 @@
 class_name GameManager
 extends Node2D
 
+signal monster_data_ready
+
 #@onready var delivery_area: DeliveryZone = $DeliveryArea
 @onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
 #@onready var order_manager: OrderManager = $OrderManager
@@ -11,6 +13,10 @@ extends Node2D
 func _ready() -> void:
 	spawner_component.connect("monster_type_list_changed", func(type_list):
 		monster_type_list = type_list
+
+		print("Monstros disponíveis:", monster_type_list)
+
+		monster_data_ready.emit()
 	)
 	#order_manager.connect("completed_order", delivery_area.resetMonsterSlots)
 	#order_manager.connect("completed_order", spawner_component.resetSpawner)
