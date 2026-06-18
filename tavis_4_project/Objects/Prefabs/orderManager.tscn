@@ -6,7 +6,7 @@
 
 [node name="OrderManager" type="Node2D" unique_id=264940256]
 script = ExtResource("1_2jukh")
-image = ExtResource("2_q0av7")
+y = Array[int]([0])
 
 [node name="OrderFlag" parent="." unique_id=1715212310 instance=ExtResource("3_m7xs6")]
 position = Vector2(-16, 0)

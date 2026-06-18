@@ -2,9 +2,15 @@ class_name MonsterController
 extends CharacterBody2D
 
 var delivered := false
+enum monsterType{
+	Example_01,
+	Example_02,
+	Example_03
+}
 
 @export_subgroup("Config")
-@export_enum("Example_01", "Example_02", "Example_03") var monster_type = "Example_01"
+@export var monster_type: monsterType = monsterType.Example_01
+
 
 @export_subgroup("States")
 @export var slotted: bool

@@ -4,6 +4,13 @@ extends Node2D
 signal completed_order
 signal mistaken_order
 
+#@export var dic: Dictionary = {
+	#"n": 0
+#}
+
+@export var x: Array[AnimatedSprite2D]
+@export var y: Array[MonsterController.monsterType]
+
 @onready var game_manager: GameManager = get_parent()
 
 @export var image: SpriteFrames
@@ -40,7 +47,8 @@ func updateIndicator() -> void:
 		var monster_type = order_list.keys()[index]
 
 		if indicator.get_child_count() > 1:
-			indicator.get_child(1).text = str(order_list[monster_type])
+			pass
+			#indicator.get_child(1).text = str(order_list[monster_type])
 
 		index += 1
 		

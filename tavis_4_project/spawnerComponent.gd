@@ -29,12 +29,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("shoot"): ready_to_spawn = true
 	if !spawned && ready_to_spawn:
-		var x = selectMonsters()
+		var x = chooseMonsters()
 		print(x)
 		spawnEnemies(x)
 	#pass
-
-func selectMonsters() -> Array[PackedScene]:
+	
+func chooseMonsters() -> Array[PackedScene]:
 	var monster_to_spawn_list: Array[PackedScene]
 	
 	#region Criar um dicionário com as chances e os index de cada monstro
@@ -88,7 +88,7 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 
 func resetSpawner() -> void:
 	current_monsters = max_monsters
-	spawnEnemies(selectMonsters())
+	spawnEnemies(chooseMonsters())
 	pass
 
 func checkTypeNumber() -> void:
