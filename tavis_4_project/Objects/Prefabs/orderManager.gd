@@ -4,16 +4,14 @@ extends Node2D
 signal completed_order
 signal mistaken_order
 
-#@export var dic: Dictionary = {
-	#"n": 0
-#}
-
-@export var x: Array[AnimatedSprite2D]
-@export var y: Array[MonsterController.monsterType]
-
 @onready var game_manager: GameManager = get_parent()
 
-@export var image: SpriteFrames
+@onready var labels := [
+	$Label1,
+	$Label2,
+	$Label3
+]
+
 @export var order_list: Dictionary = {}
 
 func _ready() -> void:
@@ -25,62 +23,97 @@ func _ready() -> void:
 
 func randomizeOrder() -> void:
 	order_list.clear()
-
+	var valid_types := []
 	for monster_type in game_manager.monster_type_list.keys():
+		if game_manager.monster_type_list[monster_type] > 0:
+			valid_types.append(monster_type)
+
+	if valid_types.is_empty():
+		print("Não existem mais monstros.")
+		return
+
+	var monsters_in_order := randi_range(
+		1,
+		min(3, valid_types.size())
+	)
+
+	valid_types.shuffle()
+
+	for i in range(monsters_in_order):
+		var monster_type = valid_types[i]
 		var available = game_manager.monster_type_list[monster_type]
 
-		if available > 0:
-			order_list[monster_type] = randi_range(0, available)
+		order_list[monster_type] = randi_range(1, available)
 
 	print("Pedido gerado:", order_list)
-	print("Tipos disponíveis:", game_manager.monster_type_list)
+	update_labels()
 
-	updateIndicator()
+func update_labels() -> void:
+	for label in labels:
+		label.text = ""
 
-func updateIndicator() -> void:
 	var index := 0
 
-	for indicator in get_children():
-		if index >= order_list.keys().size():
+	for monster_type in order_list.keys():
+		if index >= labels.size():
 			break
 
-		var monster_type = order_list.keys()[index]
+		var amount = order_list[monster_type]
 
-		if indicator.get_child_count() > 1:
-			pass
-			#indicator.get_child(1).text = str(order_list[monster_type])
+		labels[index].text = (
+			get_monster_name(monster_type)
+			+ " x"
+			+ str(amount)
+		)
 
 		index += 1
-		
+
+func get_monster_name(type) -> String:
+	match type:
+		MonsterController.monsterType.Example_01:
+			return "monto01"
+
+		MonsterController.monsterType.Example_02:
+			return "monto02"
+
+		MonsterController.monsterType.Example_03:
+			return "monto03"
+
+		_:
+			return "??? bro"
+
 func selectMonster(monster: MonsterController) -> void:
 	var type = monster.monster_type
 
-	print("Tipo clicado:", type)
-	print("Pedido atual:", order_list)
+	print("Cliquei nessa bomba:", type)
+	print("Pedido:", order_list)
 
 	if !order_list.has(type):
-		print("Tipo não está no pedido bicho burro")
+		print("Monstro não faz parte do pedido do mcdonalsd.")
+		return
+
+	if order_list[type] <= 0:
 		return
 
 	order_list[type] -= 1
-	print("Pedido atualizado:", order_list)
 
+	if game_manager.monster_type_list.has(type):
+		game_manager.monster_type_list[type] -= 1
+
+		if game_manager.monster_type_list[type] <= 0:
+			game_manager.monster_type_list.erase(type)
+
+	update_labels()
 	monster.queue_free()
-
-	updateIndicator()
-
 	checkOrderFinished()
-	
+
 func checkOrderFinished() -> void:
 	for amount in order_list.values():
 		if amount > 0:
 			return
 
+	print("PEDIDO COMPLETO! BAKUSHINNNNNNNNNN")
 	completed_order.emit()
-	print("PEDIDO COMPLETO DISGRASSA")
 
 func checkOrderCompletion() -> void:
-	print("Pedido:", order_list)
-
-	completed_order.emit()
-	print("EEEEEEEEEEEEE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	print("Pedido atual:", order_list)
