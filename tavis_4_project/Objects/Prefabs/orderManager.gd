@@ -4,69 +4,108 @@ extends Node2D
 signal completed_order
 signal mistaken_order
 
+@export var monster_sprites: Array[SpriteFrames]
+
+@export var order_size := 3
+@export var order_list: Array = []
+@export var offset := Vector2(150, 0)
+
+@onready var order_flag_scene: PackedScene = load("res://Objects/Prefabs/orderFlag.tscn")
+
+@onready var spawner_component: SpawnerComponent = $"../SpawnerComponent"
 @onready var game_manager: GameManager = get_parent()
 
-@onready var labels := [
-	$Label1,
-	$Label2,
-	$Label3
-]
-
-@export var order_list: Dictionary = {}
-
 func _ready() -> void:
-	$"../Button".connect("pressed", checkOrderCompletion)
-
 	game_manager.monster_data_ready.connect(randomizeOrder)
-
-	connect("completed_order", randomizeOrder)
+	completed_order.connect(randomizeOrder)
 
 func randomizeOrder() -> void:
 	order_list.clear()
+
 	var valid_types := []
+
 	for monster_type in game_manager.monster_type_list.keys():
 		if game_manager.monster_type_list[monster_type] > 0:
 			valid_types.append(monster_type)
 
 	if valid_types.is_empty():
-		print("Não existem mais monstros.")
+		print("No monsters available.")
 		return
 
-	var monsters_in_order := randi_range(
-		1,
-		min(3, valid_types.size())
-	)
+	for i in range(order_size):
+		var chosen_type = valid_types.pick_random()
+		order_list.append(chosen_type)
 
-	valid_types.shuffle()
+	print("Generated order:")
+	print(order_list)
+	createOrderFlags()
 
-	for i in range(monsters_in_order):
-		var monster_type = valid_types[i]
-		var available = game_manager.monster_type_list[monster_type]
+func createOrderFlags() -> void:
+	if get_child_count() > 0:
+		for child in get_children():
+			child.queue_free()
+	
+	print("GERANDO BANDEIRAS")
+	for i in range(order_list.size()):
+		var new_flag = order_flag_scene.instantiate()
+		#var flag_visual: AnimatedSprite2D = new_flag.get_child(0)
+		
+		new_flag.sprite_frames = monster_sprites[order_list[i]]
+		#glo
+		#new_flag.global_position = Vector2(0 + i *80,0)
+		add_child(new_flag)
+		print(i)
+	
+	sort_positions()
 
-		order_list[monster_type] = randi_range(1, available)
 
-	print("Pedido gerado:", order_list)
-	update_labels()
+func sort_positions() -> void:
+	print("XXXXX")
+	var children = get_children()
+	var start_x = -(children.size() - 1) * offset.x * 0.5
 
-func update_labels() -> void:
-	for label in labels:
-		label.text = ""
+	for i in range(children.size()):
+		children[i].position = Vector2(start_x + i * offset.x, 0)
 
-	var index := 0
+func selectMonster(monster: MonsterController) -> void:
+	if order_list.is_empty():
+		return
 
-	for monster_type in order_list.keys():
-		if index >= labels.size():
-			break
+	var clicked_type = monster.monster_type
+	var expected_type = order_list[0]
 
-		var amount = order_list[monster_type]
+	print("Clicked:", clicked_type)
+	print("Expected:", expected_type)
 
-		labels[index].text = (
-			get_monster_name(monster_type)
-			+ " x"
-			+ str(amount)
-		)
+	if clicked_type != expected_type:
+		print("Wrong monster!")
+		mistaken_order.emit()
+		return
 
-		index += 1
+	print("Correct!")
+
+	order_list.pop_front()
+
+	if game_manager.monster_type_list.has(clicked_type):
+		game_manager.monster_type_list[clicked_type] -= 1
+
+		if game_manager.monster_type_list[clicked_type] <= 0:
+			game_manager.monster_type_list.erase(clicked_type)
+
+	monster.queue_free()
+
+	print("Remaining order:")
+	print(order_list)
+
+	if order_list.is_empty():
+		print("ORDER COMPLETED!")
+		completed_order.emit()
+
+func getCurrentTarget():
+	if order_list.is_empty():
+		return null
+	
+	return order_list[0]
 
 func get_monster_name(type) -> String:
 	match type:
@@ -82,38 +121,5 @@ func get_monster_name(type) -> String:
 		_:
 			return "??? bro"
 
-func selectMonster(monster: MonsterController) -> void:
-	var type = monster.monster_type
-
-	print("Cliquei nessa bomba:", type)
-	print("Pedido:", order_list)
-
-	if !order_list.has(type):
-		print("Monstro não faz parte do pedido do mcdonalsd.")
-		return
-
-	if order_list[type] <= 0:
-		return
-
-	order_list[type] -= 1
-
-	if game_manager.monster_type_list.has(type):
-		game_manager.monster_type_list[type] -= 1
-
-		if game_manager.monster_type_list[type] <= 0:
-			game_manager.monster_type_list.erase(type)
-
-	update_labels()
-	monster.queue_free()
-	checkOrderFinished()
-
-func checkOrderFinished() -> void:
-	for amount in order_list.values():
-		if amount > 0:
-			return
-
-	print("PEDIDO COMPLETO! BAKUSHINNNNNNNNNN")
-	completed_order.emit()
-
 func checkOrderCompletion() -> void:
-	print("Pedido atual:", order_list)
+	print("Current order:", order_list)

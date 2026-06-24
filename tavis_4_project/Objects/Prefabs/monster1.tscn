@@ -1,9 +1,26 @@
-[gd_scene format=3 uid="uid://b5u0dlkfvv0gb"]
+[gd_scene format=3 uid="uid://u586tj5f7bgg"]
 
-[ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster.tscn" id="1_tf8uf"]
+[ext_resource type="PackedScene" uid="uid://b46cols1c34t2" path="res://Objects/Components/HoverDetectionComponent.tscn" id="1_37w2e"]
+[ext_resource type="Script" uid="uid://daqg8gc2q8dt5" path="res://Objects/Prefabs/monsterController.gd" id="1_sam45"]
+[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/monster1.tres" id="3_4yboc"]
 
-[node name="Monster" unique_id=1365438596 instance=ExtResource("1_tf8uf")]
-monster_type = 1
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yboc"]
+size = Vector2(30, 34)
 
-[node name="AnimatedSprite2D" parent="." index="1" unique_id=448399411]
-modulate = Color(0, 1, 0, 1)
+[node name="Monster1" type="CharacterBody2D" unique_id=1365438596]
+script = ExtResource("1_sam45")
+
+[node name="HoverDetectionComponent" parent="." unique_id=1076711001 instance=ExtResource("1_37w2e")]
+position = Vector2(0, 5)
+scale = Vector2(1.4755937, 1.7200003)
+collision_layer = 2
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=448399411]
+position = Vector2(1, -10)
+sprite_frames = ExtResource("3_4yboc")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1755964189]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_4yboc")

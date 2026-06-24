@@ -23,4 +23,4 @@ func checkInput(viewport: Node, event: InputEvent, shape: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			clicked.emit(self)
-			print("X")
+			#print("X")

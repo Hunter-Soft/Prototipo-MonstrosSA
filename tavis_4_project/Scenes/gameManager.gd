@@ -4,7 +4,7 @@ extends Node2D
 signal monster_data_ready
 
 #@onready var delivery_area: DeliveryZone = $DeliveryArea
-@onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
+#@onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
 #@onready var order_manager: OrderManager = $OrderManager
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent
 @export var monster_type_list: Dictionary

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bwj55xx4fvkc6"]
+
+[ext_resource type="Texture2D" uid="uid://rxtjjufx2x2x" path="res://Sprites/TemporaryAssetpack/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Die.png" id="1_0p8t5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dulrv"]
+atlas = ExtResource("1_0p8t5")
+region = Rect2(480, 0, 80, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dulrv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]

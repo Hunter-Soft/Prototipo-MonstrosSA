@@ -3,12 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://cv4i0lw13vvs3" path="res://Objects/Components/spawnerComponent.tscn" id="1_3wvi2"]
 [ext_resource type="Script" uid="uid://d1blgyuv5oscy" path="res://Scenes/gameManager.gd" id="1_anx0o"]
 [ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
-[ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster.tscn" id="3_cps6d"]
-[ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster1.tscn" id="4_5ad2a"]
-[ext_resource type="PackedScene" uid="uid://c11i4p0gth8jj" path="res://Objects/Prefabs/delivery_area.tscn" id="5_cps6d"]
+[ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster1.tscn" id="3_cps6d"]
+[ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster2.tscn" id="4_5ad2a"]
 [ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
-[ext_resource type="PackedScene" uid="uid://bk1k8kyraa6kg" path="res://Objects/Prefabs/monster_3.tscn" id="6_awh1v"]
+[ext_resource type="PackedScene" uid="uid://bk1k8kyraa6kg" path="res://Objects/Prefabs/monster3.tscn" id="6_awh1v"]
+[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/monster1.tres" id="9_aiu3w"]
 [ext_resource type="Script" uid="uid://ctupe1177m2iy" path="res://Scripts/timer.gd" id="9_gmkrs"]
+[ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/monster2.tres" id="10_iq8n3"]
+[ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/monster3.tres" id="11_7jxfu"]
 
 [node name="Level01Test" type="Node2D" unique_id=872439788]
 script = ExtResource("1_anx0o")
@@ -17,19 +19,16 @@ script = ExtResource("1_anx0o")
 script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
-position = Vector2(212, 159)
-ready_to_spawn = true
+position = Vector2(335, 186)
 delay_between_spawns = 0.0
 max_monsters = 20
 monster_pool = Array[PackedScene]([ExtResource("3_cps6d"), ExtResource("4_5ad2a"), ExtResource("6_awh1v")])
 monster_pool_chance = Array[int]([60, 60, 60])
 
-[node name="DeliveryArea" parent="." unique_id=1091671134 instance=ExtResource("5_cps6d")]
-position = Vector2(1128, 493)
-
 [node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
-position = Vector2(491, 624)
+position = Vector2(640, 624)
 scale = Vector2(2, 2)
+monster_sprites = Array[SpriteFrames]([ExtResource("9_aiu3w"), ExtResource("10_iq8n3"), ExtResource("11_7jxfu")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=287268522]
 script = ExtResource("9_gmkrs")
@@ -41,10 +40,3 @@ value = 100.0
 show_percentage = false
 
 [node name="==MonsterHolder==" type="Node" parent="." unique_id=1253744609]
-
-[node name="Button" type="Button" parent="." unique_id=297069934]
-offset_left = 1095.0
-offset_top = 195.0
-offset_right = 1152.0
-offset_bottom = 226.0
-text = "Enviar"

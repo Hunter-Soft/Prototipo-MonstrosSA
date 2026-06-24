@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("shoot"): ready_to_spawn = true
 	if !spawned && ready_to_spawn:
 		var x = chooseMonsters()
-		print(x)
+		#print(x)
 		spawnEnemies(x)
 	#pass
 	
@@ -79,7 +79,7 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 	for monster in monster_to_spawn_list:
 		#var
 		var new_monster: Node2D = monster.instantiate()
-		new_monster.global_position = global_position + Vector2(randi_range(1, 150), randi_range(1, 150))
+		new_monster.global_position = global_position + Vector2(randi_range(1, 350), randi_range(1, 350))
 		monster_list.append(new_monster)
 		$"../==MonsterHolder==".add_child(new_monster)
 		await get_tree().create_timer(delay_between_spawns).timeout

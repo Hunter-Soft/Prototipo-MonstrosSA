@@ -17,4 +17,5 @@ func _process(delta):
 	time_bar.value = (current_time / max_time) * 100
 	
 func time_up():
-	print("Hachimi cabo mambo")
+	#print("Hachimi cabo mambo")
+	pass

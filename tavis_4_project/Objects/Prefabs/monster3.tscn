@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bk1k8kyraa6kg"]
+
+[ext_resource type="PackedScene" uid="uid://u586tj5f7bgg" path="res://Objects/Prefabs/Monster1.tscn" id="1_ylbcu"]
+[ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/monster3.tres" id="2_wocws"]
+
+[node name="Monster3" unique_id=1365438596 instance=ExtResource("1_ylbcu")]
+monster_type = 2
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=448399411]
+position = Vector2(-3, -9)
+sprite_frames = ExtResource("2_wocws")

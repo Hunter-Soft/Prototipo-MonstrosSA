@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://8rgq3x0cwpxj"]
+
+[ext_resource type="Texture2D" uid="uid://bjnox6hclgmp3" path="res://Sprites/TemporaryAssetpack/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-AttackWithStun.png" id="1_cfh2a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yine3"]
+atlas = ExtResource("1_cfh2a")
+region = Rect2(880, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0kp4"]
+atlas = ExtResource("1_cfh2a")
+region = Rect2(1120, 0, 80, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yine3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0kp4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
