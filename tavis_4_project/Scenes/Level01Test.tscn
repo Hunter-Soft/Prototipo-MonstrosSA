@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster2.tscn" id="4_5ad2a"]
 [ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
 [ext_resource type="PackedScene" uid="uid://bk1k8kyraa6kg" path="res://Objects/Prefabs/monster3.tscn" id="6_awh1v"]
-[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/monster1.tres" id="9_aiu3w"]
+[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/Visuals/monster1.tres" id="9_aiu3w"]
 [ext_resource type="Script" uid="uid://ctupe1177m2iy" path="res://Scripts/timer.gd" id="9_gmkrs"]
-[ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/monster2.tres" id="10_iq8n3"]
-[ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/monster3.tres" id="11_7jxfu"]
+[ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="10_iq8n3"]
+[ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/Visuals/monster3.tres" id="11_7jxfu"]
 
 [node name="Level01Test" type="Node2D" unique_id=872439788]
 script = ExtResource("1_anx0o")

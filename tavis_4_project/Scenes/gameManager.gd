@@ -5,9 +5,12 @@ signal monster_data_ready
 
 #@onready var delivery_area: DeliveryZone = $DeliveryArea
 #@onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
+@onready var life_timer: LifeTimer = $CanvasLayer
 @onready var order_manager: OrderManager = $OrderManager
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent
 @export var monster_type_list: Dictionary
+
+@export var time_regen: float = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +24,7 @@ func _ready() -> void:
 	
 	order_manager.connect("completed_order", func(): 
 		spawner_component.rerollSpawnAmount(order_manager.order_size)
+		life_timer.regainTime(time_regen)
 	)
 	#order_manager.connect("completed_order", delivery_area.resetMonsterSlots)
 	#order_manager.connect("completed_order", spawner_component.resetSpawner)

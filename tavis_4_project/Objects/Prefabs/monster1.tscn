@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b46cols1c34t2" path="res://Objects/Components/HoverDetectionComponent.tscn" id="1_37w2e"]
 [ext_resource type="Script" uid="uid://daqg8gc2q8dt5" path="res://Objects/Prefabs/monsterController.gd" id="1_sam45"]
-[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/monster1.tres" id="3_4yboc"]
+[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/Visuals/monster1.tres" id="3_4yboc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yboc"]
 size = Vector2(30, 34)
@@ -19,7 +19,8 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=448399411]
-position = Vector2(1, -10)
+position = Vector2(0, 4)
+scale = Vector2(0.15469614, 0.15469602)
 sprite_frames = ExtResource("3_4yboc")
 animation = &"Idle"
 

@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c0mlff8gqvqp1"]
+
+[ext_resource type="Texture2D" uid="uid://dlap838sahttf" path="res://Sprites/Bloco.svg" id="1_3oywb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3oywb")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
