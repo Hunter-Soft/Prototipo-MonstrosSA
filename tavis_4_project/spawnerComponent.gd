@@ -17,7 +17,7 @@ var counted: bool
 @export_subgroup("Config")
 @export var delay_between_spawns: float = 1
 @export var max_monsters: int = 30
-@export var monster_to_spawn: int = 20
+@export var monsters_to_spawn: int = 20
 var current_monsters: int
 @export var monster_pool: Array[PackedScene]
 @export var monster_pool_chance: Array[int]
@@ -48,7 +48,7 @@ func chooseMonsters() -> Array[PackedScene]:
 	#endregion
 	
 	#region Spawna os monstros quando precisar, no início do jogo spawna 20
-	while monster_to_spawn > 0:
+	while monsters_to_spawn > 0:
 		#region Cuida da roleta
 		var total_chance = 0
 	
@@ -69,7 +69,7 @@ func chooseMonsters() -> Array[PackedScene]:
 		#endregion
 		
 		var current_monster = monster_pool[chance_index]
-		monster_to_spawn -= 1
+		monsters_to_spawn -= 1
 		
 		monster_to_spawn_list.append(current_monster)
 	#endregion
@@ -77,19 +77,59 @@ func chooseMonsters() -> Array[PackedScene]:
 
 func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 	for monster in monster_to_spawn_list:
-		#var
 		var new_monster: Node2D = monster.instantiate()
-		new_monster.global_position = global_position + Vector2(randi_range(1, 350), randi_range(1, 350))
+
+		var new_position: Vector2= get_spawn_position(50, Vector2(550, 550))
+
+		new_monster.global_position = new_position
+
 		monster_list.append(new_monster)
 		$"../==MonsterHolder==".add_child(new_monster)
-		await get_tree().create_timer(delay_between_spawns).timeout
-	checkTypeNumber()
-	spawned = true
 
+	checkTypeNumber()
+
+	spawned = true
+	ready_to_spawn = false
+
+func get_spawn_position(min_distance: float, region: Vector2) -> Vector2:
+	var new_position: Vector2
+
+	while true:
+		new_position = global_position + Vector2(
+			randi_range(1, region.x),
+			randi_range(1, region.y)
+		)
+
+		if is_position_valid(new_position, min_distance):
+			return new_position
+	return Vector2(0, 0)
+
+func is_position_valid(position: Vector2, min_distance: float) -> bool:
+	for monster in monster_list:
+		if monster == null:
+			continue
+
+		if position.distance_to(monster.global_position) < min_distance:
+			return false
+
+	return true
 func resetSpawner() -> void:
-	current_monsters = max_monsters
-	spawnEnemies(chooseMonsters())
+	#current_monsters = max_monsters
+	#spawnEnemies(chooseMonsters())
+	
+	spawned = false
+	ready_to_spawn = true
 	pass
+
+func rerollSpawnAmount(monsters_used: int) -> void:
+	var count_modifier: int = 0
+	
+	if randi_range(0, 1) == 1: count_modifier = monsters_used + 2
+	else: count_modifier = monsters_used - 1
+	
+	monsters_to_spawn += count_modifier
+	
+	resetSpawner()
 
 func checkTypeNumber() -> void:
 	monster_type_list = {}

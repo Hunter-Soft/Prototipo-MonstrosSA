@@ -19,7 +19,7 @@ script = ExtResource("1_anx0o")
 script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
-position = Vector2(335, 186)
+position = Vector2(27, 28)
 delay_between_spawns = 0.0
 max_monsters = 20
 monster_pool = Array[PackedScene]([ExtResource("3_cps6d"), ExtResource("4_5ad2a"), ExtResource("6_awh1v")])

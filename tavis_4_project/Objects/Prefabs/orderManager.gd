@@ -2,7 +2,8 @@ class_name OrderManager
 extends Node2D
 
 signal completed_order
-signal mistaken_order
+signal mistaken_monster_order
+signal right_monster_order
 
 @export var monster_sprites: Array[SpriteFrames]
 
@@ -17,7 +18,14 @@ signal mistaken_order
 
 func _ready() -> void:
 	game_manager.monster_data_ready.connect(randomizeOrder)
-	completed_order.connect(randomizeOrder)
+	connect("right_monster_order", func():
+		for child: AnimatedSprite2D in get_children():
+			if child.modulate.a == 1:
+				child.modulate.a = 0.15
+				return
+		pass
+	)
+	#completed_order.connect(randomizeOrder)
 
 func randomizeOrder() -> void:
 	order_list.clear()
@@ -41,9 +49,12 @@ func randomizeOrder() -> void:
 	createOrderFlags()
 
 func createOrderFlags() -> void:
-	if get_child_count() > 0:
+	var x = get_children().size()
+	if x > 0:
 		for child in get_children():
-			child.queue_free()
+			#print(child)
+			child.free()
+			#print(get_children())
 	
 	print("GERANDO BANDEIRAS")
 	for i in range(order_list.size()):
@@ -54,15 +65,17 @@ func createOrderFlags() -> void:
 		#glo
 		#new_flag.global_position = Vector2(0 + i *80,0)
 		add_child(new_flag)
-		print(i)
+		#print(i)
 	
 	sort_positions()
 
 
 func sort_positions() -> void:
 	print("XXXXX")
-	var children = get_children()
-	var start_x = -(children.size() - 1) * offset.x * 0.5
+	var children = get_children(false)
+	var start_x = -offset.x * (children.size() - 1) * 0.5
+	print(start_x)
+	print(children.size()-1)
 
 	for i in range(children.size()):
 		children[i].position = Vector2(start_x + i * offset.x, 0)
@@ -79,9 +92,10 @@ func selectMonster(monster: MonsterController) -> void:
 
 	if clicked_type != expected_type:
 		print("Wrong monster!")
-		mistaken_order.emit()
+		mistaken_monster_order.emit()
 		return
 
+	right_monster_order.emit()
 	print("Correct!")
 
 	order_list.pop_front()

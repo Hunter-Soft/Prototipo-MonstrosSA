@@ -5,7 +5,7 @@ signal monster_data_ready
 
 #@onready var delivery_area: DeliveryZone = $DeliveryArea
 #@onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
-#@onready var order_manager: OrderManager = $OrderManager
+@onready var order_manager: OrderManager = $OrderManager
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent
 @export var monster_type_list: Dictionary
 
@@ -17,6 +17,10 @@ func _ready() -> void:
 		print("Monstros disponíveis:", monster_type_list)
 
 		monster_data_ready.emit()
+	)
+	
+	order_manager.connect("completed_order", func(): 
+		spawner_component.rerollSpawnAmount(order_manager.order_size)
 	)
 	#order_manager.connect("completed_order", delivery_area.resetMonsterSlots)
 	#order_manager.connect("completed_order", spawner_component.resetSpawner)

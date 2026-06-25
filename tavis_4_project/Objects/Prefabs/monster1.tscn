@@ -8,6 +8,8 @@
 size = Vector2(30, 34)
 
 [node name="Monster1" type="CharacterBody2D" unique_id=1365438596]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_sam45")
 
 [node name="HoverDetectionComponent" parent="." unique_id=1076711001 instance=ExtResource("1_37w2e")]
@@ -21,6 +23,8 @@ position = Vector2(1, -10)
 sprite_frames = ExtResource("3_4yboc")
 animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1755964189]
+[node name="Area2D" type="Area2D" parent="." unique_id=1714980317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1755964189]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_4yboc")
