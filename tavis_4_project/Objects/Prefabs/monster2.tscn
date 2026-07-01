@@ -6,6 +6,6 @@
 [node name="Monster" unique_id=1365438596 instance=ExtResource("1_tf8uf")]
 monster_type = 1
 
-[node name="AnimatedSprite2D" parent="." index="1" unique_id=448399411]
-position = Vector2(4.7683716e-07, 5)
+[node name="AnimatedSprite2D" parent="feet_pivot" parent_id_path=PackedInt32Array(1936517217) index="0" unique_id=448399411]
+position = Vector2(4.7683716e-07, -11)
 sprite_frames = ExtResource("2_87a8t")

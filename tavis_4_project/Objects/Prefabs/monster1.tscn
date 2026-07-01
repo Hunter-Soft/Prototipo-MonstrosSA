@@ -18,7 +18,7 @@ size = Vector2(30, 34)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_sam45")
-y_squish = Vector2(1, 0.3)
+squish_speed = 8
 animation_resource = SubResource("Resource_68lvm")
 
 [node name="HoverDetectionComponent" parent="." unique_id=1076711001 instance=ExtResource("1_37w2e")]
@@ -27,14 +27,17 @@ scale = Vector2(1.4755937, 1.7200003)
 collision_layer = 2
 collision_mask = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=448399411]
-position = Vector2(0, 4)
-scale = Vector2(0.15469614, 0.15469602)
-sprite_frames = ExtResource("3_4yboc")
-animation = &"Idle"
-
 [node name="Area2D" type="Area2D" parent="." unique_id=1714980317]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1755964189]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_4yboc")
+
+[node name="feet_pivot" type="Node2D" parent="." unique_id=1936517217]
+position = Vector2(0, 15)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="feet_pivot" unique_id=448399411]
+position = Vector2(0, -11)
+scale = Vector2(0.15469614, 0.15469602)
+sprite_frames = ExtResource("3_4yboc")
+animation = &"Idle"

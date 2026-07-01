@@ -22,7 +22,7 @@ func _process(delta):
 	time_bar.value = (current_time / max_time) * 100
 	
 func time_up():
-	print("Acabou o tempo")
+	#print("Acabou o tempo")
 	pass
 
 func regainTime(time_regained: float):

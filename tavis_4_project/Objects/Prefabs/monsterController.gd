@@ -1,9 +1,15 @@
 class_name MonsterController
 extends CharacterBody2D
 
-@export var y_squish: Vector2
-@export var rotation_factor: Vector2
-var growing: bool
+@export_subgroup("Animation")
+@onready var pivot: Node2D = $feet_pivot
+
+@export var squish_amount := 0.1
+@export var rotate_amount := 8.0 # degrees
+@export var squish_speed := 2
+
+var time := 0.0
+
 
 @export var animation_resource: AnimationResource
 
@@ -21,36 +27,30 @@ enum monsterType{
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(scale.y)
-	scale.y = float(y_squish.x)
-	print(scale.y)
+	#print(scale.y)
+	#scale.y = float(y_squish.x)
+	#print(scale.y)
 	#animation_resource = animation_resource.duplicate()
 	#animation_resource.master = self
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+#@export var squish_amount: = 0.1
+#@export var rotate_amount: = 0.1
+#@export var squish_speed: = 2.0
+#var time: = 0.0
+
 func _process(delta: float) -> void:
-	#walkState(1, 10, 1)
-	#animation_resource.animateIdle()
-	if scale.y <= y_squish.y:
-		growing = true
-		#scale.y = lerp(scale.y, y_squish.x, 1 * delta)
-		#print("Aumentando")
-		#print(scale.y)
-	elif scale.y >= y_squish.x:
-		growing = false
-		#scale.y = lerp(scale.y, y_squish.y, 1 * delta)
-		#print("Diminuindo")
-		#print(scale.y)
-	if growing: 
-		scale.y = lerp(scale.y, y_squish.x, 1 * delta)
-		#print("Aumentando")
-		#print(scale.y)
-	else:
-		scale.y = lerp(scale.y, y_squish.y, 1 * delta)
-		#print("Diminuindo")
-		#print(scale.y)
-	pass
+	idleState(delta)
+
+func idleState(delta):
+	time += delta
+
+	var t = sin(time * squish_speed)
+	var t2 = sin(time * 0.25 * squish_speed)
+
+	pivot.scale.y = 1.0 + t * squish_amount
+	pivot.rotation_degrees = t2 * rotate_amount
 
 #func walkState(cooldown: float, distance_to_travel: float, speed: float) -> void:
 	#await $CooldownTimer.timeout
