@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://u586tj5f7bgg"]
+[gd_scene format=3 uid="uid://csa8lrpinxgke"]
 
 [ext_resource type="PackedScene" uid="uid://b46cols1c34t2" path="res://Objects/Components/HoverDetectionComponent.tscn" id="1_37w2e"]
 [ext_resource type="Script" uid="uid://daqg8gc2q8dt5" path="res://Objects/Prefabs/monsterController.gd" id="1_sam45"]
