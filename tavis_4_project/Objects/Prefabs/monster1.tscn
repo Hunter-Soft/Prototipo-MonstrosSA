@@ -20,6 +20,8 @@ collision_mask = 2
 script = ExtResource("1_sam45")
 squish_speed = 8
 animation_resource = SubResource("Resource_68lvm")
+action_cooldown = 1.0
+distance_to_travel = 50.0
 
 [node name="HoverDetectionComponent" parent="." unique_id=1076711001 instance=ExtResource("1_37w2e")]
 position = Vector2(0, 5)
@@ -41,3 +43,6 @@ position = Vector2(0, -11)
 scale = Vector2(0.15469614, 0.15469602)
 sprite_frames = ExtResource("3_4yboc")
 animation = &"Idle"
+
+[node name="Timer" type="Timer" parent="." unique_id=1943534028]
+autostart = true

@@ -6,6 +6,7 @@ signal mistaken_monster_order
 signal right_monster_order
 
 @export var monster_sprites: Array[SpriteFrames]
+@export var transparent_clicked_monsters: bool = true
 
 @export var order_size := 3
 @export var order_list: Array = []
@@ -19,11 +20,12 @@ signal right_monster_order
 func _ready() -> void:
 	game_manager.monster_data_ready.connect(randomizeOrder)
 	connect("right_monster_order", func():
-		for child: AnimatedSprite2D in get_children():
-			if child.modulate.a == 1:
-				child.modulate.a = 0.15
-				return
-		pass
+		if transparent_clicked_monsters:
+			for child: AnimatedSprite2D in get_children():
+				if child.modulate.a == 1:
+					child.modulate.a = 0.15
+					return
+		#pass
 	)
 	#completed_order.connect(randomizeOrder)
 

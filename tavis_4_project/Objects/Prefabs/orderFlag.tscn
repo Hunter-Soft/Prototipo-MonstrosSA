@@ -1,4 +1,6 @@
 [gd_scene format=3 uid="uid://ctwkbkrod4ow4"]
 
 [node name="Sprite2D" type="AnimatedSprite2D" unique_id=1554634993]
+top_level = true
+z_index = 99
 scale = Vector2(0.25, 0.25)
