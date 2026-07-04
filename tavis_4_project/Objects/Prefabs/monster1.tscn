@@ -14,6 +14,23 @@ metadata/_custom_type_script = "uid://bdbtnd1refme8"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yboc"]
 size = Vector2(30, 34)
 
+[sub_resource type="Shader" id="Shader_vv17c"]
+code = "shader_type canvas_item;
+
+uniform vec4 tint_color : source_color = vec4(1.0);
+
+void fragment()
+{
+    vec4 tex = texture(TEXTURE, UV);
+
+    COLOR = tex * tint_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56dyf"]
+shader = SubResource("Shader_vv17c")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+
 [node name="Monster1" type="CharacterBody2D" unique_id=1365438596]
 collision_layer = 2
 collision_mask = 2
@@ -39,6 +56,8 @@ shape = SubResource("RectangleShape2D_4yboc")
 position = Vector2(0, 15)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="feet_pivot" unique_id=448399411]
+texture_filter = 5
+material = SubResource("ShaderMaterial_56dyf")
 position = Vector2(0, -11)
 scale = Vector2(0.15469614, 0.15469602)
 sprite_frames = ExtResource("3_4yboc")

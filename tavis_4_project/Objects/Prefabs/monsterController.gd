@@ -10,7 +10,6 @@ extends CharacterBody2D
 
 var time := 0.0
 
-
 @export var animation_resource: AnimationResource
 
 @export_subgroup("Config")
@@ -37,6 +36,22 @@ enum monsterType{
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var sprite := $feet_pivot/AnimatedSprite2D
+
+	sprite.material = sprite.material.duplicate()
+
+	var mat := sprite.material as ShaderMaterial
+
+	match monster_type:
+		monsterType.Example_01:
+			mat.set_shader_parameter("tint_color", Color.RED)
+
+		monsterType.Example_02:
+			mat.set_shader_parameter("tint_color", Color.GREEN)
+
+		monsterType.Example_03:
+			mat.set_shader_parameter("tint_color", Color.BLUE)
+			
 	action_timer.wait_time = action_cooldown
 	action_timer.connect("timeout", func():
 		walkState(action_cooldown, distance_to_travel, speed)
