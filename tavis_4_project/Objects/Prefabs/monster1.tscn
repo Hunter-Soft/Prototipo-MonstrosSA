@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://csa8lrpinxgke"]
+[gd_scene format=3 uid="uid://0k24u25lmdix"]
 
 [ext_resource type="PackedScene" uid="uid://b46cols1c34t2" path="res://Objects/Components/HoverDetectionComponent.tscn" id="1_37w2e"]
 [ext_resource type="Script" uid="uid://daqg8gc2q8dt5" path="res://Objects/Prefabs/monsterController.gd" id="1_sam45"]
@@ -31,14 +31,18 @@ void fragment()
 shader = SubResource("Shader_vv17c")
 shader_parameter/tint_color = Color(1, 1, 1, 1)
 
-[node name="Monster1" type="CharacterBody2D" unique_id=1365438596]
-collision_layer = 2
-collision_mask = 2
+[node name="Monster1" type="CharacterBody2D" unique_id=1365438596 groups=["Monster"]]
+collision_layer = 4
+collision_mask = 6
 script = ExtResource("1_sam45")
 squish_speed = 8
 animation_resource = SubResource("Resource_68lvm")
 action_cooldown = 1.0
 distance_to_travel = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=768028066]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_4yboc")
 
 [node name="HoverDetectionComponent" parent="." unique_id=1076711001 instance=ExtResource("1_37w2e")]
 position = Vector2(0, 5)

@@ -72,6 +72,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	idleState(delta)
+	
 	#ac
 
 func idleState(delta):
@@ -92,9 +93,27 @@ func walkState(cooldown: float, distance_to_travel: float, speed: float) -> void
 	var move_direction: Vector2 = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	var target_location: Vector2 = move_direction * distance_to_travel + global_position
 	
-	while global_position.distance_to(target_location) > 10:
-		global_position = global_position.lerp(target_location, get_process_delta_time() * speed)
+	var target_direction: Vector2 = global_position.direction_to(target_location)
 	
+	while global_position.distance_to(target_location) > 10:
+		var distance_remaining = global_position.distance_to(target_location)
+		#var current_speed = target_location / distance_remaining
+		
+		
+		#var collision = move_and_collide(target_direction * speed)
+		#var collision = move_and_collide(target_direction * min(speed, distance_remaining * speed))
+		var collision = move_and_collide(target_direction * distance_remaining * 2 * speed * get_process_delta_time())
+		
+		if collision:
+			walking = false
+			velocity = Vector2.ZERO
+			
+			break
+		
+		#velocity = target_direction * speed * 100
+		#move_and_slide()
+		#global_position = global_position.lerp(target_location, get_process_delta_time() * speed)
+		#move_and_collide(target_direction * speed)
 		await get_tree().process_frame
 	
 	walking = false

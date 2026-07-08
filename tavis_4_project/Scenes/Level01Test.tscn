@@ -12,8 +12,11 @@
 [ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="10_iq8n3"]
 [ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/Visuals/monster3.tres" id="11_7jxfu"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d0xu6"]
+
 [node name="Level01Test" type="Node2D" unique_id=872439788]
 script = ExtResource("1_anx0o")
+metadata/_edit_vertical_guides_ = [90.0]
 
 [node name="==DraggingManager==" type="Node2D" parent="." unique_id=491175797]
 script = ExtResource("1_klblu")
@@ -41,3 +44,19 @@ value = 100.0
 show_percentage = false
 
 [node name="==MonsterHolder==" type="Node" parent="." unique_id=1253744609]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2107164896]
+position = Vector2(-91, -47.180416)
+scale = Vector2(1, 0.6995872)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_d0xu6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1140197397]
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(89, 108.89339, 87, 532, 89, 1053.7363, 1362, 1040.8716, 1369, 925.089, 1369, 91.74042, 1307, 113.181625, 175, 113.181625, 179, 198.94649, 1302, 194.65825, 1300, 925.089, 205, 920.8008, 173, 113.181625)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=356942909]
+position = Vector2(114, 110)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1497452437]
+position = Vector2(1183, 577)

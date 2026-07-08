@@ -79,7 +79,7 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 	for monster in monster_to_spawn_list:
 		var new_monster: Node2D = monster.instantiate()
 
-		var new_position: Vector2= get_spawn_position(50, Vector2(550, 550))
+		var new_position: Vector2= get_spawn_position(50, $"../Marker2D".global_position, $"../Marker2D2".global_position)
 
 		new_monster.global_position = new_position
 
@@ -91,13 +91,13 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 	spawned = true
 	ready_to_spawn = false
 
-func get_spawn_position(min_distance: float, region: Vector2) -> Vector2:
+func get_spawn_position(min_distance: float, point_01: Vector2, point_02) -> Vector2:
 	var new_position: Vector2
 
 	while true:
 		new_position = global_position + Vector2(
-			randi_range(1, region.x),
-			randi_range(1, region.y)
+			randi_range(point_01.x, point_02.x),
+			randi_range(point_01.y, point_02.y)
 		)
 
 		if is_position_valid(new_position, min_distance):
