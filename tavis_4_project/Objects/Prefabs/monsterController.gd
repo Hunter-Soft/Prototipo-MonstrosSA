@@ -17,6 +17,7 @@ var time := 0.0
 @export var action_cooldown: float = 2.0
 @export var distance_to_travel: float = 10
 @export var speed: float = 1
+@export var offset_amount: float = 0.1
 
 var walking: bool = false
 #var move_direction: Vector2
@@ -36,6 +37,8 @@ enum monsterType{
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	randomizeStats()
+	
 	var sprite := $feet_pivot/AnimatedSprite2D
 
 	sprite.material = sprite.material.duplicate()
@@ -74,6 +77,9 @@ func _process(delta: float) -> void:
 	idleState(delta)
 	
 	#ac
+
+func randomizeStats() -> void:
+	action_cooldown += randf_range(-offset_amount, offset_amount)
 
 func idleState(delta):
 	time += delta

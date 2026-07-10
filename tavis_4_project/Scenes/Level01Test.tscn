@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cv4i0lw13vvs3" path="res://Objects/Components/spawnerComponent.tscn" id="1_3wvi2"]
 [ext_resource type="Script" uid="uid://d1blgyuv5oscy" path="res://Scenes/gameManager.gd" id="1_anx0o"]
 [ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
-[ext_resource type="PackedScene" uid="uid://csa8lrpinxgke" path="res://Objects/Prefabs/monster1.tscn" id="3_cps6d"]
+[ext_resource type="PackedScene" uid="uid://0k24u25lmdix" path="res://Objects/Prefabs/monster1.tscn" id="3_cps6d"]
 [ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster2.tscn" id="4_5ad2a"]
 [ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
 [ext_resource type="PackedScene" uid="uid://bk1k8kyraa6kg" path="res://Objects/Prefabs/monster3.tscn" id="6_awh1v"]
@@ -56,7 +56,7 @@ scale = Vector2(0.99999994, 0.99999994)
 polygon = PackedVector2Array(89, 108.89339, 87, 532, 89, 1053.7363, 1362, 1040.8716, 1369, 925.089, 1369, 91.74042, 1307, 113.181625, 175, 113.181625, 179, 198.94649, 1302, 194.65825, 1300, 925.089, 205, 920.8008, 173, 113.181625)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=356942909]
-position = Vector2(114, 110)
+position = Vector2(182, 152)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1497452437]
-position = Vector2(1183, 577)
+position = Vector2(1138, 519)

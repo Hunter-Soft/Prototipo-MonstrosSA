@@ -39,6 +39,7 @@ squish_speed = 8
 animation_resource = SubResource("Resource_68lvm")
 action_cooldown = 1.0
 distance_to_travel = 50.0
+offset_amount = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=768028066]
 position = Vector2(0, 5)

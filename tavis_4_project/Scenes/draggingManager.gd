@@ -41,9 +41,9 @@ func _input(event: InputEvent) -> void:
 			if current_monster:
 				order_manager.selectMonster(current_monster)
 			#print("current_monster.name")
-		else:
-			if current_monster:
-				endDrag()
+		#else:
+			#if current_monster:
+				#endDrag()
 			#holding_monster = false
 
 func startDrag(monster: Node2D) -> void:

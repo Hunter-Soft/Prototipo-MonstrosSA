@@ -9,8 +9,8 @@ extends CanvasLayer
 
 var current_time := 30.0:
 	set(value):
-		current_time = value
-		clamp(current_time, 0, max_time)
+		current_time = clamp(value, 0, max_time)
+		
 
 func _process(delta):
 	current_time -= delta * damage_per_tick
