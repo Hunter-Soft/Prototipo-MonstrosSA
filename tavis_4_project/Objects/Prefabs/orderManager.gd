@@ -31,19 +31,22 @@ func _ready() -> void:
 
 func randomizeOrder() -> void:
 	order_list.clear()
-
+	
 	var valid_types := []
-
+	
 	for monster_type in game_manager.monster_type_list.keys():
 		if game_manager.monster_type_list[monster_type] > 0:
 			valid_types.append(monster_type)
-
+	
 	if valid_types.is_empty():
 		print("No monsters available.")
 		return
-
+	
+	#order_size = clamp(order_size,1, game_manager.)
+	
 	for i in range(order_size):
 		var chosen_type = valid_types.pick_random()
+		#valid_types.erase(chosen_type)
 		order_list.append(chosen_type)
 
 	print("Generated order:")

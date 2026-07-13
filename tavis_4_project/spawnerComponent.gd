@@ -15,13 +15,15 @@ var counted: bool
 }
 
 @export_subgroup("Config")
-@export var delay_between_spawns: float = 1
+@export var chance_to_dupe: float = 1
 @export var max_monsters: int = 30
 @export var monsters_to_spawn: int = 20
 var current_monsters: int
 @export var monster_pool: Array[PackedScene]
 @export var monster_pool_chance: Array[int]
 @export var monster_holer: Node
+
+var to_dupe: bool
 
 func _ready() -> void:
 	resetSpawner()
@@ -61,9 +63,14 @@ func chooseMonsters() -> Array[PackedScene]:
 		var chance_index = 0
 		
 		for monster in indexed:
-			#print(monster.value)
+			#if randf() <= chance_to_dupe:
+				#print("primeiro")
+				##acumulated_chance += monster.value
+				#break
+			
 			acumulated_chance += monster.value
 			if rng < acumulated_chance:
+				#print("C")
 				chance_index = monster.original_index
 				break
 		#endregion
@@ -72,6 +79,8 @@ func chooseMonsters() -> Array[PackedScene]:
 		monsters_to_spawn -= 1
 		
 		monster_to_spawn_list.append(current_monster)
+		
+		#if to_dupe:
 	#endregion
 	return monster_to_spawn_list
 

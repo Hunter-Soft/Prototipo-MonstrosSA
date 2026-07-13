@@ -5,6 +5,8 @@
 
 [node name="Monster" unique_id=1365438596 instance=ExtResource("1_tf8uf")]
 monster_type = 1
+action_cooldown = 2.5
+distance_to_travel = 100.0
 
 [node name="AnimatedSprite2D" parent="feet_pivot" parent_id_path=PackedInt32Array(1936517217) index="0" unique_id=448399411]
 position = Vector2(4.7683716e-07, -11)
