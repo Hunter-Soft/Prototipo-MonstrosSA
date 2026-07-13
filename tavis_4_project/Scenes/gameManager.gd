@@ -14,6 +14,8 @@ signal monster_data_ready
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ServerData.in_game = true
+	
 	spawner_component.connect("monster_type_list_changed", func(type_list):
 		monster_type_list = type_list
 

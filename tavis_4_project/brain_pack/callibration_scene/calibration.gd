@@ -3,6 +3,7 @@ extends Node2D
 var focusT = 0
 
 func _ready() -> void:
+	
 	#if ServerData.current_game == ServerData.games.JURASSIC:
 		#$Jurassic.button_pressed = true
 	#if ServerData.current_game == ServerData.games.BIKE:
@@ -17,7 +18,7 @@ func _ready() -> void:
 	#
 	#if ServerData.spanish:
 		#$CheckBox.button_pressed = true
-		pass
+	pass
 
 func _process(delta):
 	

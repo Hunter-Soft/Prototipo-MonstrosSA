@@ -7,7 +7,6 @@ radius = 30.0
 
 [node name="SpawnerComponent" type="Node2D" unique_id=1821356837]
 script = ExtResource("1_hb04x")
-delay_between_spawns = 0.2
 
 [node name="Area2D" type="Area2D" parent="." unique_id=218470519]
 visible = false
