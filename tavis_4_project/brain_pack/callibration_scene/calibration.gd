@@ -71,7 +71,7 @@ func _process(delta):
 func _on_button_button_down():
 	ServerData.setAttention($LineEdit.text)
 	ServerData.setMeditation($LineEdit2.text)
-	get_tree().change_scene_to_file("res://Meditation/Scenes/Menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level01Test.tscn")
 
 func _on_config_button_pressed() -> void:
 	#$Config_button.disabled = false

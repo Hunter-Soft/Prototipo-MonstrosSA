@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d1blgyuv5oscy" path="res://Scenes/gameManager.gd" id="1_anx0o"]
 [ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
 [ext_resource type="AudioStream" uid="uid://dr0md2h5d27nm" path="res://Musics/BGM.mp3" id="2_aiu3w"]
-[ext_resource type="PackedScene" uid="uid://0k24u25lmdix" path="res://Objects/Prefabs/monster1.tscn" id="3_cps6d"]
+[ext_resource type="PackedScene" uid="uid://dqx2f22av42p5" path="res://Objects/Prefabs/Monster1.tscn" id="3_cps6d"]
 [ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster2.tscn" id="4_5ad2a"]
 [ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
 [ext_resource type="PackedScene" uid="uid://bk1k8kyraa6kg" path="res://Objects/Prefabs/monster3.tscn" id="6_awh1v"]
