@@ -54,32 +54,37 @@ func randomizeOrder() -> void:
 	createOrderFlags()
 
 func createOrderFlags() -> void:
-	var x = get_children().size()
-	if x > 0:
-		for child in get_children():
-			#print(child)
-			child.free()
-			#print(get_children())
-	
+	for child in get_children():
+		remove_child(child)
+		child.queue_free()
+
 	print("GERANDO BANDEIRAS")
+
 	for i in range(order_list.size()):
-		var new_flag = order_flag_scene.instantiate()
-		#var flag_visual: AnimatedSprite2D = new_flag.get_child(0)
-		
+		var new_flag: AnimatedSprite2D = order_flag_scene.instantiate()
+
 		new_flag.sprite_frames = monster_sprites[order_list[i]]
-		#glo
-		#new_flag.global_position = Vector2(0 + i *80,0)
+		
+		match order_list[i]:
+			MonsterController.monsterType.Example_01:
+				new_flag.modulate = Color.RED
+				
+			MonsterController.monsterType.Example_02:
+				new_flag.modulate = Color.GREEN
+				
+			MonsterController.monsterType.Example_03:
+				new_flag.modulate = Color.BLUE
+
 		new_flag.scale = Vector2(0.3, 0.3)
 		add_child(new_flag)
-		#print(i)
-	
+
 	sort_positions()
 
 
 func sort_positions() -> void:
 	print("XXXXX")
 	var children = get_children(false)
-	var start_x = -offset.x * (children.size() - 1) * 0.5 + 600
+	var start_x = -offset.x * (children.size() - 1) * 0.5 + 640
 	print(start_x)
 	print(children.size()-1)
 
