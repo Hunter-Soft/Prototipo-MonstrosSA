@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5u0dlkfvv0gb"]
 
-[ext_resource type="PackedScene" uid="uid://csa8lrpinxgke" path="res://Objects/Prefabs/Monster1.tscn" id="1_tf8uf"]
+[ext_resource type="PackedScene" uid="uid://0k24u25lmdix" path="res://Objects/Prefabs/Monster1.tscn" id="1_tf8uf"]
 [ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="2_87a8t"]
 
 [node name="Monster" unique_id=1365438596 instance=ExtResource("1_tf8uf")]

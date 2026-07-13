@@ -26,14 +26,13 @@ var walking: bool = false
 
 var delivered := false
 
+var monster_color: Color = Color.WHITE
+
 enum monsterType{
 	Example_01,
 	Example_02,
 	Example_03
 }
-
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

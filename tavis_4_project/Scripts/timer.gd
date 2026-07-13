@@ -7,6 +7,7 @@ extends CanvasLayer
 @export var max_time := 30.0
 @export var damage_per_tick: int = 1
 
+
 var current_time := 30.0:
 	set(value):
 		current_time = clamp(value, 0, max_time)
