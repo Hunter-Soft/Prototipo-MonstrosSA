@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pwdjba7jjhga"
+path="res://.godot/imported/ENGINE Motor Heavy Loop 08.wav-34247cc31d6ca9e6c1a71aaaf9996cdf.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/ENGINE Motor Heavy Loop 08.wav"
+dest_files=["res://.godot/imported/ENGINE Motor Heavy Loop 08.wav-34247cc31d6ca9e6c1a71aaaf9996cdf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

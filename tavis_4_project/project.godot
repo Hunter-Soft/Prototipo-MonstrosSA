@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="TAVIS-4_project"
-run/main_scene="uid://bviy743a5gv3n"
+run/main_scene="uid://co5ob810hv88b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ServerData="*uid://c6de024vhhjcp"
+Global="*uid://ctl7nfcdh0rge"
 
 [display]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4odpnhtvcg25"
+path="res://.godot/imported/WEAPON GUNSHOT Rifle Swish 02.wav-de50bf94b9ac39075b82ddf4a2fa116f.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/WEAPON GUNSHOT Rifle Swish 02.wav"
+dest_files=["res://.godot/imported/WEAPON GUNSHOT Rifle Swish 02.wav-de50bf94b9ac39075b82ddf4a2fa116f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

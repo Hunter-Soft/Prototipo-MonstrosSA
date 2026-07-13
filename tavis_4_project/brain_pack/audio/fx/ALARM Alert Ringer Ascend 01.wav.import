@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bss337amljldy"
+path="res://.godot/imported/ALARM Alert Ringer Ascend 01.wav-a49b468e9f875f32f564ca0efae32759.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/ALARM Alert Ringer Ascend 01.wav"
+dest_files=["res://.godot/imported/ALARM Alert Ringer Ascend 01.wav-a49b468e9f875f32f564ca0efae32759.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

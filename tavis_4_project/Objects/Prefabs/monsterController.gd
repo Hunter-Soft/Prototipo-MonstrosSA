@@ -57,11 +57,11 @@ func _ready() -> void:
 	action_timer.wait_time = action_cooldown
 	action_timer.connect("timeout", func():
 		if monster_type == monsterType.Example_01:
-			walkState(action_cooldown, distance_to_travel, speed)
+			walkState(action_cooldown, distance_to_travel, speed) #Andar Nomarl
 		elif monster_type == monsterType.Example_02:
-			walkState(action_cooldown, distance_to_travel * 1.5, speed*30)
+			walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
 		elif monster_type == monsterType.Example_03:
-			walkState(action_cooldown, distance_to_travel*2, speed*3)
+			walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
 	)
 	
 	#print(scale.y)

@@ -1,0 +1,298 @@
+[gd_scene load_steps=11 format=3 uid="uid://co5ob810hv88b"]
+
+[ext_resource type="Script" path="res://login_scene/login_scene.gd" id="1_4tcgf"]
+[ext_resource type="Texture2D" uid="uid://boirf2o2iusrf" path="res://images/pre_assets/background.png" id="2_xu1vx"]
+[ext_resource type="Texture2D" uid="uid://bum8b6g3mhj0h" path="res://images/pre_assets/play button.svg" id="3_n826n"]
+[ext_resource type="PackedScene" uid="uid://cdytm04rgb34k" path="res://text/Label.tscn" id="4_cj10y"]
+[ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://text/Chewy-Regular.ttf" id="5_ryr77"]
+[ext_resource type="Script" path="res://login_scene/load.gd" id="6_ip3yd"]
+
+[sub_resource type="FontFile" id="1"]
+resource_local_to_scene = true
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+resource_local_to_scene = true
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_86y25"]
+resource_local_to_scene = true
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_i2wn7"]
+resource_local_to_scene = true
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[node name="LoginScene" type="Node2D"]
+script = ExtResource("1_4tcgf")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(510, 297.5)
+scale = Vector2(5.95349, 3.52353)
+texture = ExtResource("2_xu1vx")
+
+[node name="LineEditLogin" type="LineEdit" parent="."]
+offset_left = 324.723
+offset_top = 137.314
+offset_right = 708.723
+offset_bottom = 191.314
+
+[node name="LineEditPassword" type="LineEdit" parent="."]
+offset_left = 326.941
+offset_top = 266.678
+offset_right = 712.941
+offset_bottom = 322.678
+
+[node name="Button" type="Button" parent="."]
+offset_left = 432.0
+offset_top = 379.0
+offset_right = 620.0
+offset_bottom = 422.0
+text = "ENTER"
+
+[node name="play button" type="Sprite2D" parent="Button"]
+position = Vector2(92.9011, 20.6765)
+scale = Vector2(0.521183, 0.473479)
+texture = ExtResource("3_n826n")
+
+[node name="Label" parent="." instance=ExtResource("4_cj10y")]
+offset_top = 520.0
+offset_right = 358.0
+offset_bottom = 585.0
+theme_override_fonts/font = SubResource("1")
+text = "Por favor Logue primeiro"
+
+[node name="Label5" parent="." instance=ExtResource("4_cj10y")]
+offset_left = 325.0
+offset_top = 96.0
+offset_right = 718.0
+offset_bottom = 167.0
+theme_override_fonts/font = SubResource("2")
+text = "Usuário"
+
+[node name="Label6" parent="." instance=ExtResource("4_cj10y")]
+offset_left = 328.0
+offset_top = 232.0
+offset_right = 721.0
+offset_bottom = 303.0
+theme_override_fonts/font = SubResource("FontFile_86y25")
+text = "Senha"
+
+[node name="Label7" parent="." instance=ExtResource("4_cj10y")]
+offset_top = -2.0
+offset_right = 393.0
+offset_bottom = 69.0
+theme_override_fonts/font = SubResource("FontFile_i2wn7")
+text = "V 1.0
+"
+
+[node name="Load" type="Node2D" parent="."]
+visible = false
+position = Vector2(528, 512)
+script = ExtResource("6_ip3yd")
+
+[node name="ColorRect4" type="ColorRect" parent="Load"]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = -16.0
+offset_bottom = 48.0
+
+[node name="ColorRect5" type="ColorRect" parent="Load"]
+offset_left = -56.0
+offset_top = 8.0
+offset_right = -40.0
+offset_bottom = 24.0
+
+[node name="ColorRect6" type="ColorRect" parent="Load"]
+offset_left = -8.0
+offset_top = 48.0
+offset_right = 8.0
+offset_bottom = 64.0
+
+[node name="ColorRect7" type="ColorRect" parent="Load"]
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 48.0
+
+[node name="ColorRect8" type="ColorRect" parent="Load"]
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 24.0
+
+[node name="ColorRect9" type="ColorRect" parent="Load"]
+offset_left = -32.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -32.0
+
+[node name="ColorRect10" type="ColorRect" parent="Load"]
+offset_left = -56.0
+offset_top = -24.0
+offset_right = -40.0
+offset_bottom = -8.0
+
+[node name="ColorRect11" type="ColorRect" parent="Load"]
+offset_left = -8.0
+offset_top = -64.0
+offset_right = 8.0
+offset_bottom = -48.0
+
+[node name="ColorRect12" type="ColorRect" parent="Load"]
+offset_left = 16.0
+offset_top = -48.0
+offset_right = 32.0
+offset_bottom = -32.0
+
+[node name="ColorRect13" type="ColorRect" parent="Load"]
+offset_left = 40.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = -8.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

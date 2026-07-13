@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cojgpu4xxohoq"]
+
+[ext_resource type="Script" path="res://brain_pack/server_data/server_data.gd" id="1_x4gck"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_x4gck")

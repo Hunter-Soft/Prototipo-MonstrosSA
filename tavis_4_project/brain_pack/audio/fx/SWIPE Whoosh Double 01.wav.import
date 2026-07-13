@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvr5kc8j12w33"
+path="res://.godot/imported/SWIPE Whoosh Double 01.wav-da883cb28d1361761a04098aa925ca02.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/SWIPE Whoosh Double 01.wav"
+dest_files=["res://.godot/imported/SWIPE Whoosh Double 01.wav-da883cb28d1361761a04098aa925ca02.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

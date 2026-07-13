@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmg02ojg7hcb0"]
+
+[ext_resource type="Script" uid="uid://s2cdv5dcwxvy" path="res://brain_pack/http_request/http_request.gd" id="1_mti1e"]
+
+[node name="HTTPRequest" type="HTTPRequest"]
+script = ExtResource("1_mti1e")
+
+[connection signal="request_completed" from="." to="." method="_on_request_completed"]

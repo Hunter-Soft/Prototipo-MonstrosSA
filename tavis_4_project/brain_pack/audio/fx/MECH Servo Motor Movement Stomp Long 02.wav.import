@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgi8if2wjxmab"
+path="res://.godot/imported/MECH Servo Motor Movement Stomp Long 02.wav-fc85fe5a1981f2b465dc3edd98d1dfdf.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/MECH Servo Motor Movement Stomp Long 02.wav"
+dest_files=["res://.godot/imported/MECH Servo Motor Movement Stomp Long 02.wav-fc85fe5a1981f2b465dc3edd98d1dfdf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

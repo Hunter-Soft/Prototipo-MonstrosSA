@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dycjrw3ekyuao"
+path="res://.godot/imported/BONG Bell Timer Hit Deep 01.wav-3c692b7a6f57f015a03897b5e50cc876.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/BONG Bell Timer Hit Deep 01.wav"
+dest_files=["res://.godot/imported/BONG Bell Timer Hit Deep 01.wav-3c692b7a6f57f015a03897b5e50cc876.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

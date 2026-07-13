@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctcg7u3gyw544"
+path="res://.godot/imported/BOUNCE Twang Spring 13.wav-e3afc51c92e8b9dee415c3651793c471.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/BOUNCE Twang Spring 13.wav"
+dest_files=["res://.godot/imported/BOUNCE Twang Spring 13.wav-e3afc51c92e8b9dee415c3651793c471.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

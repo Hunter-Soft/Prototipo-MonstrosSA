@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://f58j3nee86et"]
+
+[ext_resource type="Texture2D" uid="uid://pt5rb7c4ecog" path="res://brain_pack/images/pre_assets/empty life bar.svg" id="1_6psw0"]
+[ext_resource type="Script" path="res://brain_pack/objects/bar.gd" id="1_bx32o"]
+[ext_resource type="Texture2D" uid="uid://bypn18wew4eok" path="res://brain_pack/images/pre_assets/full life bar.svg" id="2_fh2jt"]
+[ext_resource type="AudioStream" uid="uid://bhd8jwoaftrio" path="res://brain_pack/audio/fx/SUCCESS BEEPS Multi Echo Short 02.wav" id="3_tmq8r"]
+[ext_resource type="AudioStream" uid="uid://bavm5ekbr15ay" path="res://brain_pack/audio/fx/RETRO Jump Up Bounce Long 03.wav" id="4_ghe1d"]
+
+[node name="Bar" type="Node2D"]
+position = Vector2(746, 246)
+script = ExtResource("1_bx32o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1379.11
+offset_top = -602.373
+offset_right = 1379.11
+offset_bottom = -330.373
+color = Color(0.831373, 0.317647, 0.317647, 1)
+
+[node name="emptyBar" type="Sprite2D" parent="."]
+texture = ExtResource("1_6psw0")
+
+[node name="fullBar" type="Sprite2D" parent="."]
+position = Vector2(-252, -27)
+scale = Vector2(1e-05, 1)
+texture = ExtResource("2_fh2jt")
+centered = false
+
+[node name="Blink" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tmq8r")
+pitch_scale = 2.0
+
+[node name="Think" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ghe1d")
+volume_db = -40.0
+pitch_scale = 8.0

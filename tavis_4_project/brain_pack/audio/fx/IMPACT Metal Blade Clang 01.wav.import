@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crloe55kyoch7"
+path="res://.godot/imported/IMPACT Metal Blade Clang 01.wav-c787e19f91c13fca395fd63a76828bbe.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/IMPACT Metal Blade Clang 01.wav"
+dest_files=["res://.godot/imported/IMPACT Metal Blade Clang 01.wav-c787e19f91c13fca395fd63a76828bbe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,1577 @@
+[gd_scene format=3 uid="uid://d0j28sd78haxu"]
+
+[ext_resource type="PackedScene" uid="uid://f58j3nee86et" path="res://brain_pack/objects/bar.tscn" id="6_yn8th"]
+[ext_resource type="Script" uid="uid://bxo5wh65v5qtv" path="res://brain_pack/callibration_scene/calibration.gd" id="65"]
+[ext_resource type="Texture2D" uid="uid://boirf2o2iusrf" path="res://brain_pack/images/pre_assets/background.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://bum8b6g3mhj0h" path="res://brain_pack/images/pre_assets/play button.svg" id="67"]
+[ext_resource type="PackedScene" uid="uid://cdytm04rgb34k" path="res://brain_pack/text/Label.tscn" id="68"]
+[ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://brain_pack/text/Chewy-Regular.ttf" id="69"]
+
+[sub_resource type="FontFile" id="FontFile_02xu1"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_su5c0"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_ymxea"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_88heg"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_hyote"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_y3goa"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_ki2gm"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_nuwkq"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_83a70"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_8cbtx"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_a50qr"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_mmh8y"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_jdfm8"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_ulihq"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_mlxn3"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_egjfs"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_36c41"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_qlts8"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_km6ox"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02xu1"]
+draw_center = false
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_02xu1"]
+allow_unpress = true
+
+[sub_resource type="FontFile" id="FontFile_0v2rm"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_it5qo"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_qvtv4"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("69")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[node name="Calibration" type="Node2D" unique_id=1850089612]
+scale = Vector2(1.2540371, 1.0603659)
+script = ExtResource("65")
+
+[node name="background" type="Sprite2D" parent="." unique_id=728605364]
+position = Vector2(510, 338.691)
+scale = Vector2(5.95349, 4.00813)
+texture = ExtResource("66")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1275777379]
+offset_left = 291.374
+offset_top = 557.037
+offset_right = 358.436
+offset_bottom = 588.037
+text = "50"
+
+[node name="LineEdit2" type="LineEdit" parent="." unique_id=406986428]
+offset_left = 291.117
+offset_top = 602.833
+offset_right = 359.68
+offset_bottom = 633.833
+text = "40"
+
+[node name="texto" type="Node2D" parent="." unique_id=1971076476]
+position = Vector2(59, 245)
+
+[node name="Label" parent="texto" unique_id=1464735678 instance=ExtResource("68")]
+offset_left = 262.0
+offset_top = -243.0
+offset_right = 655.0
+offset_bottom = -166.0
+theme_override_fonts/font = SubResource("FontFile_02xu1")
+text = "Calibração
+"
+horizontal_alignment = 1
+
+[node name="Label6" parent="texto" unique_id=616444129 instance=ExtResource("68")]
+offset_left = 505.057
+offset_top = -204.794
+offset_right = 898.057
+offset_bottom = -127.794
+theme_override_fonts/font = SubResource("FontFile_su5c0")
+text = "Jogos de ação"
+horizontal_alignment = 1
+
+[node name="Label7" parent="texto" unique_id=2121453376 instance=ExtResource("68")]
+offset_left = 521.071
+offset_top = 2.42265
+offset_right = 914.071
+offset_bottom = 79.4227
+theme_override_fonts/font = SubResource("FontFile_ymxea")
+text = "Jogos de meditação"
+horizontal_alignment = 1
+
+[node name="Label2" parent="texto" unique_id=1061984956 instance=ExtResource("68")]
+offset_left = 150.075
+offset_top = -132.629
+offset_right = 543.075
+offset_bottom = -55.6287
+theme_override_fonts/font = SubResource("FontFile_88heg")
+text = "Esta seta indica concentração
+Concentre-se para carregá-la"
+horizontal_alignment = 1
+
+[node name="Label5" parent="texto" unique_id=1790784947 instance=ExtResource("68")]
+visible = false
+offset_left = 466.0
+offset_top = 81.0
+offset_right = 916.0
+offset_bottom = 158.0
+theme_override_fonts/font = SubResource("FontFile_hyote")
+text = "Tente carregá-la pelo menos uma
+vez para confirmar a conexão com o EEG"
+horizontal_alignment = 1
+
+[node name="Label3" parent="texto" unique_id=1993360199 instance=ExtResource("68")]
+offset_left = -115.05
+offset_top = -229.536
+offset_right = 277.95
+offset_bottom = -152.536
+theme_override_fonts/font = SubResource("FontFile_y3goa")
+text = "Clique no quadro branco
+ para testar a piscada"
+horizontal_alignment = 1
+
+[node name="Label4" parent="texto" unique_id=1595375850 instance=ExtResource("68")]
+offset_left = -48.0
+offset_top = 95.0
+offset_right = 345.0
+offset_bottom = 172.0
+theme_override_fonts/font = SubResource("FontFile_ki2gm")
+text = "Ao piscar, este quadro vermelho
+deve se tornar branco novamente"
+horizontal_alignment = 1
+
+[node name="Label4" parent="texto/Label4" unique_id=610384317 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = -57.0064
+offset_top = 211.111
+offset_right = 335.994
+offset_bottom = 288.111
+theme_override_fonts/font = SubResource("FontFile_nuwkq")
+text = "Valor da concentração:"
+horizontal_alignment = 1
+
+[node name="Label6" parent="texto/Label4" unique_id=1092581949 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = -57.0064
+offset_top = 257.938
+offset_right = 335.994
+offset_bottom = 334.938
+theme_override_fonts/font = SubResource("FontFile_83a70")
+text = "Valor da Meditação:"
+horizontal_alignment = 1
+
+[node name="Label7" parent="texto/Label4" unique_id=1337688884 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = 457.861
+offset_top = 264.124
+offset_right = 850.862
+offset_bottom = 341.124
+theme_override_fonts/font = SubResource("FontFile_8cbtx")
+text = "Spanish"
+horizontal_alignment = 1
+
+[node name="Label8" parent="texto/Label4" unique_id=876097753 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = 754.125
+offset_top = -232.784
+offset_right = 1147.13
+offset_bottom = -155.784
+theme_override_fonts/font = SubResource("FontFile_a50qr")
+text = "Island"
+horizontal_alignment = 1
+
+[node name="Label9" parent="texto/Label4" unique_id=1419397755 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = 505.904
+offset_top = -230.722
+offset_right = 898.905
+offset_bottom = -153.722
+theme_override_fonts/font = SubResource("FontFile_mmh8y")
+text = "Bike"
+horizontal_alignment = 1
+
+[node name="Label11" parent="texto/Label4" unique_id=1461041056 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = 678.0
+offset_top = -30.0
+offset_right = 785.0
+offset_bottom = 47.0
+theme_override_fonts/font = SubResource("FontFile_jdfm8")
+text = "Beach"
+
+[node name="Label12" parent="texto/Label4" unique_id=1248848042 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = 877.79
+offset_top = -30.0
+offset_right = 1173.79
+offset_bottom = 47.0
+theme_override_fonts/font = SubResource("FontFile_ulihq")
+text = "Song"
+
+[node name="Label10" parent="texto/Label4" unique_id=415786471 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = 527.257
+offset_top = -164.743
+offset_right = 920.258
+offset_bottom = -87.7421
+theme_override_fonts/font = SubResource("FontFile_mlxn3")
+text = "Jurassic"
+horizontal_alignment = 1
+
+[node name="button" type="Button" parent="." unique_id=339469283]
+offset_left = 620.996
+offset_top = 397.938
+offset_right = 1042.0
+offset_bottom = 526.938
+scale = Vector2(0.763078, 0.763078)
+icon = ExtResource("67")
+flat = true
+icon_alignment = 1
+
+[node name="Label5" parent="button" unique_id=858968141 instance=ExtResource("68")]
+z_index = 1
+layout_mode = 0
+offset_left = 75.3489
+offset_top = -1.54599
+offset_right = 155.349
+offset_bottom = 37.454
+scale = Vector2(3.15515, 3.15515)
+theme_override_fonts/font = SubResource("FontFile_egjfs")
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="button" unique_id=1380806945]
+layout_mode = 0
+offset_left = 45.9999
+offset_top = 25.0
+offset_right = 387.0
+offset_bottom = 101.0
+mouse_filter = 2
+color = Color(0.101961, 0.243137, 1, 1)
+
+[node name="Config_button" type="Button" parent="." unique_id=1617955464]
+offset_left = 622.776
+offset_top = 504.124
+offset_right = 1043.78
+offset_bottom = 633.124
+scale = Vector2(0.763078, 0.763078)
+icon = ExtResource("67")
+flat = true
+icon_alignment = 1
+
+[node name="Label5" parent="Config_button" unique_id=1052292448 instance=ExtResource("68")]
+z_index = 1
+layout_mode = 0
+offset_left = 75.3489
+offset_top = -1.54599
+offset_right = 155.349
+offset_bottom = 37.454
+scale = Vector2(3.15515, 3.15515)
+theme_override_fonts/font = SubResource("FontFile_36c41")
+text = "Config"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Config_button" unique_id=2025902973]
+layout_mode = 0
+offset_left = 45.9999
+offset_top = 25.0
+offset_right = 387.0
+offset_bottom = 101.0
+mouse_filter = 2
+color = Color(0.101961, 0.243137, 1, 1)
+
+[node name="Config" type="ColorRect" parent="Config_button" unique_id=1166691967]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -879.096
+offset_top = -687.665
+offset_right = 217.904
+offset_bottom = 147.335
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.152941, 0.14902, 0.317647, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Config_button/Config" unique_id=313000894]
+
+[node name="button3" type="Button" parent="Config_button/Config" unique_id=1835587136]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.5
+offset_top = -214.188
+offset_right = 210.5
+offset_bottom = -85.1883
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.763078, 0.763078)
+icon = ExtResource("67")
+flat = true
+icon_alignment = 1
+
+[node name="Label5" parent="Config_button/Config/button3" unique_id=1047691874 instance=ExtResource("68")]
+z_index = 1
+layout_mode = 0
+offset_left = 75.3489
+offset_top = -1.54599
+offset_right = 155.349
+offset_bottom = 37.454
+scale = Vector2(3.15515, 3.15515)
+theme_override_fonts/font = SubResource("FontFile_qlts8")
+text = "Return"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" parent="Config_button/Config/button3" unique_id=1529463349 instance=ExtResource("68")]
+z_index = 1
+layout_mode = 0
+offset_left = -196.259
+offset_top = -809.109
+offset_right = 113.741
+offset_bottom = -770.109
+scale = Vector2(3.15515, 3.15515)
+theme_override_fonts/font = SubResource("FontFile_km6ox")
+text = "Selecione o áudio de derrota"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Config_button/Config/button3" unique_id=1433881977]
+layout_mode = 0
+offset_left = 45.9999
+offset_top = 25.0
+offset_right = 387.0
+offset_bottom = 101.0
+mouse_filter = 2
+color = Color(0.101961, 0.243137, 1, 1)
+
+[node name="type_1" type="CheckBox" parent="Config_button/Config" unique_id=1241907019]
+layout_mode = 0
+offset_left = 440.714
+offset_top = 324.242
+offset_right = 667.714
+offset_bottom = 355.242
+scale = Vector2(3.31869, 3.31869)
+theme_override_styles/focus = SubResource("StyleBoxFlat_02xu1")
+button_group = SubResource("ButtonGroup_02xu1")
+text = "Som de Animal / Acidente"
+
+[node name="type_2" type="CheckBox" parent="Config_button/Config" unique_id=1645893992]
+layout_mode = 0
+offset_left = 440.714
+offset_top = 422.733
+offset_right = 613.714
+offset_bottom = 453.733
+scale = Vector2(3.31869, 3.31869)
+theme_override_styles/focus = SubResource("StyleBoxFlat_02xu1")
+button_group = SubResource("ButtonGroup_02xu1")
+text = "Som de GameOver"
+
+[node name="type_3" type="CheckBox" parent="Config_button/Config" unique_id=69891296]
+visible = false
+layout_mode = 0
+offset_left = 440.714
+offset_top = 442.999
+offset_right = 593.714
+offset_bottom = 473.999
+scale = Vector2(3.31869, 3.31869)
+theme_override_styles/focus = SubResource("StyleBoxFlat_02xu1")
+button_group = SubResource("ButtonGroup_02xu1")
+text = "Som da grama 3"
+
+[node name="playaudio" type="Button" parent="Config_button/Config" unique_id=1795814015]
+visible = false
+layout_mode = 0
+offset_left = 552.641
+offset_top = 607.956
+offset_right = 973.641
+offset_bottom = 736.955
+scale = Vector2(0.763078, 0.763078)
+icon = ExtResource("67")
+flat = true
+icon_alignment = 1
+
+[node name="Label5" parent="Config_button/Config/playaudio" unique_id=685382980 instance=ExtResource("68")]
+z_index = 1
+layout_mode = 0
+offset_left = 75.3489
+offset_top = -1.54599
+offset_right = 155.349
+offset_bottom = 37.454
+scale = Vector2(3.15515, 3.15515)
+theme_override_fonts/font = SubResource("FontFile_0v2rm")
+text = "listen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Config_button/Config/playaudio" unique_id=401993350]
+layout_mode = 0
+offset_left = 45.9999
+offset_top = 25.0
+offset_right = 387.0
+offset_bottom = 101.0
+mouse_filter = 2
+color = Color(0.101961, 0.243137, 1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1332590635]
+offset_left = 75.6228
+offset_top = 127.835
+offset_right = 178.623
+offset_bottom = 230.835
+mouse_filter = 2
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1389644745]
+visible = false
+offset_left = 179.0
+offset_top = 154.0
+offset_right = 355.0
+offset_bottom = 330.0
+mouse_filter = 2
+color = Color(0.796078, 0.0980392, 0.0980392, 1)
+
+[node name="Bar" parent="." unique_id=735731984 instance=ExtResource("6_yn8th")]
+position = Vector2(402.135, 240.206)
+scale = Vector2(0.635, 0.635)
+
+[node name="Conection" parent="." unique_id=319070433 instance=ExtResource("68")]
+offset_left = 25.5591
+offset_top = 438.519
+offset_right = 720.559
+offset_bottom = 503.519
+theme_override_colors/font_color = Color(0.988235, 0.176471, 0.176471, 1)
+theme_override_fonts/font = SubResource("FontFile_it5qo")
+text = "!! Conexão com EEG não detectada !!"
+
+[node name="Label" parent="Conection" unique_id=1793115167 instance=ExtResource("68")]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 42.0
+offset_right = 524.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(1, 0.333333, 0.333333, 1)
+theme_override_fonts/font = SubResource("FontFile_qvtv4")
+text = "Controles manuais ativados"
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=768151589]
+offset_left = 553.381
+offset_top = 583.505
+offset_right = 577.381
+offset_bottom = 607.505
+scale = Vector2(3.31869, 3.31869)
+
+[node name="Jurassic" type="CheckBox" parent="." unique_id=105547884]
+offset_left = 614.769
+offset_top = 149.484
+offset_right = 638.769
+offset_bottom = 173.484
+scale = Vector2(3.31869, 3.31869)
+
+[node name="Bike" type="CheckBox" parent="." unique_id=731052178]
+offset_left = 614.769
+offset_top = 86.598
+offset_right = 638.769
+offset_bottom = 110.598
+scale = Vector2(3.31869, 3.31869)
+
+[node name="Beach" type="CheckBox" parent="." unique_id=1282993574]
+offset_left = 614.769
+offset_top = 287.629
+offset_right = 638.769
+offset_bottom = 311.629
+scale = Vector2(3.31869, 3.31869)
+
+[node name="Song" type="CheckBox" parent="." unique_id=211060410]
+offset_left = 812.278
+offset_top = 287.629
+offset_right = 836.278
+offset_bottom = 311.629
+scale = Vector2(3.31869, 3.31869)
+
+[node name="Island" type="CheckBox" parent="." unique_id=1504135411]
+offset_left = 850.534
+offset_top = 92.783
+offset_right = 874.534
+offset_bottom = 116.783
+scale = Vector2(3.31869, 3.31869)
+
+[connection signal="button_down" from="button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Config_button" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="Config_button/Config/button3" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="Config_button/Config/playaudio" to="." method="_on_playaudio_pressed"]

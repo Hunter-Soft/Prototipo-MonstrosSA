@@ -1,0 +1,580 @@
+[gd_scene format=3 uid="uid://co5ob810hv88b"]
+
+[ext_resource type="Script" uid="uid://cj5tfyj7r2ge2" path="res://brain_pack/login_scene/login_scene.gd" id="1_4tcgf"]
+[ext_resource type="Texture2D" uid="uid://boirf2o2iusrf" path="res://brain_pack/images/pre_assets/background.png" id="2_xu1vx"]
+[ext_resource type="Texture2D" uid="uid://bum8b6g3mhj0h" path="res://brain_pack/images/pre_assets/play button.svg" id="3_n826n"]
+[ext_resource type="PackedScene" uid="uid://cdytm04rgb34k" path="res://brain_pack/text/Label.tscn" id="4_cj10y"]
+[ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://brain_pack/text/Chewy-Regular.ttf" id="5_ryr77"]
+[ext_resource type="Script" uid="uid://mm8rd1b1u8bx" path="res://brain_pack/login_scene/load.gd" id="6_ip3yd"]
+
+[sub_resource type="FontFile" id="FontFile_x6jid"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 1
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 16
+msdf_size = 48
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_u8g57"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 1
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 16
+msdf_size = 48
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_rpl1j"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 1
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 16
+msdf_size = 48
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_a46fp"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 1
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 16
+msdf_size = 48
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_6rl2k"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 0
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 14
+msdf_size = 128
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_hduhi"]
+resource_local_to_scene = true
+resource_name = ""
+fallbacks = Array[Font]([ExtResource("5_ryr77")])
+data = PackedByteArray()
+generate_mipmaps = false
+disable_embedded_bitmaps = true
+antialiasing = 1
+font_name = ""
+style_name = ""
+font_style = 0
+font_weight = 400
+font_stretch = 100
+subpixel_positioning = 1
+keep_rounding_remainders = true
+multichannel_signed_distance_field = false
+msdf_pixel_range = 16
+msdf_size = 48
+allow_system_fallback = true
+force_autohinter = false
+modulate_color_glyphs = false
+hinting = 1
+fixed_size = 0
+fixed_size_scale_mode = 0
+opentype_feature_overrides = {}
+oversampling = 0.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
+
+[node name="LoginScene" type="Node2D" unique_id=1828912134]
+position = Vector2(0.09, 0)
+scale = Vector2(1.269, 1.095)
+script = ExtResource("1_4tcgf")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1029446400]
+position = Vector2(510, 336.44293)
+scale = Vector2(5.95349, 3.981682)
+texture = ExtResource("2_xu1vx")
+
+[node name="LineEditLogin" type="LineEdit" parent="." unique_id=1593761490]
+offset_left = 324.723
+offset_top = 137.314
+offset_right = 708.723
+offset_bottom = 191.314
+
+[node name="LineEditPassword" type="LineEdit" parent="." unique_id=407463726]
+offset_left = 326.941
+offset_top = 266.678
+offset_right = 712.941
+offset_bottom = 322.678
+
+[node name="Button" type="Button" parent="." unique_id=1317849740]
+offset_left = 432.0
+offset_top = 379.0
+offset_right = 620.0
+offset_bottom = 422.0
+text = "ENTER"
+
+[node name="play button" type="Sprite2D" parent="Button" unique_id=539696464]
+position = Vector2(92.9011, 20.6765)
+scale = Vector2(0.521183, 0.473479)
+texture = ExtResource("3_n826n")
+
+[node name="Label" parent="." unique_id=863685837 instance=ExtResource("4_cj10y")]
+offset_top = 520.0
+offset_right = 358.0
+offset_bottom = 585.0
+theme_override_fonts/font = SubResource("FontFile_x6jid")
+text = "Login first to play"
+
+[node name="Label5" parent="." unique_id=495319862 instance=ExtResource("4_cj10y")]
+offset_left = 325.0
+offset_top = 96.0
+offset_right = 718.0
+offset_bottom = 167.0
+theme_override_fonts/font = SubResource("FontFile_u8g57")
+text = "User"
+
+[node name="Label6" parent="." unique_id=1953630868 instance=ExtResource("4_cj10y")]
+offset_left = 328.0
+offset_top = 232.0
+offset_right = 721.0
+offset_bottom = 303.0
+theme_override_fonts/font = SubResource("FontFile_rpl1j")
+text = "Password"
+
+[node name="Label7" parent="." unique_id=537914020 instance=ExtResource("4_cj10y")]
+offset_top = -2.0
+offset_right = 393.0
+offset_bottom = 69.0
+theme_override_fonts/font = SubResource("FontFile_a46fp")
+text = "V 3.92
+
+"
+
+[node name="Label5" parent="Label7" unique_id=217690443 instance=ExtResource("4_cj10y")]
+z_index = 1
+layout_mode = 0
+offset_left = 463.286
+offset_top = 370.037
+offset_right = 539.286
+offset_bottom = 407.037
+scale = Vector2(1.58744, 1.58744)
+theme_override_fonts/font = SubResource("FontFile_6rl2k")
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Label7" unique_id=1023840942]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 379.0
+offset_right = 610.0
+offset_bottom = 423.0
+mouse_filter = 2
+color = Color(0.101961, 0.243137, 1, 1)
+
+[node name="Label8" parent="." unique_id=1518500210 instance=ExtResource("4_cj10y")]
+offset_top = 35.0
+offset_right = 393.0
+offset_bottom = 106.0
+theme_override_fonts/font = SubResource("FontFile_hduhi")
+text = "Focus BCI"
+
+[node name="Load" type="Node2D" parent="." unique_id=817203253]
+visible = false
+position = Vector2(528, 512)
+script = ExtResource("6_ip3yd")
+
+[node name="ColorRect4" type="ColorRect" parent="Load" unique_id=189379779]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = -16.0
+offset_bottom = 48.0
+
+[node name="ColorRect5" type="ColorRect" parent="Load" unique_id=1566901587]
+offset_left = -56.0
+offset_top = 8.0
+offset_right = -40.0
+offset_bottom = 24.0
+
+[node name="ColorRect6" type="ColorRect" parent="Load" unique_id=55244236]
+offset_left = -8.0
+offset_top = 48.0
+offset_right = 8.0
+offset_bottom = 64.0
+
+[node name="ColorRect7" type="ColorRect" parent="Load" unique_id=673324503]
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 48.0
+
+[node name="ColorRect8" type="ColorRect" parent="Load" unique_id=382338595]
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 24.0
+
+[node name="ColorRect9" type="ColorRect" parent="Load" unique_id=441086812]
+offset_left = -32.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -32.0
+
+[node name="ColorRect10" type="ColorRect" parent="Load" unique_id=822287561]
+offset_left = -56.0
+offset_top = -24.0
+offset_right = -40.0
+offset_bottom = -8.0
+
+[node name="ColorRect11" type="ColorRect" parent="Load" unique_id=142666055]
+offset_left = -8.0
+offset_top = -64.0
+offset_right = 8.0
+offset_bottom = -48.0
+
+[node name="ColorRect12" type="ColorRect" parent="Load" unique_id=1934731372]
+offset_left = 16.0
+offset_top = -48.0
+offset_right = 32.0
+offset_bottom = -32.0
+
+[node name="ColorRect13" type="ColorRect" parent="Load" unique_id=156854340]
+offset_left = 40.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = -8.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

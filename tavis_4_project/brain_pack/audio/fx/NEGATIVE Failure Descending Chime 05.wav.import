@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvytcrd0fblgn"
+path="res://.godot/imported/NEGATIVE Failure Descending Chime 05.wav-07ef53cf74fdfd7f4706669f05384516.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/NEGATIVE Failure Descending Chime 05.wav"
+dest_files=["res://.godot/imported/NEGATIVE Failure Descending Chime 05.wav-07ef53cf74fdfd7f4706669f05384516.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

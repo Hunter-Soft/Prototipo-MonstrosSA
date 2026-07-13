@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bavm5ekbr15ay"
+path="res://.godot/imported/RETRO Jump Up Bounce Long 03.wav-766844207df2b738f9e7fb004a973db8.sample"
+
+[deps]
+
+source_file="res://brain_pack/audio/fx/RETRO Jump Up Bounce Long 03.wav"
+dest_files=["res://.godot/imported/RETRO Jump Up Bounce Long 03.wav-766844207df2b738f9e7fb004a973db8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
