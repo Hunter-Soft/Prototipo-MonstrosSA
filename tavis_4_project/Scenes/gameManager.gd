@@ -28,6 +28,10 @@ func _ready() -> void:
 		spawner_component.rerollSpawnAmount(order_manager.order_size)
 		life_timer.regainTime(time_regen)
 	)
+	
+	order_manager.connect("mistaken_monster_order", func():
+		life_timer.loseTime(5)
+	)
 	#order_manager.connect("completed_order", delivery_area.resetMonsterSlots)
 	#order_manager.connect("completed_order", spawner_component.resetSpawner)
 	#delivery_area.just_slotted.connect(delivery_area.getMonsterAttributes)

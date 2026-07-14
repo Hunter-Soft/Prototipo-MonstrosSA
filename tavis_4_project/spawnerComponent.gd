@@ -141,9 +141,16 @@ func rerollSpawnAmount(monsters_used: int) -> void:
 	resetSpawner()
 
 func checkTypeNumber() -> void:
-	monster_type_list = {}
+	monster_type_list.clear()
+
 	for monster: MonsterController in monster_list:
-		if monster != null:
-			monster_type_list[monster.monster_type] = monster_type_list.get(monster.monster_type, 0) + 1
-	
+		if monster == null:
+			continue
+
+		monster_type_list[monster.monster_type] = monster_type_list.get(monster.monster_type, 0) + 1
+
+	for type in MonsterController.monsterType.values():
+		if !monster_type_list.has(type):
+			monster_type_list[type] = 0
+
 	monster_type_list_changed.emit(monster_type_list)

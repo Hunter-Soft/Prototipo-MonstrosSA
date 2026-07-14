@@ -28,3 +28,6 @@ func time_up():
 
 func regainTime(time_regained: float):
 	current_time += time_regained
+	
+func loseTime(time_lost: float):
+	current_time -= time_lost
