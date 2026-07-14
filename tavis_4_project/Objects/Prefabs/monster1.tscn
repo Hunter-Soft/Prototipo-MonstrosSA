@@ -31,11 +31,6 @@ void fragment()
 shader = SubResource("Shader_vv17c")
 shader_parameter/tint_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Curve" id="Curve_q5lnx"]
-_limits = [-200.0, 200.0, 0.0, 1.0]
-_data = [Vector2(0, 25.680939), 0.0, 0.0, 0, 0, Vector2(1, -80.15564), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="Curve" id="Curve_koxkq"]
 _data = [Vector2(0, 0.7354086), 0.0, 0.0, 0, 0, Vector2(0.4074074, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -88,15 +83,12 @@ amount = 100
 one_shot = true
 speed_scale = 0.5
 explosiveness = 1.0
-emission_shape = 1
-emission_sphere_radius = 45.99
 spread = 180.0
 gravity = Vector2(0, 0)
+initial_velocity_min = 24.75
+initial_velocity_max = 108.91
 orbit_velocity_min = 0.25
 orbit_velocity_max = 0.25
-radial_accel_min = -100.0
-radial_accel_max = -100.0
-radial_accel_curve = SubResource("Curve_q5lnx")
 scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_koxkq")
