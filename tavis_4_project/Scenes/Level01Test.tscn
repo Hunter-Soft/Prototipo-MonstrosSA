@@ -68,7 +68,7 @@ physics_material_override = SubResource("PhysicsMaterial_d0xu6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1140197397]
 scale = Vector2(0.99999994, 0.99999994)
-polygon = PackedVector2Array(92, 68.86978, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 174, 67.44037, 179, 198.94649, 1302, 194.65825, 1300, 925.089, 205, 920.8008, 174, 67.44037)
+polygon = PackedVector2Array(92, 68.86978, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 132, 61.72271, 137, 136.05226, 1305, 143.19934, 1320, 922.23016, 132, 945.1008, 135, 61.72271)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=356942909]
 position = Vector2(182, 152)

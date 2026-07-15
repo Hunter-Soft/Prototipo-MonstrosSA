@@ -60,7 +60,7 @@ func _ready() -> void:
 			walkState(action_cooldown, distance_to_travel, speed) #Andar Nomarl
 		elif monster_type == monsterType.Example_02:
 			walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
-			await get_tree().create_timer(0.1).timeout
+			await get_tree().create_timer(0.1).timeout #NICOLLAS LEMBRAR
 			$CPUParticles2D.emitting = true
 		elif monster_type == monsterType.Example_03:
 			walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
