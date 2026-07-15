@@ -49,6 +49,8 @@ func chooseMonsters() -> Array[PackedScene]:
 		})
 	#endregion
 	
+	var last_monster: int = -1
+	
 	#region Spawna os monstros quando precisar, no início do jogo spawna 20
 	while monsters_to_spawn > 0:
 		#region Cuida da roleta
@@ -63,15 +65,17 @@ func chooseMonsters() -> Array[PackedScene]:
 		var chance_index = 0
 		
 		for monster in indexed:
-			#if randf() <= chance_to_dupe:
-				#print("primeiro")
-				##acumulated_chance += monster.value
-				#break
+			if last_monster != -1 && randf() < chance_to_dupe:
+				print("primeiro")
+				chance_index = last_monster
+				#acumulated_chance += monster.value
+				break
 			
 			acumulated_chance += monster.value
 			if rng < acumulated_chance:
 				#print("C")
 				chance_index = monster.original_index
+				last_monster = chance_index
 				break
 		#endregion
 		
