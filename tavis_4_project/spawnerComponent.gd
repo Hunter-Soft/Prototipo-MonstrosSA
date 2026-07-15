@@ -15,7 +15,8 @@ var counted: bool
 }
 
 @export_subgroup("Config")
-@export var chance_to_dupe: float = 1
+@export_range(0.0,1.0)
+var chance_to_dupe := 1
 @export var max_monsters: int = 30
 @export var monsters_to_spawn: int = 20
 var current_monsters: int
@@ -38,7 +39,7 @@ func _process(delta: float) -> void:
 	
 func chooseMonsters() -> Array[PackedScene]:
 	var monster_to_spawn_list: Array[PackedScene]
-	
+
 	#region Criar um dicionário com as chances e os index de cada monstro
 	var indexed = []
 
@@ -48,44 +49,48 @@ func chooseMonsters() -> Array[PackedScene]:
 			"original_index": i
 		})
 	#endregion
-	
-	var last_monster: int = -1
-	
+
+	var last_monster := -1
+
 	#region Spawna os monstros quando precisar, no início do jogo spawna 20
 	while monsters_to_spawn > 0:
-		#region Cuida da roleta
-		var total_chance = 0
-	
-		for i in range(0, monster_pool.size()):
-			total_chance += monster_pool_chance[i]
-		
-		var rng = randf() * total_chance
-		
-		var acumulated_chance = 0
-		var chance_index = 0
-		
-		for monster in indexed:
-			if last_monster != -1 && randf() < chance_to_dupe:
-				print("primeiro")
-				chance_index = last_monster
-				#acumulated_chance += monster.value
-				break
-			
-			acumulated_chance += monster.value
-			if rng < acumulated_chance:
-				#print("C")
-				chance_index = monster.original_index
-				last_monster = chance_index
-				break
-		#endregion
-		
+
+		var chance_index := -1
+
+		if last_monster != -1:
+			chance_index = last_monster
+			last_monster = -1
+
+		else:
+			#region Cuida da roleta
+			var total_chance = 0
+
+			for i in range(monster_pool.size()):
+				total_chance += monster_pool_chance[i]
+
+			var rng = randf() * total_chance
+
+			var acumulated_chance = 0
+
+			for monster in indexed:
+				acumulated_chance += monster.value
+
+				if rng < acumulated_chance:
+					chance_index = monster.original_index
+
+					if randf() < chance_to_dupe:
+						last_monster = chance_index
+
+					break
+			#endregion
+
 		var current_monster = monster_pool[chance_index]
-		monsters_to_spawn -= 1
-		
+
 		monster_to_spawn_list.append(current_monster)
-		
-		#if to_dupe:
+
+		monsters_to_spawn -= 1
 	#endregion
+
 	return monster_to_spawn_list
 
 func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
@@ -136,12 +141,14 @@ func resetSpawner() -> void:
 
 func rerollSpawnAmount(monsters_used: int) -> void:
 	var count_modifier: int = 0
-	
-	if randi_range(0, 1) == 1: count_modifier = monsters_used + 2
-	else: count_modifier = monsters_used - 1
-	
+
+	if randi_range(0, 1) == 1:
+		count_modifier = monsters_used + 2
+	else:
+		count_modifier = monsters_used - 1
+
 	monsters_to_spawn += count_modifier
-	
+
 	resetSpawner()
 
 func checkTypeNumber() -> void:
@@ -158,3 +165,29 @@ func checkTypeNumber() -> void:
 			monster_type_list[type] = 0
 
 	monster_type_list_changed.emit(monster_type_list)
+	
+func spawn_specific_monster(type: MonsterController.monsterType) -> void:
+	var new_monster: Node2D = monster_pool[type].instantiate()
+
+	var new_position: Vector2 = get_spawn_position(
+		50,
+		$"../Marker2D".global_position,
+		$"../Marker2D2".global_position
+	)
+
+	new_monster.global_position = new_position
+
+	monster_list.append(new_monster)
+	$"../==MonsterHolder==".add_child(new_monster)
+
+	checkTypeNumber()
+	
+func ensure_monsters_for_next_order():
+	checkTypeNumber()
+	var lowest = 99999
+	for value in monster_type_list.values():
+		lowest = min(lowest, value)
+
+	for type in monster_type_list.keys():
+		if monster_type_list[type] == lowest:
+			spawn_specific_monster(type)

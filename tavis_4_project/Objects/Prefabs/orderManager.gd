@@ -32,22 +32,20 @@ func _ready() -> void:
 func randomizeOrder() -> void:
 	order_list.clear()
 	
-	var valid_types := []
-	
-	for monster_type in game_manager.monster_type_list.keys():
-		if game_manager.monster_type_list[monster_type] > 0:
-			valid_types.append(monster_type)
-	
-	if valid_types.is_empty():
-		print("No monsters available.")
-		return
-	
-	#order_size = clamp(order_size,1, game_manager.)
-	
+	var available := game_manager.monster_type_list.duplicate()
+
 	for i in range(order_size):
+		var valid_types := []
+		for type in available.keys():
+			if available[type] > 0:
+				valid_types.append(type)
+
+		if valid_types.is_empty():
+			break
+
 		var chosen_type = valid_types.pick_random()
-		#valid_types.erase(chosen_type)
 		order_list.append(chosen_type)
+		available[chosen_type] -= 1
 
 	print("Generated order:")
 	print(order_list)
@@ -105,7 +103,8 @@ func selectMonster(monster: MonsterController) -> void:
 		print("Wrong monster!")
 		mistaken_monster_order.emit()
 		return
-
+		
+	var last_monster = order_list.size() == 1
 	right_monster_order.emit()
 	print("Correct!")
 
@@ -118,6 +117,9 @@ func selectMonster(monster: MonsterController) -> void:
 			game_manager.monster_type_list.erase(clicked_type)
 
 	monster.queue_free()
+	
+	if !last_monster:
+		get_parent().click_sound.play()
 
 	print("Remaining order:")
 	print(order_list)

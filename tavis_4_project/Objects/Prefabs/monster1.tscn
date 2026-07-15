@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://dqx2f22av42p5"]
 
 [ext_resource type="PackedScene" uid="uid://b46cols1c34t2" path="res://Objects/Components/HoverDetectionComponent.tscn" id="1_37w2e"]
+[ext_resource type="Shader" uid="uid://0rs8gped0mh" path="res://shaders/pintura.gdshader" id="1_56dyf"]
 [ext_resource type="Script" uid="uid://daqg8gc2q8dt5" path="res://Objects/Prefabs/monsterController.gd" id="1_sam45"]
 [ext_resource type="Script" uid="uid://bdbtnd1refme8" path="res://Scripts/AnimationResource.gd" id="2_q5lnx"]
 [ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/Visuals/monster1.tres" id="3_4yboc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f5nsw"]
+shader = ExtResource("1_56dyf")
+shader_parameter/tint_color = Color(1, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_68lvm"]
 script = ExtResource("2_q5lnx")
@@ -36,6 +41,8 @@ _data = [Vector2(0, 0.7354086), 0.0, 0.0, 0, 0, Vector2(0.4074074, 0), 0.0, 0.0,
 point_count = 2
 
 [node name="Monster1" type="CharacterBody2D" unique_id=1365438596 groups=["Monster"]]
+material = SubResource("ShaderMaterial_f5nsw")
+use_parent_material = true
 collision_layer = 4
 collision_mask = 6
 script = ExtResource("1_sam45")
