@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://d1blgyuv5oscy" path="res://Scenes/gameManager.gd" id="1_anx0o"]
 [ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
 [ext_resource type="AudioStream" uid="uid://dr0md2h5d27nm" path="res://Musics/BGM.mp3" id="2_aiu3w"]
-[ext_resource type="PackedScene" uid="uid://dqx2f22av42p5" path="res://Objects/Prefabs/Monster1.tscn" id="3_cps6d"]
-[ext_resource type="PackedScene" uid="uid://b5u0dlkfvv0gb" path="res://Objects/Prefabs/monster2.tscn" id="4_5ad2a"]
+[ext_resource type="AudioStream" uid="uid://dd4squjgu7nmi" path="res://Sounds/click.wav" id="3_aiu3w"]
+[ext_resource type="AudioStream" uid="uid://bo4chnpy5c480" path="res://Sounds/correct.wav" id="4_iq8n3"]
+[ext_resource type="AudioStream" uid="uid://dukfu08fssksf" path="res://Sounds/error.wav" id="5_7jxfu"]
 [ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
-[ext_resource type="PackedScene" uid="uid://bk1k8kyraa6kg" path="res://Objects/Prefabs/monster3.tscn" id="6_awh1v"]
 [ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/Visuals/monster1.tres" id="9_aiu3w"]
 [ext_resource type="Script" uid="uid://ctupe1177m2iy" path="res://Scripts/timer.gd" id="9_gmkrs"]
 [ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="10_iq8n3"]
@@ -26,6 +26,15 @@ metadata/_edit_vertical_guides_ = [90.0]
 stream = ExtResource("2_aiu3w")
 autoplay = true
 
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=2019451974]
+stream = ExtResource("3_aiu3w")
+
+[node name="CompleteSound" type="AudioStreamPlayer" parent="." unique_id=1560739038]
+stream = ExtResource("4_iq8n3")
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="." unique_id=619422088]
+stream = ExtResource("5_7jxfu")
+
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1473037882]
 offset_right = 1278.0
 offset_bottom = 728.0
@@ -36,10 +45,8 @@ script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
 position = Vector2(27, 28)
-chance_to_dupe = 80.0
 max_monsters = 15
 monsters_to_spawn = 15
-monster_pool = Array[PackedScene]([ExtResource("3_cps6d"), ExtResource("4_5ad2a"), ExtResource("6_awh1v")])
 monster_pool_chance = Array[int]([60, 15, 30])
 
 [node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
@@ -62,6 +69,7 @@ metadata/_edit_use_anchors_ = true
 [node name="==MonsterHolder==" type="Node" parent="." unique_id=1253744609]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2107164896]
+visible = false
 position = Vector2(-91, -47.180416)
 scale = Vector2(1, 0.6995872)
 collision_layer = 2

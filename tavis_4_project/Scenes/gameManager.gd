@@ -3,6 +3,10 @@ extends Node2D
 
 signal monster_data_ready
 
+@onready var click_sound: AudioStreamPlayer = $ClickSound
+@onready var complete_sound: AudioStreamPlayer = $CompleteSound
+@onready var wrong_sound: AudioStreamPlayer = $WrongSound
+
 #@onready var delivery_area: DeliveryZone = $DeliveryArea
 #@onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
 @onready var life_timer: LifeTimer = $CanvasLayer
@@ -24,12 +28,17 @@ func _ready() -> void:
 		monster_data_ready.emit()
 	)
 	
-	order_manager.connect("completed_order", func(): 
+	order_manager.connect("completed_order", func():
+		complete_sound.play()
+		await get_tree().process_frame
+		spawner_component.checkTypeNumber()
+		spawner_component.ensure_monsters_for_next_order()
 		spawner_component.rerollSpawnAmount(order_manager.order_size)
 		life_timer.regainTime(time_regen)
 	)
 	
 	order_manager.connect("mistaken_monster_order", func():
+		wrong_sound.play()
 		life_timer.loseTime(5)
 	)
 	#order_manager.connect("completed_order", delivery_area.resetMonsterSlots)
