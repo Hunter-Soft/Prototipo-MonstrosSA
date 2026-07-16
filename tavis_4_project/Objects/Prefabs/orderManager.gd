@@ -106,6 +106,7 @@ func selectMonster(monster: MonsterController) -> void:
 		mistaken_monster_order.emit()
 		return
 
+	monster.delivered.emit()
 	right_monster_order.emit()
 	print("Correct!")
 

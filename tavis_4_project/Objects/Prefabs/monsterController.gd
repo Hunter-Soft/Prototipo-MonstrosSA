@@ -1,6 +1,8 @@
 class_name MonsterController
 extends CharacterBody2D
 
+signal delivered
+
 @export_subgroup("Animation")
 @onready var pivot: Node2D = $feet_pivot
 
@@ -24,8 +26,6 @@ var walking: bool = false
 
 @onready var action_timer: Timer = $Timer
 
-var delivered := false
-
 var monster_color: Color = Color.WHITE
 
 enum monsterType{
@@ -36,6 +36,9 @@ enum monsterType{
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	delivered.connect(func() -> void:
+		$CPUParticles2D.emitting = true
+	)
 	randomizeStats()
 	
 	var sprite := $feet_pivot/AnimatedSprite2D
@@ -61,7 +64,7 @@ func _ready() -> void:
 		elif monster_type == monsterType.Example_02:
 			walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
 			await get_tree().create_timer(0.1).timeout #NICOLLAS LEMBRAR
-			$CPUParticles2D.emitting = true
+			#$CPUParticles2D.emitting = true
 		elif monster_type == monsterType.Example_03:
 			walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
 	)
