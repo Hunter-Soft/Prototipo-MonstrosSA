@@ -15,8 +15,7 @@ var counted: bool
 }
 
 @export_subgroup("Config")
-@export_range(0.0,1.0)
-var chance_to_dupe := 1
+@export_range(0.0,1.0)var chance_to_dupe: float = 1
 @export var max_monsters: int = 30
 @export var monsters_to_spawn: int = 20
 var current_monsters: int

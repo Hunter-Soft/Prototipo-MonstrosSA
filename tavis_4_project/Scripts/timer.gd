@@ -16,13 +16,15 @@ var current_time := 30.0:
 func _process(delta):
 	current_time -= delta * damage_per_tick
 
-	if current_time < 0:
+	if current_time <= 0:
 		current_time = 0
 		time_up()
 
 	time_bar.value = (current_time / max_time) * 100
 	
 func time_up():
+	ServerData.in_game = false
+	$"../Game_Over".visible = true
 	#print("Acabou o tempo")
 	pass
 

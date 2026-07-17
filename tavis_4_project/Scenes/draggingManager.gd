@@ -35,6 +35,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	if !ServerData.in_game:
+		return
+	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
 			current_monster = raycastCardCheck()

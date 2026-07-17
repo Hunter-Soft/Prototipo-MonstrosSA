@@ -9,30 +9,7 @@
 
 [sub_resource type="FontFile" id="FontFile_x6jid"]
 resource_local_to_scene = true
-resource_name = ""
 fallbacks = Array[Font]([ExtResource("5_ryr77")])
-data = PackedByteArray()
-generate_mipmaps = false
-disable_embedded_bitmaps = true
-antialiasing = 1
-font_name = ""
-style_name = ""
-font_style = 0
-font_weight = 400
-font_stretch = 100
-subpixel_positioning = 1
-keep_rounding_remainders = true
-multichannel_signed_distance_field = false
-msdf_pixel_range = 16
-msdf_size = 48
-allow_system_fallback = true
-force_autohinter = false
-modulate_color_glyphs = false
-hinting = 1
-fixed_size = 0
-fixed_size_scale_mode = 0
-opentype_feature_overrides = {}
-oversampling = 0.0
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -81,30 +58,7 @@ cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="FontFile_u8g57"]
 resource_local_to_scene = true
-resource_name = ""
 fallbacks = Array[Font]([ExtResource("5_ryr77")])
-data = PackedByteArray()
-generate_mipmaps = false
-disable_embedded_bitmaps = true
-antialiasing = 1
-font_name = ""
-style_name = ""
-font_style = 0
-font_weight = 400
-font_stretch = 100
-subpixel_positioning = 1
-keep_rounding_remainders = true
-multichannel_signed_distance_field = false
-msdf_pixel_range = 16
-msdf_size = 48
-allow_system_fallback = true
-force_autohinter = false
-modulate_color_glyphs = false
-hinting = 1
-fixed_size = 0
-fixed_size_scale_mode = 0
-opentype_feature_overrides = {}
-oversampling = 0.0
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -153,30 +107,7 @@ cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="FontFile_rpl1j"]
 resource_local_to_scene = true
-resource_name = ""
 fallbacks = Array[Font]([ExtResource("5_ryr77")])
-data = PackedByteArray()
-generate_mipmaps = false
-disable_embedded_bitmaps = true
-antialiasing = 1
-font_name = ""
-style_name = ""
-font_style = 0
-font_weight = 400
-font_stretch = 100
-subpixel_positioning = 1
-keep_rounding_remainders = true
-multichannel_signed_distance_field = false
-msdf_pixel_range = 16
-msdf_size = 48
-allow_system_fallback = true
-force_autohinter = false
-modulate_color_glyphs = false
-hinting = 1
-fixed_size = 0
-fixed_size_scale_mode = 0
-opentype_feature_overrides = {}
-oversampling = 0.0
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -225,30 +156,7 @@ cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="FontFile_a46fp"]
 resource_local_to_scene = true
-resource_name = ""
 fallbacks = Array[Font]([ExtResource("5_ryr77")])
-data = PackedByteArray()
-generate_mipmaps = false
-disable_embedded_bitmaps = true
-antialiasing = 1
-font_name = ""
-style_name = ""
-font_style = 0
-font_weight = 400
-font_stretch = 100
-subpixel_positioning = 1
-keep_rounding_remainders = true
-multichannel_signed_distance_field = false
-msdf_pixel_range = 16
-msdf_size = 48
-allow_system_fallback = true
-force_autohinter = false
-modulate_color_glyphs = false
-hinting = 1
-fixed_size = 0
-fixed_size_scale_mode = 0
-opentype_feature_overrides = {}
-oversampling = 0.0
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -297,30 +205,10 @@ cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="FontFile_6rl2k"]
 resource_local_to_scene = true
-resource_name = ""
 fallbacks = Array[Font]([ExtResource("5_ryr77")])
-data = PackedByteArray()
-generate_mipmaps = false
-disable_embedded_bitmaps = true
-antialiasing = 1
-font_name = ""
-style_name = ""
-font_style = 0
-font_weight = 400
-font_stretch = 100
 subpixel_positioning = 0
-keep_rounding_remainders = true
-multichannel_signed_distance_field = false
 msdf_pixel_range = 14
 msdf_size = 128
-allow_system_fallback = true
-force_autohinter = false
-modulate_color_glyphs = false
-hinting = 1
-fixed_size = 0
-fixed_size_scale_mode = 0
-opentype_feature_overrides = {}
-oversampling = 0.0
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -347,30 +235,7 @@ cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="FontFile_hduhi"]
 resource_local_to_scene = true
-resource_name = ""
 fallbacks = Array[Font]([ExtResource("5_ryr77")])
-data = PackedByteArray()
-generate_mipmaps = false
-disable_embedded_bitmaps = true
-antialiasing = 1
-font_name = ""
-style_name = ""
-font_style = 0
-font_weight = 400
-font_stretch = 100
-subpixel_positioning = 1
-keep_rounding_remainders = true
-multichannel_signed_distance_field = false
-msdf_pixel_range = 16
-msdf_size = 48
-allow_system_fallback = true
-force_autohinter = false
-modulate_color_glyphs = false
-hinting = 1
-fixed_size = 0
-fixed_size_scale_mode = 0
-opentype_feature_overrides = {}
-oversampling = 0.0
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -428,22 +293,22 @@ scale = Vector2(5.95349, 3.981682)
 texture = ExtResource("2_xu1vx")
 
 [node name="LineEditLogin" type="LineEdit" parent="." unique_id=1593761490]
-offset_left = 324.723
-offset_top = 137.314
-offset_right = 708.723
-offset_bottom = 191.314
+offset_left = 300.16547
+offset_top = 200.21811
+offset_right = 684.1655
+offset_bottom = 254.21811
 
 [node name="LineEditPassword" type="LineEdit" parent="." unique_id=407463726]
-offset_left = 326.941
-offset_top = 266.678
-offset_right = 712.941
-offset_bottom = 322.678
+offset_left = 302.38348
+offset_top = 329.58212
+offset_right = 688.3834
+offset_bottom = 385.58212
 
 [node name="Button" type="Button" parent="." unique_id=1317849740]
-offset_left = 432.0
-offset_top = 379.0
-offset_right = 620.0
-offset_bottom = 422.0
+offset_left = 407.4425
+offset_top = 441.9041
+offset_right = 595.4425
+offset_bottom = 484.9041
 text = "ENTER"
 
 [node name="play button" type="Sprite2D" parent="Button" unique_id=539696464]
@@ -452,25 +317,26 @@ scale = Vector2(0.521183, 0.473479)
 texture = ExtResource("3_n826n")
 
 [node name="Label" parent="." unique_id=863685837 instance=ExtResource("4_cj10y")]
-offset_top = 520.0
-offset_right = 358.0
-offset_bottom = 585.0
+offset_left = -4.011032
+offset_top = 601.8265
+offset_right = 353.98895
+offset_bottom = 666.8265
 theme_override_fonts/font = SubResource("FontFile_x6jid")
 text = "Login first to play"
 
 [node name="Label5" parent="." unique_id=495319862 instance=ExtResource("4_cj10y")]
-offset_left = 325.0
-offset_top = 96.0
-offset_right = 718.0
-offset_bottom = 167.0
+offset_left = 300.4425
+offset_top = 158.90411
+offset_right = 693.4425
+offset_bottom = 229.90411
 theme_override_fonts/font = SubResource("FontFile_u8g57")
 text = "User"
 
 [node name="Label6" parent="." unique_id=1953630868 instance=ExtResource("4_cj10y")]
-offset_left = 328.0
-offset_top = 232.0
-offset_right = 721.0
-offset_bottom = 303.0
+offset_left = 303.4425
+offset_top = 294.9041
+offset_right = 696.4425
+offset_bottom = 365.9041
 theme_override_fonts/font = SubResource("FontFile_rpl1j")
 text = "Password"
 
@@ -479,17 +345,17 @@ offset_top = -2.0
 offset_right = 393.0
 offset_bottom = 69.0
 theme_override_fonts/font = SubResource("FontFile_a46fp")
-text = "V 3.92
+text = "V 1.0
 
 "
 
 [node name="Label5" parent="Label7" unique_id=217690443 instance=ExtResource("4_cj10y")]
 z_index = 1
 layout_mode = 0
-offset_left = 463.286
-offset_top = 370.037
-offset_right = 539.286
-offset_bottom = 407.037
+offset_left = 438.72852
+offset_top = 432.9411
+offset_right = 514.7285
+offset_bottom = 469.9411
 scale = Vector2(1.58744, 1.58744)
 theme_override_fonts/font = SubResource("FontFile_6rl2k")
 text = "Play"
@@ -498,10 +364,10 @@ vertical_alignment = 1
 
 [node name="ColorRect3" type="ColorRect" parent="Label7" unique_id=1023840942]
 layout_mode = 0
-offset_left = 442.0
-offset_top = 379.0
-offset_right = 610.0
-offset_bottom = 423.0
+offset_left = 417.4425
+offset_top = 441.9041
+offset_right = 585.4425
+offset_bottom = 485.9041
 mouse_filter = 2
 color = Color(0.101961, 0.243137, 1, 1)
 
@@ -510,11 +376,11 @@ offset_top = 35.0
 offset_right = 393.0
 offset_bottom = 106.0
 theme_override_fonts/font = SubResource("FontFile_hduhi")
-text = "Focus BCI"
+text = "TAVIS-4: CLick it up!"
 
 [node name="Load" type="Node2D" parent="." unique_id=817203253]
 visible = false
-position = Vector2(528, 512)
+position = Vector2(496.38293, 572.6027)
 script = ExtResource("6_ip3yd")
 
 [node name="ColorRect4" type="ColorRect" parent="Load" unique_id=189379779]

@@ -69,7 +69,7 @@ var user_data = {
 	"finalizado": 0,
 	"data_levels": [],
 	"data_iccs": [],
-	"tp_jogo": 402,
+	"tp_jogo": 900,
 	
 }
 
@@ -222,7 +222,7 @@ func update_user_data(user_data, user, focusTime, unfocusTime, focusBits, unfocu
 	user_data["score_total"] = int(totalScore) if totalScore != null else 0
 	user_data["level_final"] = int(lastLevel) if lastLevel != null else 0
 	user_data["finalizado"] = int(finished) if finished != null else 0
-	user_data["tp_jogo"] = current_tp_game
+	user_data["tp_jogo"] = 900
 	
 	user_data["data_iccs"] = []
 	for x in iccData.size():

@@ -83,6 +83,9 @@ func _ready() -> void:
 #var time: = 0.0
 
 func _process(delta: float) -> void:
+	if !ServerData.in_game:
+		action_timer.stop()
+	
 	idleState(delta)
 	
 	#ac

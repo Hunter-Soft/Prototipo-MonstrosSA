@@ -12,11 +12,21 @@
 [ext_resource type="Script" uid="uid://ctupe1177m2iy" path="res://Scripts/timer.gd" id="9_gmkrs"]
 [ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="10_iq8n3"]
 [ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/Visuals/monster3.tres" id="11_7jxfu"]
+[ext_resource type="Texture2D" uid="uid://bum8b6g3mhj0h" path="res://brain_pack/images/pre_assets/play button.svg" id="13_ycsbx"]
+[ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://brain_pack/text/Chewy-Regular.ttf" id="15_s1wt5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0xu6"]
 bg_color = Color(0.77716494, 0.68082696, 0, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d0xu6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aiu3w"]
+font = ExtResource("15_s1wt5")
+font_size = 92
+
+[sub_resource type="LabelSettings" id="LabelSettings_7jxfu"]
+font = ExtResource("15_s1wt5")
+font_size = 48
 
 [node name="Level01Test" type="Node2D" unique_id=872439788]
 script = ExtResource("1_anx0o")
@@ -45,6 +55,7 @@ script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
 position = Vector2(27, 28)
+chance_to_dupe = 0.5
 max_monsters = 15
 monsters_to_spawn = 15
 monster_pool_chance = Array[int]([60, 15, 30])
@@ -56,6 +67,7 @@ monster_sprites = Array[SpriteFrames]([ExtResource("9_aiu3w"), ExtResource("10_i
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=287268522]
 script = ExtResource("9_gmkrs")
+damage_per_tick = 3
 
 [node name="TimeBar" type="ProgressBar" parent="CanvasLayer" unique_id=1381270529]
 offset_top = 600.0
@@ -69,7 +81,6 @@ metadata/_edit_use_anchors_ = true
 [node name="==MonsterHolder==" type="Node" parent="." unique_id=1253744609]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2107164896]
-visible = false
 position = Vector2(-91, -47.180416)
 scale = Vector2(1, 0.6995872)
 collision_layer = 2
@@ -77,7 +88,7 @@ physics_material_override = SubResource("PhysicsMaterial_d0xu6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1140197397]
 scale = Vector2(0.99999994, 0.99999994)
-polygon = PackedVector2Array(92, 68.86978, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 132, 61.72271, 137, 136.05226, 1305, 143.19934, 1320, 922.23016, 132, 945.1008, 135, 61.72271)
+polygon = PackedVector2Array(92, 68.86978, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 132, 61.72271, 137, 136.05226, 1305, 143.19934, 1327, 916.5125, 133, 913.6537, 135, 61.72271)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=356942909]
 position = Vector2(182, 152)
@@ -88,5 +99,74 @@ position = Vector2(1138, 519)
 [node name="ColorRect" type="ColorRect" parent="." unique_id=615218256]
 offset_top = 600.0
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 741.0
 color = Color(0, 0, 0, 1)
+
+[node name="Game_Over" type="CanvasLayer" parent="." unique_id=469819052]
+layer = 2
+visible = false
+
+[node name="Button" type="Button" parent="Game_Over" unique_id=1698365833]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 356.0
+offset_top = 351.0
+offset_right = -286.0
+offset_bottom = -259.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="Game_Over" unique_id=887038427]
+offset_left = -26.0
+offset_top = -6.5345573
+offset_right = 1285.0
+offset_bottom = 757.0
+color = Color(0.2620886, 1.5341676e-07, 3.6098065e-08, 0.6627451)
+
+[node name="Label" type="Label" parent="Game_Over" unique_id=2032303564]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 175.0
+offset_right = -411.0
+offset_bottom = -419.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_aiu3w")
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Game_Over" unique_id=1681784514]
+offset_left = 544.0
+offset_top = 396.963
+offset_right = 732.0
+offset_bottom = 439.963
+
+[node name="play button" type="Sprite2D" parent="Game_Over/Button2" unique_id=692436471]
+position = Vector2(92.90112, 20.676514)
+scale = Vector2(0.521183, 0.473479)
+texture = ExtResource("13_ycsbx")
+
+[node name="ColorRect3" type="ColorRect" parent="Game_Over/Button2" unique_id=1458694003]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 178.0
+offset_bottom = 44.0
+mouse_filter = 2
+color = Color(0.101961, 0.243137, 1, 1)
+
+[node name="Label2" type="Label" parent="Game_Over/Button2" unique_id=2035189394]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -9.963013
+offset_right = 94.0
+offset_bottom = 66.03699
+text = "Sair"
+label_settings = SubResource("LabelSettings_7jxfu")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Game_Over/Button2" to="." method="gameOver"]

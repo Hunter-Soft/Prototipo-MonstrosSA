@@ -8282,7 +8282,7 @@ cache/0/30/0/kerning_overrides/29/0 = Vector2(0, 0)
 cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
 
 [node name="Send" type="Node2D" unique_id=2099179981]
-scale = Vector2(1.124, 0.97)
+scale = Vector2(1.2399852, 1.063268)
 script = ExtResource("1_kxj2n")
 
 [node name="HTTPRequest" parent="." unique_id=478806295 instance=ExtResource("2_3dddy")]
@@ -8299,6 +8299,7 @@ offset_right = 228.0
 offset_bottom = 101.0
 theme_override_fonts/font = SubResource("FontFile_hystc")
 text = "Envio de dados"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" parent="." unique_id=1614523607 instance=ExtResource("4_0bwq1")]
 offset_left = 64.0
@@ -8307,6 +8308,7 @@ offset_right = 238.0
 offset_bottom = 157.0
 theme_override_fonts/font = SubResource("FontFile_8wtio")
 text = "Nome da sessão:"
+metadata/_edit_use_anchors_ = true
 
 [node name="Ses" parent="." unique_id=1476681859 instance=ExtResource("4_0bwq1")]
 offset_left = 260.703
@@ -8315,6 +8317,7 @@ offset_right = 434.703
 offset_bottom = 157.0
 theme_override_fonts/font = SubResource("FontFile_jx7b1")
 text = ""
+metadata/_edit_use_anchors_ = true
 
 [node name="Label6" parent="." unique_id=1547571472 instance=ExtResource("4_0bwq1")]
 offset_left = 66.4537
@@ -8323,6 +8326,7 @@ offset_right = 240.454
 offset_bottom = 208.852
 theme_override_fonts/font = SubResource("FontFile_pf4d4")
 text = "Score:"
+metadata/_edit_use_anchors_ = true
 
 [node name="Score" parent="." unique_id=1137704488 instance=ExtResource("4_0bwq1")]
 offset_left = 76.6773
@@ -8332,6 +8336,7 @@ offset_bottom = 286.889
 theme_override_fonts/font = SubResource("FontFile_64xhh")
 theme_override_font_sizes/font_size = 60
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label5" parent="." unique_id=1454533023 instance=ExtResource("4_0bwq1")]
 offset_left = 2.0
@@ -8341,6 +8346,7 @@ offset_bottom = 581.0
 theme_override_fonts/font = SubResource("FontFile_weqx7")
 text = "Aguardando envio"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=862871219]
 offset_left = 440.0
@@ -8348,6 +8354,7 @@ offset_top = 216.0
 offset_right = 553.0
 offset_bottom = 329.0
 icon = ExtResource("6_ns3gg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" parent="." unique_id=1529452419 instance=ExtResource("4_0bwq1")]
 offset_left = 464.0
@@ -8356,6 +8363,7 @@ offset_right = 638.0
 offset_bottom = 373.0
 theme_override_fonts/font = SubResource("FontFile_llf3p")
 text = "Enviar"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label4" parent="." unique_id=1460496124 instance=ExtResource("4_0bwq1")]
 offset_left = 952.0
@@ -8364,6 +8372,7 @@ offset_right = 1126.0
 offset_bottom = 597.0
 theme_override_fonts/font = SubResource("FontFile_55yhu")
 text = "Sair"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="." unique_id=1892450364]
 offset_left = 912.0
@@ -8371,6 +8380,7 @@ offset_top = 440.0
 offset_right = 1025.0
 offset_bottom = 553.0
 icon = ExtResource("7_d6n07")
+metadata/_edit_use_anchors_ = true
 
 [node name="Load" type="Node2D" parent="." unique_id=61035673]
 visible = false

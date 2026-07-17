@@ -47,4 +47,7 @@ func _ready() -> void:
 	#delivery_area.just_unslotted.connect(delivery_area.removeMonsterAttributes)
 	pass
 
+func gameOver() -> void:
+	ServerData.in_game = false
+	get_tree().change_scene_to_file("res://brain_pack/send_data/data_manager.tscn")
 #func getMonsterTypeList() -> void:
