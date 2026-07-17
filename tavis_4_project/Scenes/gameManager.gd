@@ -16,23 +16,24 @@ signal monster_data_ready
 
 @export var time_regen: float = 10
 
+var current_phase := 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ServerData.in_game = true
 	
 	spawner_component.connect("monster_type_list_changed", func(type_list):
 		monster_type_list = type_list
-
 		print("Monstros disponíveis:", monster_type_list)
-
-		monster_data_ready.emit()
 	)
 	
 	order_manager.connect("completed_order", func():
 		complete_sound.play()
+		current_phase += 1
+		updateDifficulty()
 		await get_tree().process_frame
 		spawner_component.checkTypeNumber()
-		spawner_component.ensure_monsters_for_next_order()
+		spawner_component.ensure_monsters_for_order(order_manager.order_list)
 		spawner_component.rerollSpawnAmount(order_manager.order_size)
 		life_timer.regainTime(time_regen)
 	)
@@ -46,6 +47,16 @@ func _ready() -> void:
 	#delivery_area.just_slotted.connect(delivery_area.getMonsterAttributes)
 	#delivery_area.just_unslotted.connect(delivery_area.removeMonsterAttributes)
 	pass
+	
+func updateDifficulty() -> void:
+	if current_phase < 5:
+		order_manager.order_size = 2
+
+	elif current_phase < 10:
+		order_manager.order_size = 3
+
+	else:
+		order_manager.order_size = 4
 
 func gameOver() -> void:
 	ServerData.in_game = false

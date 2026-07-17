@@ -8288,8 +8288,8 @@ script = ExtResource("1_kxj2n")
 [node name="HTTPRequest" parent="." unique_id=478806295 instance=ExtResource("2_3dddy")]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=32893289]
-position = Vector2(515.125, 336.317)
-scale = Vector2(5.94186, 4.01179)
+position = Vector2(520.5707, 348.45404)
+scale = Vector2(6.278206, 4.2986236)
 texture = ExtResource("3_n5iul")
 
 [node name="Label" parent="." unique_id=2116578203 instance=ExtResource("4_0bwq1")]
@@ -8339,46 +8339,46 @@ text = "0"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" parent="." unique_id=1454533023 instance=ExtResource("4_0bwq1")]
-offset_left = 2.0
-offset_top = 544.0
-offset_right = 1024.0
-offset_bottom = 581.0
+offset_left = -0.80646133
+offset_top = 635.77576
+offset_right = 1021.19354
+offset_bottom = 672.77576
 theme_override_fonts/font = SubResource("FontFile_weqx7")
 text = "Aguardando envio"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=862871219]
-offset_left = 440.0
-offset_top = 216.0
-offset_right = 553.0
-offset_bottom = 329.0
+offset_left = 445.1666
+offset_top = 327.29285
+offset_right = 558.1666
+offset_bottom = 440.29285
 icon = ExtResource("6_ns3gg")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" parent="." unique_id=1529452419 instance=ExtResource("4_0bwq1")]
-offset_left = 464.0
-offset_top = 336.0
-offset_right = 638.0
-offset_bottom = 373.0
+offset_left = 469.1666
+offset_top = 447.29285
+offset_right = 643.1666
+offset_bottom = 484.29285
 theme_override_fonts/font = SubResource("FontFile_llf3p")
 text = "Enviar"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" parent="." unique_id=1460496124 instance=ExtResource("4_0bwq1")]
-offset_left = 952.0
-offset_top = 560.0
-offset_right = 1126.0
-offset_bottom = 597.0
+offset_left = 952.1076
+offset_top = 636.3327
+offset_right = 1126.1077
+offset_bottom = 673.3327
 theme_override_fonts/font = SubResource("FontFile_55yhu")
 text = "Sair"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="." unique_id=1892450364]
-offset_left = 912.0
-offset_top = 440.0
-offset_right = 1025.0
-offset_bottom = 553.0
+offset_left = 912.1076
+offset_top = 516.3327
+offset_right = 1025.1077
+offset_bottom = 629.3327
 icon = ExtResource("7_d6n07")
 metadata/_edit_use_anchors_ = true
 

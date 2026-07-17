@@ -317,10 +317,10 @@ scale = Vector2(0.521183, 0.473479)
 texture = ExtResource("3_n826n")
 
 [node name="Label" parent="." unique_id=863685837 instance=ExtResource("4_cj10y")]
-offset_left = -4.011032
-offset_top = 601.8265
-offset_right = 353.98895
-offset_bottom = 666.8265
+offset_left = 7.0212765
+offset_top = 616.43835
+offset_right = 365.02127
+offset_bottom = 681.43835
 theme_override_fonts/font = SubResource("FontFile_x6jid")
 text = "Login first to play"
 

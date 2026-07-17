@@ -37,60 +37,18 @@ func _process(delta: float) -> void:
 	#pass
 	
 func chooseMonsters() -> Array[PackedScene]:
-	var monster_to_spawn_list: Array[PackedScene]
+	var result: Array[PackedScene] = []
+	var amount_each := monsters_to_spawn / monster_pool.size()
 
-	#region Criar um dicionário com as chances e os index de cada monstro
-	var indexed = []
+	for i in range(monster_pool.size()):
+		for j in range(amount_each):
+			result.append(monster_pool[i])
+	while result.size() < monsters_to_spawn:
+		result.append(monster_pool.pick_random())
 
-	for i in range(monster_pool_chance.size()):
-		indexed.append({
-			"value": monster_pool_chance[i],
-			"original_index": i
-		})
-	#endregion
-
-	var last_monster := -1
-
-	#region Spawna os monstros quando precisar, no início do jogo spawna 20
-	while monsters_to_spawn > 0:
-
-		var chance_index := -1
-
-		if last_monster != -1:
-			chance_index = last_monster
-			last_monster = -1
-
-		else:
-			#region Cuida da roleta
-			var total_chance = 0
-
-			for i in range(monster_pool.size()):
-				total_chance += monster_pool_chance[i]
-
-			var rng = randf() * total_chance
-
-			var acumulated_chance = 0
-
-			for monster in indexed:
-				acumulated_chance += monster.value
-
-				if rng < acumulated_chance:
-					chance_index = monster.original_index
-
-					if randf() < chance_to_dupe:
-						last_monster = chance_index
-
-					break
-			#endregion
-
-		var current_monster = monster_pool[chance_index]
-
-		monster_to_spawn_list.append(current_monster)
-
-		monsters_to_spawn -= 1
-	#endregion
-
-	return monster_to_spawn_list
+	result.shuffle()
+	monsters_to_spawn = 0
+	return result
 
 func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 	for monster in monster_to_spawn_list:
@@ -104,6 +62,7 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 		$"../==MonsterHolder==".add_child(new_monster)
 
 	checkTypeNumber()
+	get_parent().monster_data_ready.emit()
 
 	spawned = true
 	ready_to_spawn = false
@@ -181,12 +140,14 @@ func spawn_specific_monster(type: MonsterController.monsterType) -> void:
 
 	checkTypeNumber()
 	
-func ensure_monsters_for_next_order():
+func ensure_monsters_for_order(order: Array) -> void:
 	checkTypeNumber()
-	var lowest = 99999
-	for value in monster_type_list.values():
-		lowest = min(lowest, value)
+	var needed := {}
+	for type in order:
+		needed[type] = needed.get(type, 0) + 1
 
-	for type in monster_type_list.keys():
-		if monster_type_list[type] == lowest:
+	for type in needed.keys():
+		var available = monster_type_list.get(type, 0)
+		while available < needed[type]:
 			spawn_specific_monster(type)
+			available += 1

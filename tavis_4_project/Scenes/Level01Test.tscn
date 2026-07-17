@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ds4tvie5tgdp7" path="res://Scenes/draggingManager.gd" id="1_klblu"]
 [ext_resource type="AudioStream" uid="uid://dr0md2h5d27nm" path="res://Musics/BGM.mp3" id="2_aiu3w"]
 [ext_resource type="AudioStream" uid="uid://dd4squjgu7nmi" path="res://Sounds/click.wav" id="3_aiu3w"]
+[ext_resource type="AudioStream" uid="uid://yrgo6h834afp" path="res://Musics/gameover.mp3" id="3_ycsbx"]
 [ext_resource type="AudioStream" uid="uid://bo4chnpy5c480" path="res://Sounds/correct.wav" id="4_iq8n3"]
 [ext_resource type="AudioStream" uid="uid://dukfu08fssksf" path="res://Sounds/error.wav" id="5_7jxfu"]
 [ext_resource type="PackedScene" uid="uid://bqsufogqoftxd" path="res://Objects/Prefabs/orderManager.tscn" id="6_5ad2a"]
@@ -35,6 +36,10 @@ metadata/_edit_vertical_guides_ = [90.0]
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=752756537]
 stream = ExtResource("2_aiu3w")
 autoplay = true
+
+[node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=203717016]
+stream = ExtResource("3_ycsbx")
+volume_db = 5.0
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=2019451974]
 stream = ExtResource("3_aiu3w")
