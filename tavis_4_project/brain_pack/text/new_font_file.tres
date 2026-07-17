@@ -1,0 +1,52 @@
+[gd_resource type="FontFile" format=3 uid="uid://3xxns7micyn8"]
+
+[ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://brain_pack/text/Chewy-Regular.ttf" id="1_k5y5g"]
+
+[resource]
+resource_local_to_scene = true
+fallbacks = Array[Font]([ExtResource("1_k5y5g")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/28/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/28/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)

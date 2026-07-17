@@ -6,6 +6,8 @@ signal monster_data_ready
 @onready var click_sound: AudioStreamPlayer = $ClickSound
 @onready var complete_sound: AudioStreamPlayer = $CompleteSound
 @onready var wrong_sound: AudioStreamPlayer = $WrongSound
+@onready var level_label: Label = $Level
+@onready var score_label: Label = $Score
 
 #@onready var delivery_area: DeliveryZone = $DeliveryArea
 #@onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
@@ -17,6 +19,8 @@ signal monster_data_ready
 @export var time_regen: float = 10
 
 var current_phase := 1
+var level: int = 1
+var score: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +34,9 @@ func _ready() -> void:
 	order_manager.connect("completed_order", func():
 		complete_sound.play()
 		current_phase += 1
+		level += 1
+		score += 10
+		updateUI()
 		updateDifficulty()
 		await get_tree().process_frame
 		spawner_component.checkTypeNumber()
@@ -46,7 +53,12 @@ func _ready() -> void:
 	#order_manager.connect("completed_order", spawner_component.resetSpawner)
 	#delivery_area.just_slotted.connect(delivery_area.getMonsterAttributes)
 	#delivery_area.just_unslotted.connect(delivery_area.removeMonsterAttributes)
+	updateUI()
 	pass
+	
+func updateUI():
+	level_label.text = "Level: " + str(level)
+	score_label.text = "Score: " + str(score)
 	
 func updateDifficulty() -> void:
 	if current_phase < 5:
