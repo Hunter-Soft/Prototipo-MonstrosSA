@@ -30,6 +30,7 @@ font = ExtResource("15_s1wt5")
 font_size = 48
 
 [node name="Level01Test" type="Node2D" unique_id=872439788]
+position = Vector2(0, -29)
 script = ExtResource("1_anx0o")
 metadata/_edit_vertical_guides_ = [90.0]
 
@@ -54,30 +55,30 @@ stream = ExtResource("5_7jxfu")
 offset_right = 1278.0
 offset_bottom = 728.0
 color = Color(0.3254902, 0.61960787, 0.7882353, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="==DraggingManager==" type="Node2D" parent="." unique_id=491175797]
 script = ExtResource("1_klblu")
 
 [node name="SpawnerComponent" parent="." unique_id=1821356837 instance=ExtResource("1_3wvi2")]
 position = Vector2(27, 28)
-chance_to_dupe = 0.5
+chance_to_dupe = 0.8
 max_monsters = 15
 monsters_to_spawn = 15
 monster_pool_chance = Array[int]([60, 15, 30])
 
 [node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
-position = Vector2(640, 624)
+position = Vector2(-640, -670)
 scale = Vector2(2, 2)
 monster_sprites = Array[SpriteFrames]([ExtResource("9_aiu3w"), ExtResource("10_iq8n3"), ExtResource("11_7jxfu")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=287268522]
 script = ExtResource("9_gmkrs")
-damage_per_tick = 3
 
 [node name="TimeBar" type="ProgressBar" parent="CanvasLayer" unique_id=1381270529]
-offset_top = 600.0
+offset_top = 571.0
 offset_right = 1280.0
-offset_bottom = 627.0
+offset_bottom = 598.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_d0xu6")
 value = 100.0
 show_percentage = false
@@ -103,9 +104,10 @@ position = Vector2(1138, 519)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=615218256]
 offset_top = 600.0
-offset_right = 1280.0
-offset_bottom = 741.0
+offset_right = 1288.885
+offset_bottom = 756.52
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Level" type="Label" parent="." unique_id=1824954970]
 offset_left = 14.0
@@ -115,6 +117,7 @@ offset_bottom = 705.0
 theme_override_fonts/font = ExtResource("15_s1wt5")
 theme_override_font_sizes/font_size = 40
 text = "Level: 1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="Label" parent="." unique_id=1940151498]
 offset_left = 1095.0
@@ -124,10 +127,13 @@ offset_bottom = 706.0
 theme_override_fonts/font = ExtResource("15_s1wt5")
 theme_override_font_sizes/font_size = 40
 text = "Score: 0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Game_Over" type="CanvasLayer" parent="." unique_id=469819052]
 layer = 2
 visible = false
+offset = Vector2(0, -23.88)
+transform = Transform2D(1, 0, 0, 1, 0, -23.88)
 
 [node name="Button" type="Button" parent="Game_Over" unique_id=1698365833]
 anchors_preset = 15
@@ -165,6 +171,7 @@ offset_left = 544.0
 offset_top = 396.963
 offset_right = 732.0
 offset_bottom = 439.963
+flat = true
 
 [node name="play button" type="Sprite2D" parent="Game_Over/Button2" unique_id=692436471]
 position = Vector2(92.90112, 20.676514)

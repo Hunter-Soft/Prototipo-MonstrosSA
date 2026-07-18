@@ -1,6 +1,55 @@
 [gd_scene format=3 uid="uid://ctwkbkrod4ow4"]
 
-[node name="Sprite2D" type="AnimatedSprite2D" unique_id=1554634993]
-top_level = true
-z_index = 99
-scale = Vector2(0.25, 0.25)
+[ext_resource type="SpriteFrames" uid="uid://c0mlff8gqvqp1" path="res://Objects/Resources/Visuals/monster1.tres" id="1_yl5st"]
+
+[sub_resource type="Animation" id="Animation_odkxg"]
+resource_name = "Order_flags"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.2253129, 0.55478436),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(4.0000005, 0.25, 1),
+"update": 0,
+"values": [-0.5061454830783556, 0.3490658503988659, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yl5st"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ttr2w"]
+_data = {
+&"Enter_Scene": SubResource("Animation_odkxg"),
+&"RESET": SubResource("Animation_yl5st")
+}
+
+[node name="Flag" type="Node2D" unique_id=1165882046]
+z_index = 1
+scale = Vector2(0.75, 0.75)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2137421086]
+position = Vector2(500, 0)
+rotation = -0.5061455
+scale = Vector2(0.125, 0.125)
+sprite_frames = ExtResource("1_yl5st")
+animation = &"Idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=23701552]
+root_node = NodePath("../AnimatedSprite2D")
+libraries/ = SubResource("AnimationLibrary_ttr2w")
+autoplay = &"Enter_Scene"

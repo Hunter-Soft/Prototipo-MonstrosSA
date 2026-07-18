@@ -10,7 +10,7 @@ signal right_monster_order
 
 @export var order_size := 2
 @export var order_list: Array = []
-@export var offset := Vector2(150, 0)
+@export var offset := Vector2(100, 0)
 
 @onready var order_flag_scene: PackedScene = load("res://Objects/Prefabs/orderFlag.tscn")
 
@@ -21,9 +21,10 @@ func _ready() -> void:
 	game_manager.monster_data_ready.connect(randomizeOrder)
 	connect("right_monster_order", func():
 		if transparent_clicked_monsters:
-			for child: AnimatedSprite2D in get_children():
-				if child.modulate.a == 1:
-					child.modulate.a = 0.15
+			for child: Node2D in get_children():
+				var child_sprite: AnimatedSprite2D = child.get_child(0)
+				if child_sprite.modulate.a == 1:
+					child_sprite.modulate.a = 0.15
 					return
 		#pass
 	)
@@ -59,7 +60,8 @@ func createOrderFlags() -> void:
 	print("GERANDO BANDEIRAS")
 
 	for i in range(order_list.size()):
-		var new_flag: AnimatedSprite2D = order_flag_scene.instantiate()
+		var flag_scene: Node2D = order_flag_scene.instantiate()
+		var new_flag: AnimatedSprite2D = flag_scene.get_child(0)
 
 		new_flag.sprite_frames = monster_sprites[order_list[i]]
 		
@@ -74,9 +76,12 @@ func createOrderFlags() -> void:
 				new_flag.modulate = Color.BLUE
 
 		new_flag.scale = Vector2(0.3, 0.3)
-		add_child(new_flag)
+		add_child(flag_scene)
 
 	sort_positions()
+	for flag in get_children():
+		var anim_player: AnimationPlayer = flag.get_child(1)
+		anim_player.play("Enter_Scene")
 
 
 func sort_positions() -> void:
