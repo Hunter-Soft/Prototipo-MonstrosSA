@@ -14,6 +14,7 @@ signal right_monster_order
 
 @onready var order_flag_scene: PackedScene = load("res://Objects/Prefabs/orderFlag.tscn")
 @onready var correct_particles: PackedScene = load("res://Objects/Components/ParticleComponent.tscn")
+@onready var correct_monster_SFX_scene: PackedScene = load("res://Objects/Components/SFXComponent.tscn")
 
 @onready var spawner_component: SpawnerComponent = $"../SpawnerComponent"
 @onready var game_manager: GameManager = get_parent()
@@ -118,6 +119,10 @@ func selectMonster(monster: MonsterController) -> void:
 	var new_particles: CPUParticles2D = correct_particles.instantiate()
 	new_particles.global_position = monster.global_position
 	get_tree().root.add_child(new_particles)
+
+	var new_sfx: AudioStreamPlayer2D = correct_monster_SFX_scene.instantiate()
+	new_sfx.global_position = monster.global_position
+	get_tree().root.add_child(new_sfx)
 
 	order_list.pop_front()
 

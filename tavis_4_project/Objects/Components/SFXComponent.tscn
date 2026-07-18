@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cjgcliowgrk0u"]
+
+[ext_resource type="Script" uid="uid://6t0bgajvr21r" path="res://Objects/Components/SFXComponent.gd" id="1_edb0g"]
+[ext_resource type="AudioStream" uid="uid://ct3d7g2asn444" path="res://Sounds/Correct_enemy.mp3" id="1_n750o"]
+
+[node name="SFXComponent" type="AudioStreamPlayer2D" unique_id=455118794]
+stream = ExtResource("1_n750o")
+autoplay = true
+script = ExtResource("1_edb0g")

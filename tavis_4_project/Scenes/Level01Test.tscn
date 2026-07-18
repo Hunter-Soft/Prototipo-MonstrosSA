@@ -36,6 +36,7 @@ metadata/_edit_vertical_guides_ = [90.0]
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=752756537]
 stream = ExtResource("2_aiu3w")
+volume_db = -7.0
 autoplay = true
 
 [node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=203717016]
