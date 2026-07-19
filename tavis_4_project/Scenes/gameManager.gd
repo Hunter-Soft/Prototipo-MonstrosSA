@@ -16,6 +16,9 @@ signal monster_data_ready
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent
 @export var monster_type_list: Dictionary
 
+@export_subgroup("Timer")
+@export var max_time: float = 30
+@export var damage_per_second: float = 1
 @export var time_regen: float = 10
 
 var current_phase := 1
@@ -65,12 +68,25 @@ func updateDifficulty() -> void:
 		order_manager.order_size = 2
 
 	elif current_phase < 10:
-		order_manager.order_size = 3
+		var rng = randf()
+		if rng < 0.6:
+			order_manager.order_size = 3
+		else:
+			order_manager.order_size = 2
 
 	else:
-		order_manager.order_size = 4
+		var rng = randf()
+		if rng < 1 && rng > 0.8:
+			order_manager.order_size = 4
+		elif rng < 0.8 && rng > 0.5:
+			order_manager.order_size = 3
+		else:
+			order_manager.order_size = 2
 
 func gameOver() -> void:
 	ServerData.in_game = false
+	Global.score = score
+	ServerData.data.totalScore = score
+	
 	get_tree().change_scene_to_file("res://brain_pack/send_data/data_manager.tscn")
 #func getMonsterTypeList() -> void:
