@@ -15,6 +15,9 @@
 [ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/Visuals/monster3.tres" id="11_7jxfu"]
 [ext_resource type="Texture2D" uid="uid://bum8b6g3mhj0h" path="res://brain_pack/images/pre_assets/play button.svg" id="13_ycsbx"]
 [ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://brain_pack/text/Chewy-Regular.ttf" id="15_s1wt5"]
+[ext_resource type="Texture2D" uid="uid://d24f7r2lf08f3" path="res://Sprites/UI/4.png" id="16_5xslw"]
+[ext_resource type="Texture2D" uid="uid://cjjask0eo0v6b" path="res://Sprites/UI/1.png" id="16_s1wt5"]
+[ext_resource type="Texture2D" uid="uid://6k1oy86rer1k" path="res://Sprites/UI/2.png" id="17_5xslw"]
 
 [sub_resource type="Animation" id="Animation_qavo7"]
 length = 0.001
@@ -54,6 +57,16 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0xu6"]
 bg_color = Color(0.77716494, 0.68082696, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.12627444, 0.11215026, 0.008818432, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d0xu6"]
 
@@ -68,7 +81,6 @@ font_size = 48
 [node name="Level01Test" type="Node2D" unique_id=872439788]
 position = Vector2(0, -29)
 script = ExtResource("1_anx0o")
-metadata/_edit_vertical_guides_ = [90.0]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=146112897]
 libraries/ = SubResource("AnimationLibrary_qavo7")
@@ -120,9 +132,13 @@ monster_sprites = Array[SpriteFrames]([ExtResource("9_aiu3w"), ExtResource("10_i
 script = ExtResource("9_gmkrs")
 
 [node name="TimeBar" type="ProgressBar" parent="CanvasLayer" unique_id=1381270529]
-offset_top = 571.0
-offset_right = 1280.0
-offset_bottom = 598.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 545.0
+offset_right = -71.0
+offset_bottom = -152.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_d0xu6")
 value = 100.0
 show_percentage = false
@@ -138,7 +154,7 @@ physics_material_override = SubResource("PhysicsMaterial_d0xu6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1140197397]
 scale = Vector2(0.99999994, 0.99999994)
-polygon = PackedVector2Array(92, 68.86978, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 132, 61.72271, 112, 117.46987, 1348, 126.04636, 1341, 855.04767, 112, 862.19476, 119, 134.62285, 135, 61.72271)
+polygon = PackedVector2Array(92, 104.60514, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 149, 88.881584, 143, 144.62875, 1323, 143.19934, 1323, 869.34186, 149, 853.6183, 143, 94.59924)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=356942909]
 position = Vector2(182, 152)
@@ -243,5 +259,38 @@ offset_bottom = 66.03699
 text = "Sair"
 label_settings = SubResource("LabelSettings_7jxfu")
 horizontal_alignment = 1
+
+[node name="UI" type="Node2D" parent="." unique_id=822755116]
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="UI" unique_id=1004295650]
+offset_left = -12.0
+offset_top = 565.0
+offset_right = 1297.0
+offset_bottom = 763.0
+texture = ExtResource("16_5xslw")
+region_rect = Rect2(5, 5, 463, 323)
+patch_margin_left = 43
+patch_margin_top = 43
+patch_margin_right = 42
+patch_margin_bottom = 48
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI" unique_id=75775021]
+offset_top = 15.0
+offset_right = 1281.0
+offset_bottom = 603.0
+texture = ExtResource("16_s1wt5")
+region_rect = Rect2(-0.381958, 0, 1446.382, 543)
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI" unique_id=1304445297]
+offset_left = 41.0
+offset_top = 553.0
+offset_right = 1235.0
+offset_bottom = 619.0
+texture = ExtResource("17_5xslw")
+region_rect = Rect2(0, 0, 352, 122)
+patch_margin_left = 37
+patch_margin_top = 32
+patch_margin_right = 33
+patch_margin_bottom = 34
 
 [connection signal="pressed" from="Game_Over/Button2" to="." method="gameOver"]
