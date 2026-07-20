@@ -29,6 +29,7 @@ func _ready() -> void:
 	resetSpawner()
 
 func _process(delta: float) -> void:
+	
 	#if Input.is_action_just_pressed("shoot"): ready_to_spawn = true
 	if !spawned && ready_to_spawn:
 		var x = chooseMonsters()
@@ -53,6 +54,11 @@ func _process(delta: float) -> void:
 func chooseMonsters() -> Array[PackedScene]:
 	var result: Array[PackedScene] = []
 	for i in range(monsters_to_spawn):
+		#if monster_list.size() >= max_monsters:
+			#print("ROLA!!!!!!!!!!!!!!!!")
+			#print(monster_list.size())
+			#return result
+		
 		var total := 0
 		for chance in monster_pool_chance:
 			total += chance
@@ -60,15 +66,20 @@ func chooseMonsters() -> Array[PackedScene]:
 		var accumulated := 0
 		for j in range(monster_pool.size()):
 			accumulated += monster_pool_chance[j]
-
+		
 			if rng <= accumulated:
 				result.append(monster_pool[j])
 				break
 	monsters_to_spawn = 0
+	#print("ROLA!!!!!!!!!!!!!!!!")
+	#print(monster_list.size())
 	return result
 
 func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 	for monster in monster_to_spawn_list:
+		if current_monsters >= max_monsters:
+			break
+	
 		var new_monster: Node2D = monster.instantiate()
 
 		var new_position: Vector2= get_spawn_position(50, $"../Marker2D".global_position, $"../Marker2D2".global_position)
@@ -128,6 +139,11 @@ func rerollSpawnAmount(monsters_used: int) -> void:
 
 func checkTypeNumber() -> void:
 	monster_type_list.clear()
+	current_monsters = 0
+
+	for monster in monster_list:
+		if monster != null:
+			current_monsters += 1
 
 	for monster: MonsterController in monster_list:
 		if monster == null:

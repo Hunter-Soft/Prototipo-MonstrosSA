@@ -109,7 +109,7 @@ position = Vector2(27, 28)
 chance_to_dupe = 0.1
 max_monsters = 15
 monsters_to_spawn = 15
-monster_pool_chance = Array[int]([10, 10, 10])
+monster_pool_chance = Array[int]([1, 1, 3])
 
 [node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
 position = Vector2(-640, -670)
