@@ -54,11 +54,6 @@ func _process(delta: float) -> void:
 func chooseMonsters() -> Array[PackedScene]:
 	var result: Array[PackedScene] = []
 	for i in range(monsters_to_spawn):
-		#if monster_list.size() >= max_monsters:
-			#print("ROLA!!!!!!!!!!!!!!!!")
-			#print(monster_list.size())
-			#return result
-		
 		var total := 0
 		for chance in monster_pool_chance:
 			total += chance
@@ -71,8 +66,6 @@ func chooseMonsters() -> Array[PackedScene]:
 				result.append(monster_pool[j])
 				break
 	monsters_to_spawn = 0
-	#print("ROLA!!!!!!!!!!!!!!!!")
-	#print(monster_list.size())
 	return result
 
 func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
