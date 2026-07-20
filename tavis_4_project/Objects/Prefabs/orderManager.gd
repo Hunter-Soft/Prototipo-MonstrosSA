@@ -13,7 +13,7 @@ signal right_monster_order
 @export var offset := Vector2(100, 0)
 
 @onready var order_flag_scene: PackedScene = load("res://Objects/Prefabs/orderFlag.tscn")
-@onready var correct_particles: PackedScene = load("res://Objects/Components/ParticleComponent.tscn")
+@onready var correct_particles: PackedScene = load("res://Objects/Components/HitParticles.tscn")
 @onready var correct_monster_SFX_scene: PackedScene = load("res://Objects/Components/SFXComponent.tscn")
 
 @onready var spawner_component: SpawnerComponent = $"../SpawnerComponent"

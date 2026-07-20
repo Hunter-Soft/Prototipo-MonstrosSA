@@ -3,6 +3,78 @@
 [ext_resource type="PackedScene" uid="uid://dqx2f22av42p5" path="res://Objects/Prefabs/Monster1.tscn" id="1_tf8uf"]
 [ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="2_87a8t"]
 
+[sub_resource type="Animation" id="Animation_87a8t"]
+resource_name = "Blink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(3.4822028, 1, 1),
+"update": 0,
+"values": [1.0, 0.01, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 0.37892914, 0.37892914),
+"update": 0,
+"values": [1.0, 0.1, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_xtip7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.08617324]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yo7ys"]
+_data = {
+&"Blink": SubResource("Animation_87a8t"),
+&"RESET": SubResource("Animation_xtip7")
+}
+
 [node name="Monster" unique_id=1365438596 instance=ExtResource("1_tf8uf")]
 monster_type = 1
 action_cooldown = 2.5
@@ -11,3 +83,7 @@ distance_to_travel = 100.0
 [node name="AnimatedSprite2D" parent="feet_pivot" parent_id_path=PackedInt32Array(1936517217) index="0" unique_id=448399411]
 position = Vector2(4.7683716e-07, -11)
 sprite_frames = ExtResource("2_87a8t")
+
+[node name="AnimationPlayer" parent="." index="6" unique_id=700333192]
+libraries/ = SubResource("AnimationLibrary_yo7ys")
+speed_scale = 2.0

@@ -35,8 +35,22 @@ func _process(delta: float) -> void:
 		#print(x)
 		spawnEnemies(x)
 	#pass
-	
-func chooseMonsters() -> Array[PackedScene]:
+
+#func chooseMonsters() -> Array[PackedScene]:
+	#var result: Array[PackedScene] = []
+	##var amount_each := monsters_to_spawn / monster_pool.size()
+#
+	##for i in range(monster_pool.size()):
+		##for j in range(amount_each):
+			##result.append(monster_pool[i])
+	#while result.size() < monsters_to_spawn:
+		#result.append(monster_pool.pick_random())
+#
+	#result.shuffle()
+	#monsters_to_spawn = 0
+	#return result
+
+func chooseMonsters() -> Array[PackedScene]: #VERSÃO SOFIA
 	var result: Array[PackedScene] = []
 	var amount_each := monsters_to_spawn / monster_pool.size()
 

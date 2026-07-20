@@ -50,6 +50,7 @@ func _ready() -> void:
 	
 	order_manager.connect("mistaken_monster_order", func():
 		wrong_sound.play()
+		$AnimationPlayer.play("Shake")
 		life_timer.loseTime(5)
 	)
 	#order_manager.connect("completed_order", delivery_area.resetMonsterSlots)
@@ -65,9 +66,11 @@ func updateUI():
 	
 func updateDifficulty() -> void:
 	if current_phase < 5:
+		damage_per_second = 1
 		order_manager.order_size = 2
 
 	elif current_phase < 10:
+		damage_per_second = 1.5
 		var rng = randf()
 		if rng < 0.6:
 			order_manager.order_size = 3
@@ -75,6 +78,7 @@ func updateDifficulty() -> void:
 			order_manager.order_size = 2
 
 	else:
+		damage_per_second = 2
 		var rng = randf()
 		if rng < 1 && rng > 0.8:
 			order_manager.order_size = 4

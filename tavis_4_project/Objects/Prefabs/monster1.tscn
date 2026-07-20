@@ -100,3 +100,5 @@ scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_koxkq")
 color = Color(0, 0.6951624, 0.105703525, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=700333192]

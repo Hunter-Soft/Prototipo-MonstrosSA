@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b8lmswgy66v2a" path="res://Objects/Components/particleComponent.gd" id="1_26c5k"]
 
 [sub_resource type="Curve" id="Curve_koxkq"]
-_data = [Vector2(0, 0.7354086), 0.0, 0.0, 0, 0, Vector2(0.4074074, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0.2996109), 0.0, 0.0, 0, 0, Vector2(0.44973546, 0.08171213), -2.45136, 0.0, 0, 0, Vector2(0.77248675, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="CPUParticles2D" type="CPUParticles2D" unique_id=1921351149]
 emitting = false
