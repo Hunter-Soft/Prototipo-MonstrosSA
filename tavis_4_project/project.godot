@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="TAVIS-4_project"
+config/version="0.159"
 run/main_scene="uid://co5ob810hv88b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
