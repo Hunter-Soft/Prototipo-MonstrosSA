@@ -50,17 +50,20 @@ func _process(delta: float) -> void:
 	#monsters_to_spawn = 0
 	#return result
 
-func chooseMonsters() -> Array[PackedScene]: #VERSÃO SOFIA
+func chooseMonsters() -> Array[PackedScene]:
 	var result: Array[PackedScene] = []
-	var amount_each := monsters_to_spawn / monster_pool.size()
+	for i in range(monsters_to_spawn):
+		var total := 0
+		for chance in monster_pool_chance:
+			total += chance
+		var rng := randi_range(1, total)
+		var accumulated := 0
+		for j in range(monster_pool.size()):
+			accumulated += monster_pool_chance[j]
 
-	for i in range(monster_pool.size()):
-		for j in range(amount_each):
-			result.append(monster_pool[i])
-	while result.size() < monsters_to_spawn:
-		result.append(monster_pool.pick_random())
-
-	result.shuffle()
+			if rng <= accumulated:
+				result.append(monster_pool[j])
+				break
 	monsters_to_spawn = 0
 	return result
 
