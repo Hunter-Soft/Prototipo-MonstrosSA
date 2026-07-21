@@ -6,6 +6,7 @@ signal delivered
 @export_subgroup("Animation")
 @onready var pivot: Node2D = $feet_pivot
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var tp_particle: PackedScene = load("res://Objects/Prefabs/TP_start.tscn")
 
 @export var squish_amount := 0.1
 @export var rotate_amount := 8.0 # degrees
@@ -64,10 +65,18 @@ func _ready() -> void:
 			walkState(action_cooldown, distance_to_travel, speed) #Andar Nomarl
 		elif monster_type == monsterType.Example_02:
 			anim_player.play("Blink")
+			
+			var new_particle: CPUParticles2D = tp_particle.instantiate()
+			new_particle.global_position = global_position
+			get_tree().root.add_child(new_particle)
+			
+			
 			await get_tree().create_timer(0.3).timeout
 			walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
+			await get_tree().create_timer(0.1).timeout
+			$CPUParticles2D.emitting = true
 			#NICOLLAS LEMBRAR
-			#$CPUParticles2D.emitting = true
+			
 		elif monster_type == monsterType.Example_03:
 			walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
 	)

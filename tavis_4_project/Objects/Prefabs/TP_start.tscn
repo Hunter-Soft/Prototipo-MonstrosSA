@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://br2ekxno7n38d"]
+
+[ext_resource type="Script" uid="uid://cqr5psefxqk6k" path="res://Objects/Prefabs/tp_start.gd" id="1_g2ura"]
+
+[sub_resource type="Curve" id="Curve_87a8t"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.015873015, -86.38135), 0.0, 0.0, 0, 0, Vector2(0.994709, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_koxkq"]
+_data = [Vector2(0, 0.7354086), 0.0, 0.0, 0, 0, Vector2(0.55026454, 0.50194556), 1.9184575, 1.9184575, 0, 0, Vector2(0.85714287, 0.20622575), -1.9610897, -1.9610897, 0, 0, Vector2(1, 0.019455314), -4.9027243, 0.0, 0, 0]
+point_count = 4
+
+[node name="TP_start" type="CPUParticles2D" unique_id=1205720530]
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+preprocess = 0.5
+speed_scale = 4.0
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 24.75
+initial_velocity_max = 80.0
+orbit_velocity_min = 0.25
+orbit_velocity_max = 0.25
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+radial_accel_curve = SubResource("Curve_87a8t")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_koxkq")
+color = Color(0, 0.69411767, 0.17254902, 1)
+script = ExtResource("1_g2ura")

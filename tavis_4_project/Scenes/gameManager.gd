@@ -68,7 +68,7 @@ func updateDifficulty() -> void:
 	if current_phase < 5:
 		damage_per_second = 1
 		order_manager.order_size = 2
-		spawner_component.monster_pool_chance[0] = 1
+		spawner_component.monster_pool_chance[1] = 1
 
 	elif current_phase < 10:
 		damage_per_second = 1.5
@@ -81,7 +81,7 @@ func updateDifficulty() -> void:
 			order_manager.order_size = 2
 
 	else:
-		spawner_component.monster_pool_chance[0] = 3
+		spawner_component.monster_pool_chance[0] = 2
 		spawner_component.monster_pool_chance[1] = 1
 		spawner_component.monster_pool_chance[2] = 2
 		
