@@ -14,6 +14,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="10_iq8n3"]
 [ext_resource type="SpriteFrames" uid="uid://8rgq3x0cwpxj" path="res://Objects/Resources/Visuals/monster3.tres" id="11_7jxfu"]
 [ext_resource type="Texture2D" uid="uid://bum8b6g3mhj0h" path="res://brain_pack/images/pre_assets/play button.svg" id="13_ycsbx"]
+[ext_resource type="Texture2D" uid="uid://det8amj1v1fke" path="res://Sprites/UI/over.png" id="15_kl5m4"]
 [ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://brain_pack/text/Chewy-Regular.ttf" id="15_s1wt5"]
 [ext_resource type="Texture2D" uid="uid://d24f7r2lf08f3" path="res://Sprites/UI/4.png" id="16_5xslw"]
 [ext_resource type="Texture2D" uid="uid://bj34c7b2qmyps" path="res://Sprites/UI/5.png" id="16_ckl3y"]
@@ -212,6 +213,7 @@ grow_vertical = 2
 flat = true
 
 [node name="ColorRect" type="ColorRect" parent="Game_Over" unique_id=887038427]
+visible = false
 offset_left = -26.0
 offset_top = -6.5345573
 offset_right = 1285.0
@@ -222,13 +224,18 @@ color = Color(0.2620886, 1.5341676e-07, 3.6098065e-08, 0.6627451)
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 370.0
-offset_top = 175.0
-offset_right = -411.0
-offset_bottom = -419.0
+offset_left = 396.0
+offset_top = 190.88
+offset_right = -385.0
+offset_bottom = -403.12
 text = "Game Over"
 label_settings = SubResource("LabelSettings_aiu3w")
 horizontal_alignment = 1
+
+[node name="Over" type="Sprite2D" parent="Game_Over" unique_id=1782519723]
+position = Vector2(636, 244.88)
+scale = Vector2(0.51171875, 0.51171875)
+texture = ExtResource("15_kl5m4")
 
 [node name="Button2" type="Button" parent="Game_Over" unique_id=1681784514]
 offset_left = 544.0
@@ -237,12 +244,25 @@ offset_right = 732.0
 offset_bottom = 439.963
 flat = true
 
+[node name="NinePatchRect5" type="NinePatchRect" parent="Game_Over/Button2" unique_id=1413220973]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 62.916992
+offset_right = 220.0
+offset_bottom = 164.03699
+texture = ExtResource("19_ckl3y")
+region_rect = Rect2(32, 72, 184, 132)
+patch_margin_left = 80
+patch_margin_right = 72
+
 [node name="play button" type="Sprite2D" parent="Game_Over/Button2" unique_id=692436471]
+visible = false
 position = Vector2(92.90112, 20.676514)
 scale = Vector2(0.521183, 0.473479)
 texture = ExtResource("13_ycsbx")
 
 [node name="ColorRect3" type="ColorRect" parent="Game_Over/Button2" unique_id=1458694003]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_right = 178.0
@@ -255,10 +275,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -106.0
-offset_top = -9.963013
-offset_right = 94.0
-offset_bottom = 66.03699
+offset_left = -91.0
+offset_top = 71.03699
+offset_right = 109.0
+offset_bottom = 147.03699
 text = "Sair"
 label_settings = SubResource("LabelSettings_7jxfu")
 horizontal_alignment = 1
@@ -308,15 +328,5 @@ patch_margin_left = 37
 patch_margin_top = 32
 patch_margin_right = 33
 patch_margin_bottom = 34
-
-[node name="NinePatchRect5" type="NinePatchRect" parent="UI" unique_id=1413220973]
-offset_left = 87.0
-offset_top = 265.0
-offset_right = 696.0
-offset_bottom = 445.0
-texture = ExtResource("19_ckl3y")
-region_rect = Rect2(32, 72, 184, 132)
-patch_margin_left = 80
-patch_margin_right = 72
 
 [connection signal="pressed" from="Game_Over/Button2" to="." method="gameOver"]
