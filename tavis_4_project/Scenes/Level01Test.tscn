@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bj34c7b2qmyps" path="res://Sprites/UI/5.png" id="16_ckl3y"]
 [ext_resource type="Texture2D" uid="uid://cjjask0eo0v6b" path="res://Sprites/UI/1.png" id="16_s1wt5"]
 [ext_resource type="Texture2D" uid="uid://6k1oy86rer1k" path="res://Sprites/UI/2.png" id="17_5xslw"]
+[ext_resource type="Texture2D" uid="uid://d1thollonomv7" path="res://Sprites/UI/Botão.png" id="19_ckl3y"]
 
 [sub_resource type="Animation" id="Animation_qavo7"]
 length = 0.001
@@ -155,13 +156,13 @@ physics_material_override = SubResource("PhysicsMaterial_d0xu6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1140197397]
 scale = Vector2(0.99999994, 0.99999994)
-polygon = PackedVector2Array(92, 104.60514, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 149, 88.881584, 143, 144.62875, 1323, 143.19934, 1323, 869.34186, 149, 853.6183, 143, 94.59924)
+polygon = PackedVector2Array(150, 147.48758, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 357, 61.722713, 376, 143.19934, 1107, 146.05817, 1323, 869.34186, 133, 855.04767, 369, 150.3464)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=356942909]
-position = Vector2(182, 152)
+position = Vector2(315, 115)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1497452437]
-position = Vector2(1138, 519)
+position = Vector2(1078, 489)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=615218256]
 offset_top = 600.0
@@ -307,5 +308,15 @@ patch_margin_left = 37
 patch_margin_top = 32
 patch_margin_right = 33
 patch_margin_bottom = 34
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="UI" unique_id=1413220973]
+offset_left = 87.0
+offset_top = 265.0
+offset_right = 696.0
+offset_bottom = 445.0
+texture = ExtResource("19_ckl3y")
+region_rect = Rect2(32, 72, 184, 132)
+patch_margin_left = 80
+patch_margin_right = 72
 
 [connection signal="pressed" from="Game_Over/Button2" to="." method="gameOver"]
