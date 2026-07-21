@@ -37,8 +37,8 @@ shader = SubResource("Shader_vv17c")
 shader_parameter/tint_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Curve" id="Curve_koxkq"]
-_data = [Vector2(0, 0.7354086), 0.0, 0.0, 0, 0, Vector2(0.4074074, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0.7354086), 0.0, 0.0, 0, 0, Vector2(0.6984127, 0.6575876), 1.9184575, 1.9184575, 0, 0, Vector2(0.9417989, 0), -2.3696513, 0.0, 0, 0]
+point_count = 3
 
 [node name="Monster1" type="CharacterBody2D" unique_id=1365438596 groups=["Monster"]]
 material = SubResource("ShaderMaterial_f5nsw")

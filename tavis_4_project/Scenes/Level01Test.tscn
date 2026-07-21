@@ -121,7 +121,7 @@ position = Vector2(27, 28)
 chance_to_dupe = 0.1
 max_monsters = 15
 monsters_to_spawn = 15
-monster_pool_chance = Array[int]([1, 0, 0])
+monster_pool_chance = Array[int]([0, 1, 0])
 
 [node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
 position = Vector2(-640, -670)
@@ -181,10 +181,11 @@ text = "Level: 1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="Label" parent="." unique_id=1940151498]
+z_index = 1
 offset_left = 1095.0
-offset_top = 662.0
+offset_top = 649.0
 offset_right = 1220.0
-offset_bottom = 715.0
+offset_bottom = 702.0
 theme_override_fonts/font = ExtResource("15_s1wt5")
 theme_override_font_sizes/font_size = 40
 text = "Score: 0"

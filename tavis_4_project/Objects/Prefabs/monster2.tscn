@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://dqx2f22av42p5" path="res://Objects/Prefabs/Monster1.tscn" id="1_tf8uf"]
 [ext_resource type="SpriteFrames" uid="uid://bwj55xx4fvkc6" path="res://Objects/Resources/Visuals/monster2.tres" id="2_87a8t"]
 
+[sub_resource type="Curve" id="Curve_87a8t"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.015873015, -86.38135), 0.0, 0.0, 0, 0, Vector2(0.994709, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Animation" id="Animation_87a8t"]
 resource_name = "Blink"
 tracks/0/type = "value"
@@ -83,6 +88,13 @@ distance_to_travel = 100.0
 [node name="AnimatedSprite2D" parent="feet_pivot" parent_id_path=PackedInt32Array(1936517217) index="0" unique_id=448399411]
 position = Vector2(4.7683716e-07, -11)
 sprite_frames = ExtResource("2_87a8t")
+
+[node name="CPUParticles2D" parent="." index="5" unique_id=994174788]
+amount = 100
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+radial_accel_curve = SubResource("Curve_87a8t")
+color = Color(5.7756904e-07, 0.6927873, 0.17401737, 1)
 
 [node name="AnimationPlayer" parent="." index="6" unique_id=700333192]
 root_node = NodePath("../feet_pivot")
