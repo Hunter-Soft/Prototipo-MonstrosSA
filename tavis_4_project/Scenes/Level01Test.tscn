@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bum8b6g3mhj0h" path="res://brain_pack/images/pre_assets/play button.svg" id="13_ycsbx"]
 [ext_resource type="FontFile" uid="uid://vpugeo7khh26" path="res://brain_pack/text/Chewy-Regular.ttf" id="15_s1wt5"]
 [ext_resource type="Texture2D" uid="uid://d24f7r2lf08f3" path="res://Sprites/UI/4.png" id="16_5xslw"]
+[ext_resource type="Texture2D" uid="uid://bj34c7b2qmyps" path="res://Sprites/UI/5.png" id="16_ckl3y"]
 [ext_resource type="Texture2D" uid="uid://cjjask0eo0v6b" path="res://Sprites/UI/1.png" id="16_s1wt5"]
 [ext_resource type="Texture2D" uid="uid://6k1oy86rer1k" path="res://Sprites/UI/2.png" id="17_5xslw"]
 
@@ -136,9 +137,9 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 68.0
-offset_top = 545.0
+offset_top = 539.0
 offset_right = -71.0
-offset_bottom = -152.0
+offset_bottom = -158.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_d0xu6")
 value = 100.0
 show_percentage = false
@@ -262,6 +263,18 @@ horizontal_alignment = 1
 
 [node name="UI" type="Node2D" parent="." unique_id=822755116]
 
+[node name="NinePatchRect4" type="NinePatchRect" parent="UI" unique_id=670171302]
+offset_left = -11.0
+offset_top = 6.0
+offset_right = 1298.0
+offset_bottom = 651.0
+texture = ExtResource("16_ckl3y")
+region_rect = Rect2(5, 5, 2034.5629, 820.8072)
+patch_margin_left = 43
+patch_margin_top = 43
+patch_margin_right = 42
+patch_margin_bottom = 48
+
 [node name="NinePatchRect3" type="NinePatchRect" parent="UI" unique_id=1004295650]
 offset_left = -12.0
 offset_top = 565.0
@@ -279,9 +292,10 @@ offset_top = 15.0
 offset_right = 1281.0
 offset_bottom = 603.0
 texture = ExtResource("16_s1wt5")
-region_rect = Rect2(-0.381958, 0, 1446.382, 543)
+region_rect = Rect2(-0.381958, 0, 2043.8158, 771.4444)
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="UI" unique_id=1304445297]
+visible = false
 offset_left = 41.0
 offset_top = 553.0
 offset_right = 1235.0
