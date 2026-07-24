@@ -33,7 +33,8 @@ var monster_color: Color = Color.WHITE
 enum monsterType{
 	Example_01,
 	Example_02,
-	Example_03
+	Example_03,
+	Urgent
 }
 
 # Called when the node enters the scene tree for the first time.

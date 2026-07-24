@@ -65,13 +65,22 @@ func updateUI():
 	score_label.text = "Score: " + str(score)
 	
 func updateDifficulty() -> void:
+	#Nicollas nova dificuldade
+	if current_phase % 3 == 0:
+		damage_per_second += 0.1
+	
+	if current_phase % 9:
+		spawner_component.max_monsters = clamp(spawner_component.max_monsters + 3, 20, 40)
+		
+	
+	#Velha dificuldade
 	if current_phase < 5:
-		damage_per_second = 1
+		#damage_per_second = 1
 		order_manager.order_size = 2
 		spawner_component.monster_pool_chance[0] = 1
 
 	elif current_phase < 10:
-		damage_per_second = 1.5
+		#damage_per_second = 1.5
 		spawner_component.monster_pool_chance[0] = 2
 		spawner_component.monster_pool_chance[2] = 1
 		var rng = randf()
@@ -80,12 +89,12 @@ func updateDifficulty() -> void:
 		else:
 			order_manager.order_size = 2
 
-	else:
+	elif current_phase < 20:
 		spawner_component.monster_pool_chance[0] = 2
 		spawner_component.monster_pool_chance[1] = 1
 		spawner_component.monster_pool_chance[2] = 2
 		
-		damage_per_second = 2
+		#damage_per_second = 2
 		var rng = randf()
 		if rng < 1 && rng > 0.8:
 			order_manager.order_size = 4
@@ -93,6 +102,24 @@ func updateDifficulty() -> void:
 			order_manager.order_size = 3
 		else:
 			order_manager.order_size = 2
+	else:
+		spawner_component.monster_pool_chance[0] = 2
+		spawner_component.monster_pool_chance[1] = 4
+		spawner_component.monster_pool_chance[2] = 3
+		
+		#damage_per_second = 2
+		var rng = randf()
+		if rng < 1 && rng > 0.7:
+			order_manager.order_size = 5
+		#elif rng < 0.6 && rng > 0.3:
+			#order_manager.order_size = 3
+		elif rng < 0.7 && rng > 0.4:
+			order_manager.order_size = 4
+		elif rng < 0.4 && rng > 0.2:
+			order_manager.order_size = 3
+		else:
+			order_manager.order_size = 2
+		
 
 func gameOver() -> void:
 	ServerData.in_game = false
