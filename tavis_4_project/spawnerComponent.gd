@@ -3,6 +3,8 @@ extends Node2D
 
 signal monster_type_list_changed(type_list: Dictionary)
 
+@onready var game_manager: GameManager = $".."
+
 @export var ready_to_spawn: bool = false
 var spawned: bool
 
@@ -10,6 +12,8 @@ var monster_list: Array[MonsterController]
 var monster_slot_list: Array[int]
 
 var counted: bool
+
+var monster_types_in_game: MonsterController.monsterType
 
 @export var monster_type_list: Dictionary = {
 }
@@ -34,7 +38,7 @@ func _process(delta: float) -> void:
 	if !spawned && ready_to_spawn:
 		var x = chooseMonsters()
 		#print(x)
-		spawnEnemies(x)
+		spawnEnemies(x, false)
 	#pass
 
 #func chooseMonsters() -> Array[PackedScene]:
@@ -68,9 +72,12 @@ func chooseMonsters() -> Array[PackedScene]:
 	monsters_to_spawn = 0
 	return result
 
-func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
+func spawnEnemies(monster_to_spawn_list: Array[PackedScene], special_case: bool) -> void:
+	
+		
+	
 	for monster in monster_to_spawn_list:
-		if current_monsters >= max_monsters:
+		if current_monsters >= max_monsters && !special_case:
 			break
 	
 		var new_monster: Node2D = monster.instantiate()
@@ -81,9 +88,14 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene]) -> void:
 
 		monster_list.append(new_monster)
 		$"../==MonsterHolder==".add_child(new_monster)
-
-	checkTypeNumber()
-	get_parent().monster_data_ready.emit()
+	
+	var urgent_rng = randf()
+	if urgent_rng <= 1:
+		game_manager.order_manager.emergency_order.emit()
+		
+	if monster_list[0].monster_type != monster_list[0].monsterType.Urgent:
+		checkTypeNumber()
+		get_parent().monster_data_ready.emit()
 
 	spawned = true
 	ready_to_spawn = false
@@ -139,7 +151,7 @@ func checkTypeNumber() -> void:
 			current_monsters += 1
 
 	for monster: MonsterController in monster_list:
-		if monster == null:
+		if monster == null || monster.monster_type == 3:
 			continue
 
 		monster_type_list[monster.monster_type] = monster_type_list.get(monster.monster_type, 0) + 1

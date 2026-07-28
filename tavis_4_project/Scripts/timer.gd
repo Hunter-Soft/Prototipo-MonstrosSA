@@ -20,8 +20,11 @@ var current_time := 30.0:
 func _process(delta):
 	if game_over_called:
 		return
-		
-	current_time -= delta * game_manager.damage_per_second
+	
+	if !game_manager.in_emergency:
+		current_time -= delta * game_manager.damage_per_second
+	elif game_manager.in_emergency:
+		current_time -= delta * (game_manager.damage_per_second + game_manager.emergency_modifier)
 
 	if current_time <= 0:
 		current_time = 0

@@ -8,17 +8,22 @@ signal monster_data_ready
 @onready var wrong_sound: AudioStreamPlayer = $WrongSound
 @onready var level_label: Label = $Level
 @onready var score_label: Label = $Score
+@onready var emergency_monster_scene: PackedScene = load("res://Objects/Prefabs/monster_urgent.tscn")
 
 #@onready var delivery_area: DeliveryZone = $DeliveryArea
 #@onready var delivery_zone: CollisionShape2D = $DeliveryArea/DeliveryZone
 @onready var life_timer: LifeTimer = $CanvasLayer
 @onready var order_manager: OrderManager = $OrderManager
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent
+
 @export var monster_type_list: Dictionary
+
+@export var in_emergency: bool = false
 
 @export_subgroup("Timer")
 @export var max_time: float = 30
 @export var damage_per_second: float = 1
+@export var emergency_modifier: float = 1
 @export var time_regen: float = 10
 
 var current_phase := 1
@@ -29,12 +34,27 @@ var score: int = 0
 func _ready() -> void:
 	ServerData.in_game = true
 	
+	order_manager.connect("completed_emergency_order", func():
+		$RedBeacon.play("Default")
+		in_emergency = false
+		pass
+	)
+	order_manager.connect("emergency_order", func():
+		if !in_emergency: 
+			$RedBeacon.play("Active")
+			in_emergency = true
+			spawner_component.spawnEnemies([emergency_monster_scene], true)
+			spawner_component.resetSpawner()
+	)
+	#order_manager.emergency_order.emit()
 	spawner_component.connect("monster_type_list_changed", func(type_list):
 		monster_type_list = type_list
 		print("Monstros disponíveis:", monster_type_list)
 	)
 	
 	order_manager.connect("completed_order", func():
+		#order_manager.emergency_order.emit()
+		
 		complete_sound.play()
 		current_phase += 1
 		level += 1

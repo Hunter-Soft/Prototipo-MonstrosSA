@@ -4,6 +4,8 @@ extends Node2D
 signal completed_order
 signal mistaken_monster_order
 signal right_monster_order
+signal emergency_order
+signal completed_emergency_order
 
 @export var monster_sprites: Array[SpriteFrames]
 @export var transparent_clicked_monsters: bool = true
@@ -69,7 +71,7 @@ func createOrderFlags() -> void:
 		
 		match order_list[i]:
 			MonsterController.monsterType.Example_01:
-				new_flag.modulate = Color.RED
+				new_flag.modulate = Color.YELLOW
 				
 			MonsterController.monsterType.Example_02:
 				new_flag.modulate = Color.GREEN
@@ -97,19 +99,37 @@ func sort_positions() -> void:
 		children[i].position = Vector2(start_x + i * offset.x, 680)
 
 func selectMonster(monster: MonsterController) -> void:
-	if order_list.is_empty():
+	if order_list.is_empty() && monster.monster_type != monster.monsterType.Urgent:
 		return
+	
+	if monster.monster_type  == monster.monsterType.Urgent:
+		print("PEGA LADRÃO")
+		completed_emergency_order.emit()
+		
+		var new_particle: CPUParticles2D = correct_particles.instantiate()
+		new_particle.global_position = monster.global_position
+		get_tree().root.add_child(new_particle)
+
+		var new_sfxs: AudioStreamPlayer2D = correct_monster_SFX_scene.instantiate()
+		new_sfxs.global_position = monster.global_position
+		get_tree().root.add_child(new_sfxs)
+		
+		monster.queue_free()
+		return
+		#NICOLLAS
 
 	var clicked_type = monster.monster_type
 	var expected_type = order_list[0]
 
 	print("Clicked:", clicked_type)
 	print("Expected:", expected_type)
-
+	
+	
 	if clicked_type != expected_type:
 		print("Wrong monster!")
 		mistaken_monster_order.emit()
 		return
+	
 
 	monster.delivered.emit()
 	right_monster_order.emit()

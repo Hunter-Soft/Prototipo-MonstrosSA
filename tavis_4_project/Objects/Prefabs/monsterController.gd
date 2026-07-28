@@ -52,13 +52,16 @@ func _ready() -> void:
 
 	match monster_type:
 		monsterType.Example_01:
-			mat.set_shader_parameter("tint_color", Color.RED)
+			mat.set_shader_parameter("tint_color", Color.YELLOW)
 
 		monsterType.Example_02:
 			mat.set_shader_parameter("tint_color", Color.GREEN)
 
 		monsterType.Example_03:
 			mat.set_shader_parameter("tint_color", Color.BLUE)
+		
+		monsterType.Urgent:
+			mat.set_shader_parameter("tint_color", Color.RED)
 			
 	action_timer.wait_time = action_cooldown
 	action_timer.connect("timeout", func():

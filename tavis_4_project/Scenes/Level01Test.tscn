@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://cjjask0eo0v6b" path="res://Sprites/UI/1.png" id="16_s1wt5"]
 [ext_resource type="Texture2D" uid="uid://6k1oy86rer1k" path="res://Sprites/UI/2.png" id="17_5xslw"]
 [ext_resource type="Texture2D" uid="uid://d1thollonomv7" path="res://Sprites/UI/Botão.png" id="19_ckl3y"]
+[ext_resource type="Texture2D" uid="uid://g8p35ki5fctr" path="res://Sprites/RedBeacon2.png" id="21_i2mgh"]
+[ext_resource type="Texture2D" uid="uid://jlb40oscqthp" path="res://Sprites/RedBeacon.png" id="22_u5k7e"]
 
 [sub_resource type="Animation" id="Animation_qavo7"]
 length = 0.001
@@ -79,6 +81,28 @@ font_size = 92
 [sub_resource type="LabelSettings" id="LabelSettings_7jxfu"]
 font = ExtResource("15_s1wt5")
 font_size = 48
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wh8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_i2mgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_u5k7e")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_i2mgh")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}]
 
 [node name="Level01Test" type="Node2D" unique_id=872439788]
 position = Vector2(0, -29)
@@ -311,5 +335,13 @@ patch_margin_left = 37
 patch_margin_top = 32
 patch_margin_right = 33
 patch_margin_bottom = 34
+
+[node name="RedBeacon" type="AnimatedSprite2D" parent="." unique_id=2015765158]
+position = Vector2(116, 87)
+rotation = 3.1415927
+scale = Vector2(0.28268915, 0.28268915)
+sprite_frames = SubResource("SpriteFrames_6wh8y")
+animation = &"Active"
+frame_progress = 0.50500417
 
 [connection signal="pressed" from="Game_Over/Button2" to="." method="gameOver"]
