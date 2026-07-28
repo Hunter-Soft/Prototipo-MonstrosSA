@@ -66,7 +66,11 @@ func _ready() -> void:
 	action_timer.wait_time = action_cooldown
 	action_timer.connect("timeout", func():
 		if monster_type == monsterType.Example_01:
-			walkState(action_cooldown, distance_to_travel, speed) #Andar Nomarl
+			var rng_behaviour = randf()
+			if rng_behaviour >= 0.8:
+				walkState(action_cooldown, distance_to_travel, speed) #Andar Nomarl
+			else:
+				walkState(action_cooldown, distance_to_travel*2, speed*3) #Andar Nomarl
 		elif monster_type == monsterType.Example_02:
 			anim_player.play("Blink")
 			
