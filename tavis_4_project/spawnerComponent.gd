@@ -92,7 +92,7 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene], special_case: bool)
 	
 	var urgent_appears_at = 6
 	var urgent_rng = randf()
-	if urgent_rng <= float(game_manager.current_phase)/30:
+	if game_manager.current_phase > urgent_appears_at && urgent_rng <= float(game_manager.current_phase)/30:
 		game_manager.order_manager.emergency_order.emit()
 		
 	#if monster_list[0].monster_type != monster_list[0].monsterType.Urgent: #FILHA DA PUTA ACHEI

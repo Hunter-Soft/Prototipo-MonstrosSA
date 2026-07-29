@@ -161,7 +161,7 @@ func _process(delta):
 					
 			focus = false
 		#Nicollas
-		print(int(arrays.meditation))
+		#print(int(arrays.meditation))
 		
 		if int(arrays.meditation) > meditating_value:
 			meditate = true 
