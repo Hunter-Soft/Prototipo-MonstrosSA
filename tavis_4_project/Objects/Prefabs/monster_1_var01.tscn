@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dtd0urp8le7dq"]
+
+[ext_resource type="PackedScene" uid="uid://dqx2f22av42p5" path="res://Objects/Prefabs/Monster1.tscn" id="1_m5a8a"]
+
+[node name="Monster1" unique_id=1365438596 instance=ExtResource("1_m5a8a")]
+monster_type = 4

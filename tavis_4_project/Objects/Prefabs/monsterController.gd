@@ -22,6 +22,9 @@ var time := 0.0
 @export var distance_to_travel: float = 10
 @export var speed: float = 1
 @export var offset_amount: float = 0.1
+@export var current_color: Color
+
+@export var color_list: Array[Color]
 
 var walking: bool = false
 #var move_direction: Vector2
@@ -34,6 +37,12 @@ enum monsterType{
 	Example_01,
 	Example_02,
 	Example_03,
+	Variant1_01,
+	Variant1_02,
+	Variant2_01,
+	Variant2_02,
+	Variant3_01,
+	Variant3_02,
 	Urgent
 }
 
@@ -51,17 +60,25 @@ func _ready() -> void:
 	var mat := sprite.material as ShaderMaterial
 
 	match monster_type:
-		monsterType.Example_01:
-			mat.set_shader_parameter("tint_color", Color.YELLOW)
+		monsterType.Example_01, monsterType.Variant2_01, monsterType.Variant3_01:
+			current_color = Color.YELLOW
+			mat.set_shader_parameter("tint_color", current_color)
+			#print(current_color)
 
-		monsterType.Example_02:
-			mat.set_shader_parameter("tint_color", Color.GREEN)
+		monsterType.Example_02, monsterType.Variant1_01, monsterType.Variant3_02:
+			current_color = Color.GREEN
+			mat.set_shader_parameter("tint_color", current_color)
+			#print(current_color)
 
-		monsterType.Example_03:
-			mat.set_shader_parameter("tint_color", Color.BLUE)
+		monsterType.Example_03, monsterType.Variant1_02, monsterType.Variant2_02:
+			current_color = Color.BLUE
+			mat.set_shader_parameter("tint_color", current_color)
+			#print(current_color)
 		
 		monsterType.Urgent:
-			mat.set_shader_parameter("tint_color", Color.RED)
+			current_color = Color.RED
+			mat.set_shader_parameter("tint_color", current_color)
+			print(current_color)
 			
 	action_timer.wait_time = action_cooldown
 	action_timer.connect("timeout", func():
@@ -72,21 +89,31 @@ func _ready() -> void:
 			else:
 				walkState(action_cooldown, distance_to_travel*2, speed*3) #Andar Nomarl
 		elif monster_type == monsterType.Example_02:
-			anim_player.play("Blink")
-			
-			var new_particle: CPUParticles2D = tp_particle.instantiate()
-			new_particle.global_position = global_position
-			get_tree().root.add_child(new_particle)
-			
-			
-			await get_tree().create_timer(0.3).timeout
-			walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
-			await get_tree().create_timer(0.1).timeout
-			$CPUParticles2D.emitting = true
-			#NICOLLAS LEMBRAR
+			var rng_behaviour = randf()
+			if rng_behaviour >= 0.6:
+				anim_player.play("Blink")
+				
+				var new_particle: CPUParticles2D = tp_particle.instantiate()
+				new_particle.global_position = global_position
+				get_tree().root.add_child(new_particle)
+				
+				
+				await get_tree().create_timer(0.3).timeout
+				walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
+				await get_tree().create_timer(0.1).timeout
+				$CPUParticles2D.emitting = true
+				#NICOLLAS LEMBRAR
+			else:
+				walkState(action_cooldown, distance_to_travel*2, speed*3)
 			
 		elif monster_type == monsterType.Example_03:
-			walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
+			var rng_behaviour = randf()
+			if rng_behaviour >= 1:
+				walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
+			else:
+				walkState(action_cooldown, distance_to_travel*2, speed*5)
+				await get_tree().create_timer(0.3).timeout
+				walkState(action_cooldown, distance_to_travel*2, speed*2)
 	)
 	
 	#print(scale.y)
@@ -112,6 +139,29 @@ func _process(delta: float) -> void:
 
 func randomizeStats() -> void:
 	action_cooldown += randf_range(-offset_amount, offset_amount)
+	
+	match monster_type:
+		monsterType.Example_01:
+			var rng_collor = randf()
+			if rng_collor > 0.6:
+				monster_type = monsterType.Variant1_01
+			elif rng_collor < 0.6:
+				monster_type = monsterType.Variant1_02
+			pass
+		monsterType.Example_02:
+			var rng_collor = randf()
+			if rng_collor > 0.6:
+				monster_type = monsterType.Variant2_01
+			elif rng_collor < 0.6:
+				monster_type = monsterType.Variant2_02
+			pass
+		monsterType.Example_03:
+			var rng_collor = randf()
+			if rng_collor > 0.6:
+				monster_type = monsterType.Variant3_01
+			elif rng_collor < 0.6:
+				monster_type = monsterType.Variant3_02
+			pass
 
 func idleState(delta):
 	time += delta

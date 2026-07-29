@@ -152,7 +152,7 @@ monster_pool_chance = Array[int]([1, 1, 1])
 [node name="OrderManager" parent="." unique_id=264940256 instance=ExtResource("6_5ad2a")]
 position = Vector2(-640, -670)
 scale = Vector2(2, 2)
-monster_sprites = Array[SpriteFrames]([ExtResource("9_aiu3w"), ExtResource("10_iq8n3"), ExtResource("11_7jxfu")])
+monster_sprites = Array[SpriteFrames]([ExtResource("9_aiu3w"), ExtResource("10_iq8n3"), ExtResource("11_7jxfu"), ExtResource("9_aiu3w"), ExtResource("9_aiu3w"), ExtResource("10_iq8n3"), ExtResource("10_iq8n3"), ExtResource("11_7jxfu"), ExtResource("11_7jxfu")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=287268522]
 script = ExtResource("9_gmkrs")

@@ -70,13 +70,13 @@ func createOrderFlags() -> void:
 		new_flag.sprite_frames = monster_sprites[order_list[i]]
 		
 		match order_list[i]:
-			MonsterController.monsterType.Example_01:
+			MonsterController.monsterType.Example_01, MonsterController.monsterType.Variant2_01, MonsterController.monsterType.Variant3_01:
 				new_flag.modulate = Color.YELLOW
 				
-			MonsterController.monsterType.Example_02:
+			MonsterController.monsterType.Example_02, MonsterController.monsterType.Variant1_01, MonsterController.monsterType.Variant3_02:
 				new_flag.modulate = Color.GREEN
 				
-			MonsterController.monsterType.Example_03:
+			MonsterController.monsterType.Example_03, MonsterController.monsterType.Variant1_02, MonsterController.monsterType.Variant2_02:
 				new_flag.modulate = Color.BLUE
 
 		new_flag.scale = Vector2(0.3, 0.3)
