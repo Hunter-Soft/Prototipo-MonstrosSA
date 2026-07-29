@@ -93,9 +93,9 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene], special_case: bool)
 	if urgent_rng <= 1:
 		game_manager.order_manager.emergency_order.emit()
 		
-	if monster_list[0].monster_type != monster_list[0].monsterType.Urgent:
-		checkTypeNumber()
-		get_parent().monster_data_ready.emit()
+	#if monster_list[0].monster_type != monster_list[0].monsterType.Urgent: #FILHA DA PUTA ACHEI
+	checkTypeNumber()
+	get_parent().monster_data_ready.emit()
 
 	spawned = true
 	ready_to_spawn = false

@@ -183,10 +183,10 @@ scale = Vector2(0.99999994, 0.99999994)
 polygon = PackedVector2Array(150, 147.48758, 87, 532, 91, 1066.6011, 1368, 1060.8833, 1369, 925.089, 1369, 67.44037, 1307, 67.44037, 357, 61.722713, 376, 143.19934, 1107, 146.05817, 1323, 869.34186, 133, 855.04767, 369, 150.3464)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=356942909]
-position = Vector2(315, 115)
+position = Vector2(368, 115)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1497452437]
-position = Vector2(1078, 489)
+position = Vector2(918, 489)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=615218256]
 offset_top = 600.0

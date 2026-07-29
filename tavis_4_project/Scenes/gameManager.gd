@@ -36,12 +36,14 @@ func _ready() -> void:
 	
 	order_manager.connect("completed_emergency_order", func():
 		$RedBeacon.play("Default")
+		$Music.pitch_scale = 1
 		in_emergency = false
 		pass
 	)
 	order_manager.connect("emergency_order", func():
 		if !in_emergency: 
 			$RedBeacon.play("Active")
+			$Music.pitch_scale = 1.2
 			in_emergency = true
 			spawner_component.spawnEnemies([emergency_monster_scene], true)
 			spawner_component.resetSpawner()
