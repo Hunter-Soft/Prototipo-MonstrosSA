@@ -14,7 +14,9 @@ config/name="TAVIS-4_project"
 config/version="0.159"
 run/main_scene="uid://co5ob810hv88b"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/image="uid://dh8x1kruseyo5"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=200
 
 [autoload]
 

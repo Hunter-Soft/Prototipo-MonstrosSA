@@ -89,10 +89,10 @@ func updateUI():
 func updateDifficulty() -> void:
 	#Nicollas nova dificuldade
 	if current_phase % 3 == 0:
-		damage_per_second += 0.1
+		damage_per_second += 0.15
 	
-	if current_phase % 9:
-		spawner_component.max_monsters = clamp(spawner_component.max_monsters + 3, 20, 40)
+	if current_phase % 5:
+		spawner_component.max_monsters = clamp(spawner_component.max_monsters + 3, 10, 40)
 		
 	
 	#Velha dificuldade

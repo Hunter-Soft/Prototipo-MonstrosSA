@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 signal delivered
 
+var game_manager: GameManager
+
 @export_subgroup("Animation")
 @onready var pivot: Node2D = $feet_pivot
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -61,17 +63,20 @@ func _ready() -> void:
 
 	match monster_type:
 		monsterType.Example_01, monsterType.Variant2_01, monsterType.Variant3_01:
+			action_cooldown = 1
 			current_color = Color.YELLOW
 			mat.set_shader_parameter("tint_color", current_color)
 			#print(current_color)
 
 		monsterType.Example_02, monsterType.Variant1_01, monsterType.Variant3_02:
+			action_cooldown = 2.5
 			current_color = Color.GREEN
 			mat.set_shader_parameter("tint_color", current_color)
 			#print(current_color)
 
 		monsterType.Example_03, monsterType.Variant1_02, monsterType.Variant2_02:
-			current_color = Color.BLUE
+			action_cooldown = 2
+			current_color = Color.AQUA
 			mat.set_shader_parameter("tint_color", current_color)
 			#print(current_color)
 		
@@ -79,41 +84,44 @@ func _ready() -> void:
 			current_color = Color.RED
 			mat.set_shader_parameter("tint_color", current_color)
 			print(current_color)
-			
+	
+	#randomizeStats()
 	action_timer.wait_time = action_cooldown
+	
 	action_timer.connect("timeout", func():
-		if monster_type == monsterType.Example_01:
-			var rng_behaviour = randf()
-			if rng_behaviour >= 0.8:
-				walkState(action_cooldown, distance_to_travel, speed) #Andar Nomarl
-			else:
-				walkState(action_cooldown, distance_to_travel*2, speed*3) #Andar Nomarl
-		elif monster_type == monsterType.Example_02:
-			var rng_behaviour = randf()
-			if rng_behaviour >= 0.6:
-				anim_player.play("Blink")
-				
-				var new_particle: CPUParticles2D = tp_particle.instantiate()
-				new_particle.global_position = global_position
-				get_tree().root.add_child(new_particle)
-				
-				
-				await get_tree().create_timer(0.3).timeout
-				walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
-				await get_tree().create_timer(0.1).timeout
-				$CPUParticles2D.emitting = true
-				#NICOLLAS LEMBRAR
-			else:
-				walkState(action_cooldown, distance_to_travel*2, speed*3)
+		match monster_type:
+			monsterType.Example_01, monsterType.Variant2_01, monsterType.Variant3_01:
+				var rng_behaviour = randf()
+				if rng_behaviour >= (1 - (game_manager.current_phase/20)):
+					walkState(action_cooldown, distance_to_travel, speed) #Andar Nomarl
+				else:
+					walkState(action_cooldown, distance_to_travel*2, speed*3) #Andar Nomarl
+			monsterType.Example_02, monsterType.Variant1_01, monsterType.Variant3_02:
+				var rng_behaviour = randf()
+				if rng_behaviour >= 0.6:
+					anim_player.play("Blink")
+					
+					var new_particle: CPUParticles2D = tp_particle.instantiate()
+					new_particle.global_position = global_position
+					get_tree().root.add_child(new_particle)
+					
+					
+					await get_tree().create_timer(action_cooldown/10).timeout
+					walkState(action_cooldown, distance_to_travel * 1.5, speed*30) #Teleporte
+					await get_tree().create_timer(action_cooldown/30).timeout
+					$CPUParticles2D.emitting = true
+					#NICOLLAS LEMBRAR
+				else:
+					walkState(action_cooldown, distance_to_travel*2, speed*3)
 			
-		elif monster_type == monsterType.Example_03:
-			var rng_behaviour = randf()
-			if rng_behaviour >= 1:
-				walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
-			else:
-				walkState(action_cooldown, distance_to_travel*2, speed*5)
-				await get_tree().create_timer(0.3).timeout
-				walkState(action_cooldown, distance_to_travel*2, speed*2)
+			monsterType.Example_03, monsterType.Variant1_02, monsterType.Variant2_02:
+				var rng_behaviour = randf()
+				if rng_behaviour >= 1:
+					walkState(action_cooldown, distance_to_travel*2, speed*3) #Dash
+				else:
+					walkState(action_cooldown, distance_to_travel*2, speed*5)
+					await get_tree().create_timer(action_cooldown/3).timeout
+					walkState(action_cooldown, distance_to_travel*2, speed*2)
 	)
 	
 	#print(scale.y)
@@ -138,29 +146,42 @@ func _process(delta: float) -> void:
 	#ac
 
 func randomizeStats() -> void:
+	var lower_floor = 0
+	var upper_floor = 0.7
+	
+	var collor_change_appearing_at = 10
 	action_cooldown += randf_range(-offset_amount, offset_amount)
+	
+	if collor_change_appearing_at > game_manager.current_phase:
+		return
 	
 	match monster_type:
 		monsterType.Example_01:
 			var rng_collor = randf()
-			if rng_collor > 0.6:
-				monster_type = monsterType.Variant1_01
-			elif rng_collor < 0.6:
-				monster_type = monsterType.Variant1_02
+			if rng_collor <= clamp(float(game_manager.current_phase) / 40, 0, 0.8):
+				rng_collor = randf()
+				if rng_collor > (1 - clamp(float(game_manager.current_phase)/10, lower_floor, upper_floor)):
+					monster_type = monsterType.Variant1_01
+				elif rng_collor <= (clamp(float(game_manager.current_phase)/10, 0.3, 0.8)):
+					monster_type = monsterType.Variant1_02
 			pass
 		monsterType.Example_02:
 			var rng_collor = randf()
-			if rng_collor > 0.6:
-				monster_type = monsterType.Variant2_01
-			elif rng_collor < 0.6:
-				monster_type = monsterType.Variant2_02
+			if rng_collor <= clamp(float(game_manager.current_phase) / 40, 0, 0.8):
+				rng_collor = randf()
+				if rng_collor > (1 - clamp(float(game_manager.current_phase)/10, lower_floor, upper_floor)):
+					monster_type = monsterType.Variant2_01
+				elif rng_collor <= (clamp(float(game_manager.current_phase)/10, 0.3, 0.8)):
+					monster_type = monsterType.Variant2_02
 			pass
 		monsterType.Example_03:
 			var rng_collor = randf()
-			if rng_collor > 0.6:
-				monster_type = monsterType.Variant3_01
-			elif rng_collor < 0.6:
-				monster_type = monsterType.Variant3_02
+			if rng_collor <= clamp(float(game_manager.current_phase) / 40, 0, 0.8):
+				rng_collor = randf()
+				if rng_collor > (1 - clamp(float(game_manager.current_phase)/10, lower_floor, upper_floor)):
+					monster_type = monsterType.Variant3_01
+				elif rng_collor <= (clamp(float(game_manager.current_phase)/10, 0.3, 0.8)):
+					monster_type = monsterType.Variant3_02
 			pass
 
 func idleState(delta):

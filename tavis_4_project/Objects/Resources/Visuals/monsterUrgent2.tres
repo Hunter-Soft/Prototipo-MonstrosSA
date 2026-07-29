@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ykj8yhmli7ie"]
+
+[ext_resource type="Texture2D" uid="uid://bclmk5rj4egdt" path="res://Sprites/Estrela.png" id="1_4brnc"]
+[ext_resource type="Texture2D" uid="uid://jlb40oscqthp" path="res://Sprites/RedBeacon.png" id="1_bkx0o"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bkx0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_4brnc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]

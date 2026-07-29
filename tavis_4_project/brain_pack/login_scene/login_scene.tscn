@@ -345,7 +345,7 @@ offset_top = -2.0
 offset_right = 393.0
 offset_bottom = 69.0
 theme_override_fonts/font = SubResource("FontFile_a46fp")
-text = "V 0.159
+text = "V 1.0
 
 "
 

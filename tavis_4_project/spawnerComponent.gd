@@ -85,12 +85,14 @@ func spawnEnemies(monster_to_spawn_list: Array[PackedScene], special_case: bool)
 		var new_position: Vector2= get_spawn_position(50, $"../Marker2D".global_position, $"../Marker2D2".global_position)
 
 		new_monster.global_position = new_position
+		new_monster.game_manager = game_manager
 
 		monster_list.append(new_monster)
 		$"../==MonsterHolder==".add_child(new_monster)
 	
+	var urgent_appears_at = 6
 	var urgent_rng = randf()
-	if urgent_rng <= 1:
+	if urgent_rng <= float(game_manager.current_phase)/30:
 		game_manager.order_manager.emergency_order.emit()
 		
 	#if monster_list[0].monster_type != monster_list[0].monsterType.Urgent: #FILHA DA PUTA ACHEI
@@ -151,7 +153,7 @@ func checkTypeNumber() -> void:
 			current_monsters += 1
 
 	for monster: MonsterController in monster_list:
-		if monster == null || monster.monster_type == 3:
+		if monster == null || monster.monster_type == monster.monsterType.Urgent:
 			continue
 
 		monster_type_list[monster.monster_type] = monster_type_list.get(monster.monster_type, 0) + 1
